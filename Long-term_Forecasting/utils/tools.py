@@ -268,9 +268,17 @@ def vali(model, vali_data, vali_loader, criterion, args, device, itr):
             # encoder - decoder
             outputs = outputs[:, -args.pred_len:, :]
             batch_y = batch_y[:, -args.pred_len:, :].to(device)
+            missing_idx=~torch.isnan(batch_y)
+            outputs=outputs[missing_idx]
+            batch_y=batch_y[missing_idx]
+            print('total vali observation:',batch_y.shape)
+            print('missing_idx_len:',len(missing_idx))
+
 
             pred = outputs.detach().cpu()
             true = batch_y.detach().cpu()
+            print('pred',pred)
+            print('true',true)
 
             loss = criterion(pred, true)
 
@@ -309,6 +317,9 @@ def test(model, test_data, test_loader, args, device, itr):
             # encoder - decoder
             outputs = outputs[:, -args.pred_len:, :]
             batch_y = batch_y[:, -args.pred_len:, :].to(device)
+            missing_idx=~torch.isnan(batch_y)
+            outputs=outputs[missing_idx]
+            batch_y=batch_y[missing_idx]
 
             pred = outputs.detach().cpu().numpy()
             true = batch_y.detach().cpu().numpy()
@@ -324,8 +335,8 @@ def test(model, test_data, test_loader, args, device, itr):
     trues = trues.reshape(-1, trues.shape[-2], trues.shape[-1])
     print('test shape:', preds.shape, trues.shape)
 
-    mae, mse, rmse, mape, mspe, smape, nd = metric(preds, trues)
+    mae, mse, rmse, mape, mspe, smape, r2 = metric(preds, trues)
     # print('mae:{:.4f}, mse:{:.4f}, rmse:{:.4f}, smape:{:.4f}, mases:{:.4f}'.format(mae, mse, rmse, smape, mases))
-    print('mae:{:.4f}, mse:{:.4f}, rmse:{:.4f}, smape:{:.4f}'.format(mae, mse, rmse, smape))
+    print('mae:{:.4f}, mse:{:.4f}, rmse:{:.4f}, r2:{:.4f}'.format(mae, mse, rmse, r2))
 
-    return mse, mae
+    return mse, r2

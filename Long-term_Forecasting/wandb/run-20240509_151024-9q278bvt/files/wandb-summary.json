@@ -1,0 +1,1 @@
+{"train_loss": 0.018916137516498566, "val_loss": 0.014666355215013027, "_timestamp": 1715281863.4600885, "_runtime": 38.90453243255615, "_step": 4, "test_mse_mean": 0.016204319894313812, "test_mse_std": 0.0, "test_r2_mean": -1.9273200035095215, "test_r2_std": 0.0, "_wandb": {"runtime": 38}}

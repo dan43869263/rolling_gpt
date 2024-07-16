@@ -37,6 +37,25 @@ def SMAPE(pred, true):
 def ND(pred, true):
     return np.mean(np.abs(true - pred)) / np.mean(np.abs(true))
 
+def r_squared(pred, true):
+    """
+    Calculate R-squared score.
+    
+    Parameters:
+    - y_true: numpy array of actual values
+    - y_pred: numpy array of predicted values
+    
+    Returns:
+    - r2: R-squared score
+    """
+    # Total sum of squares
+    ss_total = np.sum((true - np.mean(true))**2)
+    # Residual sum of squares
+    ss_res = np.sum((true - pred)**2)
+    # R-squared
+    r2 = 1 - (ss_res / ss_total)
+    return r2
+
 def metric(pred, true):
     mae = MAE(pred, true)
     mse = MSE(pred, true)
@@ -44,6 +63,6 @@ def metric(pred, true):
     mape = MAPE(pred, true)
     mspe = MSPE(pred, true)
     smape = SMAPE(pred, true)
-    nd = ND(pred, true)
+    r2 = r_squared(pred, true)
 
-    return mae, mse, rmse, mape, mspe, smape, nd
+    return mae, mse, rmse, mape, mspe, smape, r2

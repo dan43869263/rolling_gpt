@@ -1,0 +1,4615 @@
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+train 6066
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+val 774
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+test 1674
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (1): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (2): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (3): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (4): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (5): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+3it [00:01,  2.54it/s]
+Epoch: 1 cost time: 1.4655568599700928
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 1, Steps: 3 | Train Loss: 2.1904223 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (inf --> nan).  Saving model ...
+1it [00:00,  9.85it/s]
+3it [00:00, 13.68it/s]
+1it [00:00, 11.46it/s]
+Epoch: 2 cost time: 0.5617575645446777
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 2, Steps: 3 | Train Loss: 2.1301096 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.45it/s]
+1it [00:00, 10.28it/s]
+Epoch: 3 cost time: 0.5602748394012451
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 3, Steps: 3 | Train Loss: 2.0837742 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.68it/s]
+1it [00:00, 10.29it/s]
+Epoch: 4 cost time: 0.5904788970947266
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 4, Steps: 3 | Train Loss: 2.0546043 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.86it/s]
+1it [00:00, 10.11it/s]
+Epoch: 5 cost time: 0.5799415111541748
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 5, Steps: 3 | Train Loss: 2.0306711 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 6 cost time: 0.5657382011413574
+3it [00:00, 13.29it/s]
+1it [00:00, 10.25it/s]
+2it [00:00, 16.26it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 6, Steps: 3 | Train Loss: 2.0187688 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 7 cost time: 0.5720760822296143
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 7, Steps: 3 | Train Loss: 2.0016360 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.68it/s]
+1it [00:00, 10.47it/s]
+3it [00:00, 11.98it/s]
+Epoch: 8 cost time: 0.5792787075042725
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 8, Steps: 3 | Train Loss: 2.0031996 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.89it/s]
+3it [00:00, 13.54it/s]
+1it [00:00, 10.50it/s]
+Epoch: 9 cost time: 0.5751712322235107
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 9, Steps: 3 | Train Loss: 1.9980745 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.40it/s]
+1it [00:00, 10.79it/s]
+Epoch: 10 cost time: 0.5619525909423828
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 10, Steps: 3 | Train Loss: 1.9959313 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.57it/s]
+1it [00:00,  9.80it/s]
+Epoch: 11 cost time: 0.5620205402374268
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 11, Steps: 3 | Train Loss: 1.9986294 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 12 cost time: 0.5561733245849609
+3it [00:00, 12.78it/s]
+1it [00:00, 10.78it/s]
+0it [00:00, ?it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 12, Steps: 3 | Train Loss: 1.9966290 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 13 cost time: 0.5675404071807861
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+3it [00:00, 12.28it/s]
+1it [00:00, 10.67it/s]
+3it [00:00, 12.61it/s]
+Epoch: 13, Steps: 3 | Train Loss: 2.0060794 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 14 cost time: 0.5661759376525879
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 14, Steps: 3 | Train Loss: 1.9956311 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.59it/s]
+3it [00:00, 12.46it/s]
+0it [00:00, ?it/s]
+Epoch: 15 cost time: 0.5705163478851318
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 15, Steps: 3 | Train Loss: 1.9986893 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00, 10.81it/s]
+3it [00:00, 12.82it/s]
+1it [00:00, 10.82it/s]
+Epoch: 16 cost time: 0.5632250308990479
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 16, Steps: 3 | Train Loss: 1.9858541 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.43it/s]
+1it [00:00, 10.74it/s]
+Epoch: 17 cost time: 0.5755307674407959
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 17, Steps: 3 | Train Loss: 1.9742261 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.73it/s]
+1it [00:00, 10.66it/s]
+Epoch: 18 cost time: 0.5690948963165283
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 18, Steps: 3 | Train Loss: 1.9770804 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 19 cost time: 0.5918562412261963
+3it [00:00, 11.89it/s]
+1it [00:00, 11.10it/s]
+2it [00:00, 14.80it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 19, Steps: 3 | Train Loss: 1.9661680 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 20 cost time: 0.5706219673156738
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 20, Steps: 3 | Train Loss: 1.9610753 Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 12.26it/s]
+1it [00:00, 10.35it/s]
+3it [00:00, 12.48it/s]
+Epoch: 21 cost time: 0.5765223503112793
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 21, Steps: 3 | Train Loss: 1.9563065 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.03it/s]
+3it [00:00, 13.58it/s]
+1it [00:00, 11.86it/s]
+Epoch: 22 cost time: 0.5564613342285156
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 22, Steps: 3 | Train Loss: 1.9500252 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.15it/s]
+1it [00:00, 10.02it/s]
+Epoch: 23 cost time: 0.5640132427215576
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 23, Steps: 3 | Train Loss: 1.9510269 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.12it/s]
+1it [00:00, 10.70it/s]
+Epoch: 24 cost time: 0.5558638572692871
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 24, Steps: 3 | Train Loss: 1.9466614 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 25 cost time: 0.598297119140625
+3it [00:00, 11.76it/s]
+1it [00:00, 10.26it/s]
+0it [00:00, ?it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 25, Steps: 3 | Train Loss: 1.9491612 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 26 cost time: 0.557889461517334
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 26, Steps: 3 | Train Loss: 1.9494965 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 13.01it/s]
+1it [00:00, 10.19it/s]
+3it [00:00, 13.73it/s]
+Epoch: 27 cost time: 0.552882194519043
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 27, Steps: 3 | Train Loss: 1.9431150 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.57it/s]
+3it [00:00, 12.57it/s]
+1it [00:00,  9.76it/s]
+Epoch: 28 cost time: 0.5690946578979492
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 28, Steps: 3 | Train Loss: 1.9465136 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.57it/s]
+1it [00:00, 10.71it/s]
+Epoch: 29 cost time: 0.5706946849822998
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 29, Steps: 3 | Train Loss: 1.9466101 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.52it/s]
+1it [00:00, 10.16it/s]
+Epoch: 30 cost time: 0.5672130584716797
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 30, Steps: 3 | Train Loss: 1.9439443 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 31 cost time: 0.5677225589752197
+3it [00:00, 14.08it/s]
+1it [00:00, 11.23it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 31, Steps: 3 | Train Loss: 1.9397891 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 32 cost time: 0.5819392204284668
+3it [00:00, 11.64it/s]
+1it [00:00, 10.65it/s]
+3it [00:00, 12.24it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 32, Steps: 3 | Train Loss: 1.9540691 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 33 cost time: 0.5778372287750244
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 33, Steps: 3 | Train Loss: 1.9465233 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.88it/s]
+3it [00:00, 12.43it/s]
+0it [00:00, ?it/s]
+Epoch: 34 cost time: 0.5609557628631592
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 34, Steps: 3 | Train Loss: 1.9399610 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00, 10.88it/s]
+3it [00:00, 12.05it/s]
+1it [00:00, 11.65it/s]
+Epoch: 35 cost time: 0.5764799118041992
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 35, Steps: 3 | Train Loss: 1.9461320 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.04it/s]
+1it [00:00, 10.28it/s]
+Epoch: 36 cost time: 0.5644643306732178
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 36, Steps: 3 | Train Loss: 1.9445245 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.50it/s]
+1it [00:00, 10.58it/s]
+Epoch: 37 cost time: 0.5883433818817139
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 37, Steps: 3 | Train Loss: 1.9376875 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 38 cost time: 0.5809032917022705
+3it [00:00, 13.58it/s]
+1it [00:00, 10.36it/s]
+2it [00:00, 14.96it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 38, Steps: 3 | Train Loss: 1.9438541 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 39 cost time: 0.5760283470153809
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 39, Steps: 3 | Train Loss: 1.9427357 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 11.70it/s]
+1it [00:00, 10.46it/s]
+3it [00:00, 13.34it/s]
+Epoch: 40 cost time: 0.570314884185791
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 40, Steps: 3 | Train Loss: 1.9423308 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.36it/s]
+3it [00:00, 11.92it/s]
+1it [00:00, 10.54it/s]
+Epoch: 41 cost time: 0.5802130699157715
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 41, Steps: 3 | Train Loss: 1.9440917 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.75it/s]
+1it [00:00,  9.72it/s]
+Epoch: 42 cost time: 0.5842266082763672
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 42, Steps: 3 | Train Loss: 1.9372157 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.49it/s]
+1it [00:00, 10.20it/s]
+Epoch: 43 cost time: 0.563481330871582
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 43, Steps: 3 | Train Loss: 1.9336022 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.41it/s]
+1it [00:00, 10.84it/s]
+Epoch: 44 cost time: 0.5710983276367188
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 44, Steps: 3 | Train Loss: 1.9350646 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 45 cost time: 0.5611248016357422
+3it [00:00, 12.52it/s]
+1it [00:00, 10.07it/s]
+2it [00:00, 17.84it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 45, Steps: 3 | Train Loss: 1.9263854 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 46 cost time: 0.5675790309906006
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 46, Steps: 3 | Train Loss: 1.9302504 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 13.30it/s]
+1it [00:00, 11.55it/s]
+3it [00:00, 13.68it/s]
+Epoch: 47 cost time: 0.5581319332122803
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 47, Steps: 3 | Train Loss: 1.9330649 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.71it/s]
+3it [00:00, 12.38it/s]
+1it [00:00, 10.35it/s]
+Epoch: 48 cost time: 0.5686683654785156
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 48, Steps: 3 | Train Loss: 1.9305110 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.36it/s]
+1it [00:00, 10.96it/s]
+Epoch: 49 cost time: 0.5677742958068848
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 49, Steps: 3 | Train Loss: 1.9252445 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.06it/s]
+1it [00:00, 10.65it/s]
+Epoch: 50 cost time: 0.5766892433166504
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 50, Steps: 3 | Train Loss: 1.9311730 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 51 cost time: 0.5622098445892334
+3it [00:00, 12.65it/s]
+1it [00:00, 10.19it/s]
+0it [00:00, ?it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 51, Steps: 3 | Train Loss: 1.9288197 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 52 cost time: 0.5701649188995361
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 52, Steps: 3 | Train Loss: 1.9274443 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.68it/s]
+1it [00:00,  9.95it/s]
+2it [00:00, 15.54it/s]
+3it [00:00, 12.68it/s]
+Epoch: 53 cost time: 0.5853023529052734
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 53, Steps: 3 | Train Loss: 1.9314421 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00, 10.78it/s]
+3it [00:00, 12.55it/s]
+1it [00:00, 10.78it/s]
+Epoch: 54 cost time: 0.5676395893096924
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 54, Steps: 3 | Train Loss: 1.9313178 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 12.32it/s]
+1it [00:00,  9.78it/s]
+3it [00:00, 12.32it/s]
+Epoch: 55 cost time: 0.5650856494903564
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 55, Steps: 3 | Train Loss: 1.9309109 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  8.85it/s]
+1it [00:00,  8.85it/s]
+Epoch: 56 cost time: 0.5733656883239746
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 56, Steps: 3 | Train Loss: 1.9290895 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  8.85it/s]
+Epoch: 57 cost time: 0.5875575542449951
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 57, Steps: 3 | Train Loss: 1.9292056 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 12.97it/s]
+3it [00:00, 12.97it/s]
+Epoch: 58 cost time: 0.5698332786560059
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 58, Steps: 3 | Train Loss: 1.9272851 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  6.31it/s]
+1it [00:00,  6.31it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 59, Steps: 3 | Train Loss: 1.9390398 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 60, Steps: 3 | Train Loss: 1.9234314 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 61 cost time: 0.5990884304046631
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 61, Steps: 3 | Train Loss: 1.9238083 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 11.99it/s]
+3it [00:00, 11.99it/s]
+Epoch: 62 cost time: 0.6906087398529053
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 62, Steps: 3 | Train Loss: 1.9169741 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00, 10.50it/s]
+1it [00:00, 10.50it/s]
+Epoch: 63 cost time: 0.5751850605010986
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 63, Steps: 3 | Train Loss: 1.9172358 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 12.98it/s]
+3it [00:00, 12.98it/s]
+Epoch: 64 cost time: 0.5603773593902588
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 64, Steps: 3 | Train Loss: 1.9261099 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00, 10.28it/s]
+1it [00:00, 10.28it/s]
+Epoch: 65 cost time: 0.7345657348632812
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 65, Steps: 3 | Train Loss: 1.9201349 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.28it/s]
+Epoch: 66 cost time: 0.6847667694091797
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 66, Steps: 3 | Train Loss: 1.9162098 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00,  8.30it/s]
+3it [00:00,  8.30it/s]
+Epoch: 67 cost time: 0.6818838119506836
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 67, Steps: 3 | Train Loss: 1.9188371 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00, 11.71it/s]
+1it [00:00, 11.71it/s]
+Epoch: 68 cost time: 0.6885991096496582
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 68, Steps: 3 | Train Loss: 1.9195563 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 69 cost time: 0.6846251487731934
+1it [00:00, 11.71it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 69, Steps: 3 | Train Loss: 1.9182253 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.96it/s]
+3it [00:00, 11.96it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 70, Steps: 3 | Train Loss: 1.9179744 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.09it/s]
+1it [00:00,  3.09it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 71, Steps: 3 | Train Loss: 1.9194404 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 72 cost time: 0.5714547634124756
+1it [00:00,  3.09it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 72, Steps: 3 | Train Loss: 1.9159520 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 73 cost time: 0.5807356834411621
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 73, Steps: 3 | Train Loss: 1.9162535 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 11.97it/s]
+3it [00:00, 11.97it/s]
+Epoch: 74 cost time: 0.5918524265289307
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 74, Steps: 3 | Train Loss: 1.9221170 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00, 10.12it/s]
+1it [00:00, 10.12it/s]
+Epoch: 75 cost time: 0.5710675716400146
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 75, Steps: 3 | Train Loss: 1.9207203 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 12.33it/s]
+3it [00:00, 12.33it/s]
+Epoch: 76 cost time: 0.576129674911499
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 76, Steps: 3 | Train Loss: 1.9184177 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00, 10.34it/s]
+1it [00:00, 10.34it/s]
+Epoch: 77 cost time: 0.5745992660522461
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 77, Steps: 3 | Train Loss: 1.9161917 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.34it/s]
+Epoch: 78 cost time: 0.5739803314208984
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 78, Steps: 3 | Train Loss: 1.9114737 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.30it/s]
+3it [00:00, 13.30it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 79, Steps: 3 | Train Loss: 1.9103278 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 80 cost time: 0.5870702266693115
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+1it [00:00, 10.48it/s]
+1it [00:00, 10.48it/s]
+Epoch: 80, Steps: 3 | Train Loss: 1.9093530 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 81 cost time: 0.594696044921875
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 81, Steps: 3 | Train Loss: 1.9165051 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 12.81it/s]
+3it [00:00, 12.81it/s]
+Epoch: 82 cost time: 0.5799798965454102
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 82, Steps: 3 | Train Loss: 1.9110165 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00, 10.15it/s]
+1it [00:00, 10.15it/s]
+Epoch: 83 cost time: 0.5688722133636475
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 83, Steps: 3 | Train Loss: 1.9117608 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.15it/s]
+Epoch: 84 cost time: 0.5617547035217285
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 84, Steps: 3 | Train Loss: 1.9132117 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 12.92it/s]
+3it [00:00, 12.92it/s]
+Epoch: 85 cost time: 0.5634515285491943
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 85, Steps: 3 | Train Loss: 1.9197149 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.37it/s]
+1it [00:00, 10.37it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 86, Steps: 3 | Train Loss: 1.9097813 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 87, Steps: 3 | Train Loss: 1.9060776 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 88 cost time: 0.5673482418060303
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 88, Steps: 3 | Train Loss: 1.9061443 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.69it/s]
+3it [00:00, 12.69it/s]
+Epoch: 89 cost time: 0.58693528175354
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 89, Steps: 3 | Train Loss: 1.9091523 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00, 10.64it/s]
+1it [00:00, 10.64it/s]
+Epoch: 90 cost time: 0.5871155261993408
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 90, Steps: 3 | Train Loss: 1.9092453 Vali Loss: nan
+lr = 0.0000000100
+3it [00:00, 12.33it/s]
+3it [00:00, 12.33it/s]
+Epoch: 91 cost time: 0.5651354789733887
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 91, Steps: 3 | Train Loss: 1.9052620 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00, 10.07it/s]
+1it [00:00, 10.07it/s]
+Epoch: 92 cost time: 0.5752148628234863
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 92, Steps: 3 | Train Loss: 1.9079233 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.07it/s]
+Epoch: 93 cost time: 0.6080746650695801
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 93, Steps: 3 | Train Loss: 1.9054650 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.15it/s]
+3it [00:00, 12.15it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 94, Steps: 3 | Train Loss: 1.9030114 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 95 cost time: 0.594599723815918
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 95, Steps: 3 | Train Loss: 1.9063288 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00, 10.58it/s]
+1it [00:00, 10.58it/s]
+Epoch: 96 cost time: 0.6012744903564453
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 96, Steps: 3 | Train Loss: 1.9055596 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 11.96it/s]
+3it [00:00, 11.96it/s]
+Epoch: 97 cost time: 0.5757551193237305
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 97, Steps: 3 | Train Loss: 1.9127883 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00, 10.58it/s]
+1it [00:00, 10.58it/s]
+Epoch: 98 cost time: 0.6035823822021484
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 98, Steps: 3 | Train Loss: 1.9006034 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.58it/s]
+Epoch: 99 cost time: 0.5808265209197998
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 99, Steps: 3 | Train Loss: 1.9058868 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 13.18it/s]
+3it [00:00, 13.18it/s]
+Epoch: 100 cost time: 0.5790197849273682
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 100, Steps: 3 | Train Loss: 1.9084963 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.10it/s]
+1it [00:00, 10.10it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 101, Steps: 3 | Train Loss: 1.9065799 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 102 cost time: 0.5870094299316406
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 102, Steps: 3 | Train Loss: 1.9005872 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 12.38it/s]
+3it [00:00, 12.38it/s]
+Epoch: 103 cost time: 0.578014612197876
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 103, Steps: 3 | Train Loss: 1.9043235 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.38it/s]
+Epoch: 104 cost time: 0.5807838439941406
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 104, Steps: 3 | Train Loss: 1.8985968 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00, 10.46it/s]
+1it [00:00, 10.46it/s]
+Epoch: 105 cost time: 0.5920820236206055
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 105, Steps: 3 | Train Loss: 1.8969684 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 12.82it/s]
+3it [00:00, 12.82it/s]
+Epoch: 106 cost time: 0.5827438831329346
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 106, Steps: 3 | Train Loss: 1.9036001 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00, 11.49it/s]
+1it [00:00, 11.49it/s]
+Epoch: 107 cost time: 0.5692181587219238
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 107, Steps: 3 | Train Loss: 1.8961598 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 108 cost time: 0.5657269954681396
+1it [00:00, 11.49it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 108, Steps: 3 | Train Loss: 1.9000352 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 109 cost time: 0.5740635395050049
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 109, Steps: 3 | Train Loss: 1.8974276 Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 12.34it/s]
+3it [00:00, 12.34it/s]
+Epoch: 110 cost time: 0.5706162452697754
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 110, Steps: 3 | Train Loss: 1.8959887 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00, 10.59it/s]
+1it [00:00, 10.59it/s]
+Epoch: 111 cost time: 0.5882139205932617
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 111, Steps: 3 | Train Loss: 1.8983704 Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 12.61it/s]
+3it [00:00, 12.61it/s]
+Epoch: 112 cost time: 0.5842611789703369
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 112, Steps: 3 | Train Loss: 1.8938919 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00, 10.90it/s]
+1it [00:00, 10.90it/s]
+Epoch: 113 cost time: 0.607666015625
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 113, Steps: 3 | Train Loss: 1.8988800 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.90it/s]
+Epoch: 114 cost time: 0.589205265045166
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 114, Steps: 3 | Train Loss: 1.8960154 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.92it/s]
+3it [00:00, 11.92it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 115, Steps: 3 | Train Loss: 1.8950115 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.42it/s]
+1it [00:00, 10.42it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 116, Steps: 3 | Train Loss: 1.8972069 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 117 cost time: 0.6033434867858887
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 117, Steps: 3 | Train Loss: 1.8916697 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 13.54it/s]
+3it [00:00, 13.54it/s]
+Epoch: 118 cost time: 0.5674710273742676
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 118, Steps: 3 | Train Loss: 1.8941859 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.54it/s]
+Epoch: 119 cost time: 0.5700991153717041
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 119, Steps: 3 | Train Loss: 1.9058179 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00, 10.36it/s]
+1it [00:00, 10.36it/s]
+Epoch: 120 cost time: 0.5697891712188721
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 120, Steps: 3 | Train Loss: 1.8910304 Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 12.73it/s]
+3it [00:00, 12.73it/s]
+Epoch: 121 cost time: 0.5806536674499512
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 121, Steps: 3 | Train Loss: 1.8874625 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00, 10.29it/s]
+1it [00:00, 10.29it/s]
+Epoch: 122 cost time: 0.5659317970275879
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 122, Steps: 3 | Train Loss: 1.8876092 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 123 cost time: 0.5834355354309082
+1it [00:00, 10.29it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 123, Steps: 3 | Train Loss: 1.8890953 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 124 cost time: 0.572681188583374
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 124, Steps: 3 | Train Loss: 1.8758465 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 13.83it/s]
+3it [00:00, 13.83it/s]
+Epoch: 125 cost time: 0.5739490985870361
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 125, Steps: 3 | Train Loss: 1.8899129 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00, 11.19it/s]
+1it [00:00, 11.19it/s]
+Epoch: 126 cost time: 0.5800812244415283
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 126, Steps: 3 | Train Loss: 1.8873551 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 12.82it/s]
+3it [00:00, 12.82it/s]
+Epoch: 127 cost time: 0.6038558483123779
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 127, Steps: 3 | Train Loss: 1.8950878 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00, 10.46it/s]
+1it [00:00, 10.46it/s]
+Epoch: 128 cost time: 0.5689132213592529
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 128, Steps: 3 | Train Loss: 1.8895326 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.46it/s]
+Epoch: 129 cost time: 0.5748715400695801
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 129, Steps: 3 | Train Loss: 1.8866808 Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 12.91it/s]
+3it [00:00, 12.91it/s]
+Epoch: 130 cost time: 0.5661048889160156
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 130, Steps: 3 | Train Loss: 1.8870005 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.13it/s]
+1it [00:00, 10.13it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 131, Steps: 3 | Train Loss: 1.8828429 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 132 cost time: 0.5678746700286865
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 132, Steps: 3 | Train Loss: 1.8917818 Vali Loss: nan
+lr = 0.0000095582
+2it [00:00, 18.36it/s]
+2it [00:00, 18.36it/s]
+Epoch: 133 cost time: 0.5783495903015137
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 133, Steps: 3 | Train Loss: 1.8833717 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 13.34it/s]
+3it [00:00, 13.34it/s]
+Epoch: 134 cost time: 0.5836372375488281
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 134, Steps: 3 | Train Loss: 1.8808663 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00, 10.80it/s]
+1it [00:00, 10.80it/s]
+Epoch: 135 cost time: 0.5707058906555176
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 135, Steps: 3 | Train Loss: 1.8758787 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 14.23it/s]
+3it [00:00, 14.23it/s]
+Epoch: 136 cost time: 0.5821726322174072
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 136, Steps: 3 | Train Loss: 1.8909708 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00, 10.58it/s]
+1it [00:00, 10.58it/s]
+Epoch: 137 cost time: 0.6057004928588867
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 137, Steps: 3 | Train Loss: 1.8849148 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.58it/s]
+Epoch: 138 cost time: 0.5865211486816406
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 138, Steps: 3 | Train Loss: 1.8859591 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.37it/s]
+3it [00:00, 12.37it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 139, Steps: 3 | Train Loss: 1.8832234 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 140 cost time: 0.5809977054595947
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 140, Steps: 3 | Train Loss: 1.8869482 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00, 10.45it/s]
+1it [00:00, 10.45it/s]
+Epoch: 141 cost time: 0.6052956581115723
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 141, Steps: 3 | Train Loss: 1.8883909 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 11.90it/s]
+3it [00:00, 11.90it/s]
+Epoch: 142 cost time: 0.578991174697876
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 142, Steps: 3 | Train Loss: 1.8835123 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00, 10.51it/s]
+1it [00:00, 10.51it/s]
+Epoch: 143 cost time: 0.5598151683807373
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 143, Steps: 3 | Train Loss: 1.8744701 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.51it/s]
+Epoch: 144 cost time: 0.5936074256896973
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 144, Steps: 3 | Train Loss: 1.8710984 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 11.95it/s]
+3it [00:00, 11.95it/s]
+Epoch: 145 cost time: 0.6011795997619629
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 145, Steps: 3 | Train Loss: 1.8840664 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  9.71it/s]
+1it [00:00,  9.71it/s]
+Epoch: 146 cost time: 0.5802433490753174
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 146, Steps: 3 | Train Loss: 1.8717523 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 147 cost time: 0.5694382190704346
+1it [00:00,  9.71it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 147, Steps: 3 | Train Loss: 1.8827139 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 148 cost time: 0.5949578285217285
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 148, Steps: 3 | Train Loss: 1.8834970 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 11.63it/s]
+3it [00:00, 11.63it/s]
+Epoch: 149 cost time: 0.5835461616516113
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 149, Steps: 3 | Train Loss: 1.8891162 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00, 10.39it/s]
+1it [00:00, 10.39it/s]
+Epoch: 150 cost time: 0.5740659236907959
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 150, Steps: 3 | Train Loss: 1.8698341 Vali Loss: nan
+lr = 0.0000000100
+3it [00:00, 12.30it/s]
+3it [00:00, 12.30it/s]
+Epoch: 151 cost time: 0.572119951248169
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 151, Steps: 3 | Train Loss: 1.8710728 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00, 10.71it/s]
+1it [00:00, 10.71it/s]
+Epoch: 152 cost time: 0.582627534866333
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 152, Steps: 3 | Train Loss: 1.8736506 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.71it/s]
+Epoch: 153 cost time: 0.5709538459777832
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 153, Steps: 3 | Train Loss: 1.8680716 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.35it/s]
+3it [00:00, 12.35it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 154, Steps: 3 | Train Loss: 1.8725018 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.16it/s]
+1it [00:00, 10.16it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 155, Steps: 3 | Train Loss: 1.8645364 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 156 cost time: 0.5812094211578369
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 156, Steps: 3 | Train Loss: 1.8633315 Vali Loss: nan
+lr = 0.0000654543
+2it [00:00, 17.12it/s]
+2it [00:00, 17.12it/s]
+Epoch: 157 cost time: 0.5787696838378906
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 157, Steps: 3 | Train Loss: 1.8635213 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 13.01it/s]
+3it [00:00, 13.01it/s]
+Epoch: 158 cost time: 0.5835447311401367
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 158, Steps: 3 | Train Loss: 1.8677392 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00, 11.39it/s]
+1it [00:00, 11.39it/s]
+Epoch: 159 cost time: 0.5903496742248535
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 159, Steps: 3 | Train Loss: 1.8689849 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 13.50it/s]
+3it [00:00, 13.50it/s]
+Epoch: 160 cost time: 0.5749313831329346
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 160, Steps: 3 | Train Loss: 1.8689442 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00, 10.18it/s]
+1it [00:00, 10.18it/s]
+Epoch: 161 cost time: 0.583824872970581
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 161, Steps: 3 | Train Loss: 1.8617295 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 162 cost time: 0.5890886783599854
+1it [00:00, 10.18it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 162, Steps: 3 | Train Loss: 1.8581214 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.18it/s]
+3it [00:00, 11.18it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 163, Steps: 3 | Train Loss: 1.8635956 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 164 cost time: 0.5894021987915039
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+1it [00:00, 10.52it/s]
+1it [00:00, 10.52it/s]
+Epoch: 164, Steps: 3 | Train Loss: 1.8617123 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 165 cost time: 0.5912861824035645
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 165, Steps: 3 | Train Loss: 1.8648524 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 12.40it/s]
+3it [00:00, 12.40it/s]
+Epoch: 166 cost time: 0.5884723663330078
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 166, Steps: 3 | Train Loss: 1.8569549 Vali Loss: nan
+lr = 0.0000345557
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 167 cost time: 0.585684061050415
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 167, Steps: 3 | Train Loss: 1.8505339 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00, 11.33it/s]
+1it [00:00, 11.33it/s]
+Epoch: 168 cost time: 0.5659258365631104
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 168, Steps: 3 | Train Loss: 1.8468461 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 11.70it/s]
+3it [00:00, 11.70it/s]
+Epoch: 169 cost time: 0.5891923904418945
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 169, Steps: 3 | Train Loss: 1.8616100 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.66it/s]
+1it [00:00, 10.66it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 170, Steps: 3 | Train Loss: 1.8448761 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 171 cost time: 0.5830192565917969
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 171, Steps: 3 | Train Loss: 1.8490986 Vali Loss: nan
+lr = 0.0000024569
+2it [00:00, 15.77it/s]
+2it [00:00, 15.77it/s]
+Epoch: 172 cost time: 0.5836167335510254
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 172, Steps: 3 | Train Loss: 1.8655878 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.12it/s]
+3it [00:00, 12.12it/s]
+Epoch: 173 cost time: 0.5659356117248535
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 173, Steps: 3 | Train Loss: 1.8525774 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00, 10.40it/s]
+1it [00:00, 10.40it/s]
+Epoch: 174 cost time: 0.5880429744720459
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 174, Steps: 3 | Train Loss: 1.8484522 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 12.18it/s]
+3it [00:00, 12.18it/s]
+Epoch: 175 cost time: 0.5752749443054199
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 175, Steps: 3 | Train Loss: 1.8702044 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00, 10.47it/s]
+1it [00:00, 10.47it/s]
+Epoch: 176 cost time: 0.5805578231811523
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 176, Steps: 3 | Train Loss: 1.8778567 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 177 cost time: 0.5722789764404297
+1it [00:00, 10.47it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 177, Steps: 3 | Train Loss: 1.8552380 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 178 cost time: 0.5659499168395996
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 178, Steps: 3 | Train Loss: 1.8652912 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 12.55it/s]
+3it [00:00, 12.55it/s]
+Epoch: 179 cost time: 0.6540622711181641
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 179, Steps: 3 | Train Loss: 1.8509547 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  9.51it/s]
+1it [00:00,  9.51it/s]
+Epoch: 180 cost time: 0.598167896270752
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 180, Steps: 3 | Train Loss: 1.8483324 Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 11.42it/s]
+3it [00:00, 11.42it/s]
+Epoch: 181 cost time: 0.6474573612213135
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 181, Steps: 3 | Train Loss: 1.8331508 Vali Loss: nan
+lr = 0.0000975531
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 182 cost time: 0.5916130542755127
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 182, Steps: 3 | Train Loss: 1.8481888 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00, 10.27it/s]
+1it [00:00, 10.27it/s]
+Epoch: 183 cost time: 0.6452443599700928
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 183, Steps: 3 | Train Loss: 1.8436113 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 12.96it/s]
+3it [00:00, 12.96it/s]
+Epoch: 184 cost time: 0.6567604541778564
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 184, Steps: 3 | Train Loss: 1.8378200 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00, 10.13it/s]
+1it [00:00, 10.13it/s]
+Epoch: 185 cost time: 0.6196863651275635
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 185, Steps: 3 | Train Loss: 1.8415607 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.13it/s]
+Epoch: 186 cost time: 0.61806321144104
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 186, Steps: 3 | Train Loss: 1.8446562 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.75it/s]
+3it [00:00, 11.75it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 187, Steps: 3 | Train Loss: 1.8285835 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  9.27it/s]
+1it [00:00,  9.27it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 188, Steps: 3 | Train Loss: 1.8218692 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 189 cost time: 0.6133370399475098
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 189, Steps: 3 | Train Loss: 1.8245335 Vali Loss: nan
+lr = 0.0000024569
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 190 cost time: 0.6187081336975098
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 190, Steps: 3 | Train Loss: 1.8200199 Vali Loss: nan
+lr = 0.0000000100
+3it [00:00, 12.45it/s]
+3it [00:00, 12.45it/s]
+Epoch: 191 cost time: 0.6192889213562012
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 191, Steps: 3 | Train Loss: 1.8168359 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  9.52it/s]
+1it [00:00,  9.52it/s]
+Epoch: 192 cost time: 0.6250185966491699
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 192, Steps: 3 | Train Loss: 1.8369711 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 11.42it/s]
+3it [00:00, 11.42it/s]
+Epoch: 193 cost time: 0.6335649490356445
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 193, Steps: 3 | Train Loss: 1.8213904 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00, 10.16it/s]
+1it [00:00, 10.16it/s]
+Epoch: 194 cost time: 0.6198644638061523
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 194, Steps: 3 | Train Loss: 1.8358905 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.16it/s]
+Epoch: 195 cost time: 0.6169881820678711
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 195, Steps: 3 | Train Loss: 1.8329294 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 12.16it/s]
+3it [00:00, 12.16it/s]
+Epoch: 196 cost time: 0.6025314331054688
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 196, Steps: 3 | Train Loss: 1.8318950 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 11.40it/s]
+1it [00:00, 11.40it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 197, Steps: 3 | Train Loss: 1.8333143 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 198 cost time: 0.6097500324249268
+1it [00:00, 11.40it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 198, Steps: 3 | Train Loss: 1.8262513 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.10it/s]
+3it [00:00, 12.10it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 199, Steps: 3 | Train Loss: 1.8229802 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 200 cost time: 0.6199283599853516
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 200, Steps: 3 | Train Loss: 1.8250846 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  9.43it/s]
+1it [00:00,  9.43it/s]
+Epoch: 201 cost time: 0.6318457126617432
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 201, Steps: 3 | Train Loss: 1.8176581 Vali Loss: nan
+lr = 0.0000975531
+2it [00:00, 13.84it/s]
+2it [00:00, 13.84it/s]
+Epoch: 202 cost time: 0.6157805919647217
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 202, Steps: 3 | Train Loss: 1.8148031 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 11.16it/s]
+3it [00:00, 11.16it/s]
+Epoch: 203 cost time: 0.6272056102752686
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 203, Steps: 3 | Train Loss: 1.8211561 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  9.30it/s]
+1it [00:00,  9.30it/s]
+Epoch: 204 cost time: 0.6318655014038086
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 204, Steps: 3 | Train Loss: 1.8236916 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 11.14it/s]
+3it [00:00, 11.14it/s]
+Epoch: 205 cost time: 0.6215012073516846
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 205, Steps: 3 | Train Loss: 1.8385691 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  9.41it/s]
+1it [00:00,  9.41it/s]
+Epoch: 206 cost time: 0.6910338401794434
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 206, Steps: 3 | Train Loss: 1.7974817 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  9.41it/s]
+Epoch: 207 cost time: 0.6010663509368896
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 207, Steps: 3 | Train Loss: 1.8068320 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 13.55it/s]
+3it [00:00, 13.55it/s]
+Epoch: 208 cost time: 0.5960805416107178
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 208, Steps: 3 | Train Loss: 1.8160866 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.83it/s]
+3it [00:00, 12.83it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 209, Steps: 3 | Train Loss: 1.8142168 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.34it/s]
+3it [00:00, 12.34it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 210, Steps: 3 | Train Loss: 1.8018635 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 211 cost time: 0.621199369430542
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+3it [00:00, 12.17it/s]
+3it [00:00, 12.17it/s]
+Epoch: 211, Steps: 3 | Train Loss: 1.8320828 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 212 cost time: 0.640601634979248
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 212, Steps: 3 | Train Loss: 1.8275183 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.33it/s]
+3it [00:00, 12.33it/s]
+Epoch: 213 cost time: 0.6146574020385742
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 213, Steps: 3 | Train Loss: 1.8160133 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.03it/s]
+3it [00:00, 12.03it/s]
+Epoch: 214 cost time: 0.6168169975280762
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 214, Steps: 3 | Train Loss: 1.8073409 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  9.33it/s]
+1it [00:00,  9.33it/s]
+Epoch: 215 cost time: 0.6252832412719727
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 215, Steps: 3 | Train Loss: 1.8251446 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  9.71it/s]
+1it [00:00,  9.71it/s]
+Epoch: 216 cost time: 0.6320297718048096
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 216, Steps: 3 | Train Loss: 1.8310215 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  9.65it/s]
+1it [00:00,  9.65it/s]
+Epoch: 217 cost time: 0.6245825290679932
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 217, Steps: 3 | Train Loss: 1.8141607 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 12.76it/s]
+3it [00:00, 12.76it/s]
+Epoch: 218 cost time: 0.5999374389648438
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 218, Steps: 3 | Train Loss: 1.8098210 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 11.04it/s]
+3it [00:00, 11.04it/s]
+Epoch: 219 cost time: 0.6462633609771729
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 219, Steps: 3 | Train Loss: 1.8020643 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.45it/s]
+3it [00:00, 11.45it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 220, Steps: 3 | Train Loss: 1.8140761 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.12it/s]
+3it [00:00, 12.12it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 221, Steps: 3 | Train Loss: 1.8035112 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 222 cost time: 0.6265499591827393
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 222, Steps: 3 | Train Loss: 1.7895824 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 12.20it/s]
+3it [00:00, 12.20it/s]
+Epoch: 223 cost time: 0.6207559108734131
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 223, Steps: 3 | Train Loss: 1.7888147 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 11.88it/s]
+3it [00:00, 11.88it/s]
+Epoch: 224 cost time: 0.6216335296630859
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 224, Steps: 3 | Train Loss: 1.8007616 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 12.08it/s]
+3it [00:00, 12.08it/s]
+Epoch: 225 cost time: 0.6042087078094482
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 225, Steps: 3 | Train Loss: 1.8008346 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  9.59it/s]
+1it [00:00,  9.59it/s]
+Epoch: 226 cost time: 0.6048357486724854
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 226, Steps: 3 | Train Loss: 1.7887920 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00, 11.47it/s]
+1it [00:00, 11.47it/s]
+Epoch: 227 cost time: 0.611962080001831
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 227, Steps: 3 | Train Loss: 1.7859175 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 11.43it/s]
+3it [00:00, 11.43it/s]
+Epoch: 228 cost time: 0.6148490905761719
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 228, Steps: 3 | Train Loss: 1.8028026 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.92it/s]
+3it [00:00, 12.92it/s]
+Epoch: 229 cost time: 0.6095399856567383
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 229, Steps: 3 | Train Loss: 1.7804921 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.71it/s]
+3it [00:00, 12.71it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 230, Steps: 3 | Train Loss: 1.7970258 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.84it/s]
+3it [00:00, 11.84it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 231, Steps: 3 | Train Loss: 1.7804288 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 232 cost time: 0.6158599853515625
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 232, Steps: 3 | Train Loss: 1.7905132 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.10it/s]
+3it [00:00, 12.10it/s]
+Epoch: 233 cost time: 0.5947918891906738
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 233, Steps: 3 | Train Loss: 1.7947754 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 11.69it/s]
+3it [00:00, 11.69it/s]
+Epoch: 234 cost time: 0.5841054916381836
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 234, Steps: 3 | Train Loss: 1.7858249 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00, 10.64it/s]
+1it [00:00, 10.64it/s]
+Epoch: 235 cost time: 0.5790097713470459
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 235, Steps: 3 | Train Loss: 1.7772386 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00, 10.30it/s]
+1it [00:00, 10.30it/s]
+Epoch: 236 cost time: 0.5817923545837402
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 236, Steps: 3 | Train Loss: 1.7902142 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 12.60it/s]
+3it [00:00, 12.60it/s]
+Epoch: 237 cost time: 0.5995204448699951
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 237, Steps: 3 | Train Loss: 1.7977398 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.44it/s]
+3it [00:00, 11.44it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 238, Steps: 3 | Train Loss: 1.7933427 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 239 cost time: 0.5832915306091309
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 239, Steps: 3 | Train Loss: 1.7887873 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 12.96it/s]
+3it [00:00, 12.96it/s]
+Epoch: 240 cost time: 0.6087207794189453
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 240, Steps: 3 | Train Loss: 1.7636896 Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 11.30it/s]
+3it [00:00, 11.30it/s]
+Epoch: 241 cost time: 0.596937894821167
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 241, Steps: 3 | Train Loss: 1.7859669 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 12.42it/s]
+3it [00:00, 12.42it/s]
+Epoch: 242 cost time: 0.6022694110870361
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 242, Steps: 3 | Train Loss: 1.8020060 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00, 11.44it/s]
+1it [00:00, 11.44it/s]
+Epoch: 243 cost time: 0.5925779342651367
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 243, Steps: 3 | Train Loss: 1.7830309 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 13.29it/s]
+3it [00:00, 13.29it/s]
+Epoch: 244 cost time: 0.5910582542419434
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 244, Steps: 3 | Train Loss: 1.7772302 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 13.23it/s]
+3it [00:00, 13.23it/s]
+Epoch: 245 cost time: 0.5824325084686279
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 245, Steps: 3 | Train Loss: 1.7772042 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.88it/s]
+3it [00:00, 11.88it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 246, Steps: 3 | Train Loss: 1.7945501 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 247 cost time: 0.6138620376586914
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 247, Steps: 3 | Train Loss: 1.7786917 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 10.64it/s]
+3it [00:00, 10.64it/s]
+Epoch: 248 cost time: 0.6075708866119385
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 248, Steps: 3 | Train Loss: 1.7745688 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.38it/s]
+3it [00:00, 12.38it/s]
+Epoch: 249 cost time: 0.6091787815093994
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 249, Steps: 3 | Train Loss: 1.7832662 Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 12.12it/s]
+3it [00:00, 12.12it/s]
+Epoch: 250 cost time: 0.5844740867614746
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 250, Steps: 3 | Train Loss: 1.7885574 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00, 10.73it/s]
+1it [00:00, 10.73it/s]
+Epoch: 251 cost time: 0.5754778385162354
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 251, Steps: 3 | Train Loss: 1.7780122 Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 12.37it/s]
+3it [00:00, 12.37it/s]
+Epoch: 252 cost time: 0.593193769454956
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 252, Steps: 3 | Train Loss: 1.7772604 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 11.80it/s]
+3it [00:00, 11.80it/s]
+Epoch: 253 cost time: 0.58408522605896
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 253, Steps: 3 | Train Loss: 1.7796011 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.22it/s]
+3it [00:00, 12.22it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 254, Steps: 3 | Train Loss: 1.7730523 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 255 cost time: 0.5973219871520996
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+3it [00:00, 13.03it/s]
+3it [00:00, 13.03it/s]
+Epoch: 255, Steps: 3 | Train Loss: 1.7947455 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 256 cost time: 0.5868816375732422
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 256, Steps: 3 | Train Loss: 1.7705335 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 12.22it/s]
+3it [00:00, 12.22it/s]
+Epoch: 257 cost time: 0.5791733264923096
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 257, Steps: 3 | Train Loss: 1.7713756 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 13.08it/s]
+3it [00:00, 13.08it/s]
+Epoch: 258 cost time: 0.5963499546051025
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 258, Steps: 3 | Train Loss: 1.7735412 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 13.02it/s]
+3it [00:00, 13.02it/s]
+Epoch: 259 cost time: 0.5770971775054932
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 259, Steps: 3 | Train Loss: 1.7725093 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00, 10.57it/s]
+1it [00:00, 10.57it/s]
+Epoch: 260 cost time: 0.572190523147583
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 260, Steps: 3 | Train Loss: 1.7764490 Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 12.48it/s]
+3it [00:00, 12.48it/s]
+Epoch: 261 cost time: 0.5795493125915527
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 261, Steps: 3 | Train Loss: 1.7806225 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.36it/s]
+3it [00:00, 12.36it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 262, Steps: 3 | Train Loss: 1.7725525 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 263 cost time: 0.5963747501373291
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 263, Steps: 3 | Train Loss: 1.7726262 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 11.27it/s]
+3it [00:00, 11.27it/s]
+Epoch: 264 cost time: 0.5845947265625
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 264, Steps: 3 | Train Loss: 1.7825982 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 11.99it/s]
+3it [00:00, 11.99it/s]
+Epoch: 265 cost time: 0.5959289073944092
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 265, Steps: 3 | Train Loss: 1.7668497 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 12.02it/s]
+3it [00:00, 12.02it/s]
+Epoch: 266 cost time: 0.5851905345916748
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 266, Steps: 3 | Train Loss: 1.7868194 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00, 11.18it/s]
+1it [00:00, 11.18it/s]
+Epoch: 267 cost time: 0.6055600643157959
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 267, Steps: 3 | Train Loss: 1.7582703 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00, 10.85it/s]
+1it [00:00, 10.85it/s]
+Epoch: 268 cost time: 0.5637598037719727
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 268, Steps: 3 | Train Loss: 1.7763119 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.39it/s]
+3it [00:00, 12.39it/s]
+Epoch: 269 cost time: 0.6096668243408203
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 269, Steps: 3 | Train Loss: 1.7661242 Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 13.01it/s]
+3it [00:00, 13.01it/s]
+Epoch: 270 cost time: 0.5702857971191406
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 270, Steps: 3 | Train Loss: 1.7874350 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.89it/s]
+3it [00:00, 11.89it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 271, Steps: 3 | Train Loss: 1.7818130 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 272 cost time: 0.5886847972869873
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 272, Steps: 3 | Train Loss: 1.7652094 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 11.63it/s]
+3it [00:00, 11.63it/s]
+Epoch: 273 cost time: 0.5726807117462158
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 273, Steps: 3 | Train Loss: 1.7644649 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.23it/s]
+3it [00:00, 12.23it/s]
+Epoch: 274 cost time: 0.5860347747802734
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 274, Steps: 3 | Train Loss: 1.7743977 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 12.89it/s]
+3it [00:00, 12.89it/s]
+Epoch: 275 cost time: 0.6074278354644775
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 275, Steps: 3 | Train Loss: 1.7656315 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  9.61it/s]
+1it [00:00,  9.61it/s]
+Epoch: 276 cost time: 0.5828697681427002
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 276, Steps: 3 | Train Loss: 1.7628329 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 12.48it/s]
+3it [00:00, 12.48it/s]
+Epoch: 277 cost time: 0.5912344455718994
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 277, Steps: 3 | Train Loss: 1.7593676 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 13.52it/s]
+3it [00:00, 13.52it/s]
+Epoch: 278 cost time: 0.5754845142364502
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 278, Steps: 3 | Train Loss: 1.7697974 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.09it/s]
+3it [00:00, 13.09it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 279, Steps: 3 | Train Loss: 1.7687573 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 280 cost time: 0.5933411121368408
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 280, Steps: 3 | Train Loss: 1.7625210 Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 13.00it/s]
+3it [00:00, 13.00it/s]
+Epoch: 281 cost time: 0.5706970691680908
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 281, Steps: 3 | Train Loss: 1.7694075 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 12.05it/s]
+3it [00:00, 12.05it/s]
+Epoch: 282 cost time: 0.5761303901672363
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 282, Steps: 3 | Train Loss: 1.7586544 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 12.42it/s]
+3it [00:00, 12.42it/s]
+Epoch: 283 cost time: 0.597275972366333
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 283, Steps: 3 | Train Loss: 1.7628668 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00, 11.15it/s]
+1it [00:00, 11.15it/s]
+Epoch: 284 cost time: 0.5696604251861572
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 284, Steps: 3 | Train Loss: 1.7639333 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 12.10it/s]
+3it [00:00, 12.10it/s]
+Epoch: 285 cost time: 0.5903444290161133
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 285, Steps: 3 | Train Loss: 1.7547932 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.54it/s]
+3it [00:00, 12.54it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 286, Steps: 3 | Train Loss: 1.7622141 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.97it/s]
+3it [00:00, 12.97it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 287, Steps: 3 | Train Loss: 1.7694316 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 288 cost time: 0.5817747116088867
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 288, Steps: 3 | Train Loss: 1.7538825 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.90it/s]
+3it [00:00, 12.90it/s]
+Epoch: 289 cost time: 0.5828747749328613
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 289, Steps: 3 | Train Loss: 1.7714403 Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 12.77it/s]
+3it [00:00, 12.77it/s]
+Epoch: 290 cost time: 0.580718994140625
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 290, Steps: 3 | Train Loss: 1.7816717 Vali Loss: nan
+lr = 0.0000000100
+3it [00:00, 13.43it/s]
+3it [00:00, 13.43it/s]
+Epoch: 291 cost time: 0.5635979175567627
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 291, Steps: 3 | Train Loss: 1.7571479 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00, 10.24it/s]
+1it [00:00, 10.24it/s]
+Epoch: 292 cost time: 0.5961251258850098
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 292, Steps: 3 | Train Loss: 1.7601500 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  9.71it/s]
+1it [00:00,  9.71it/s]
+Epoch: 293 cost time: 0.5830962657928467
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 293, Steps: 3 | Train Loss: 1.7611669 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.74it/s]
+3it [00:00, 12.74it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 294, Steps: 3 | Train Loss: 1.7615460 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.78it/s]
+3it [00:00, 12.78it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 295, Steps: 3 | Train Loss: 1.7573595 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 296 cost time: 0.5912420749664307
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 296, Steps: 3 | Train Loss: 1.7511360 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 11.68it/s]
+3it [00:00, 11.68it/s]
+Epoch: 297 cost time: 0.5859551429748535
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 297, Steps: 3 | Train Loss: 1.7482520 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 12.44it/s]
+3it [00:00, 12.44it/s]
+Epoch: 298 cost time: 0.583237886428833
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 298, Steps: 3 | Train Loss: 1.7607260 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 13.65it/s]
+3it [00:00, 13.65it/s]
+Epoch: 299 cost time: 0.5762324333190918
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 299, Steps: 3 | Train Loss: 1.7527068 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00, 11.06it/s]
+1it [00:00, 11.06it/s]
+Epoch: 300 cost time: 0.5947201251983643
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 300, Steps: 3 | Train Loss: 1.7424129 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00, 10.55it/s]
+1it [00:00, 10.55it/s]
+Epoch: 301 cost time: 0.568842887878418
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 301, Steps: 3 | Train Loss: 1.7568419 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 12.34it/s]
+3it [00:00, 12.34it/s]
+Epoch: 302 cost time: 0.5775136947631836
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 302, Steps: 3 | Train Loss: 1.7477205 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.26it/s]
+3it [00:00, 12.26it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 303, Steps: 3 | Train Loss: 1.7519617 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.83it/s]
+3it [00:00, 11.83it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 304, Steps: 3 | Train Loss: 1.7420844 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 305 cost time: 0.6191747188568115
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+3it [00:00, 11.25it/s]
+3it [00:00, 11.25it/s]
+Epoch: 305, Steps: 3 | Train Loss: 1.7586988 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 306 cost time: 0.5832149982452393
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 306, Steps: 3 | Train Loss: 1.7709054 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 12.06it/s]
+3it [00:00, 12.06it/s]
+Epoch: 307 cost time: 0.5642352104187012
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 307, Steps: 3 | Train Loss: 1.7544938 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.80it/s]
+3it [00:00, 12.80it/s]
+Epoch: 308 cost time: 0.5787241458892822
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 308, Steps: 3 | Train Loss: 1.7621444 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.22it/s]
+3it [00:00, 12.22it/s]
+Epoch: 309 cost time: 0.580207347869873
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 309, Steps: 3 | Train Loss: 1.7533864 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00, 10.62it/s]
+1it [00:00, 10.62it/s]
+Epoch: 310 cost time: 0.5615787506103516
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 310, Steps: 3 | Train Loss: 1.7520132 Vali Loss: nan
+lr = 0.0000000100
+3it [00:00, 12.22it/s]
+3it [00:00, 12.22it/s]
+Epoch: 311 cost time: 0.5848875045776367
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 311, Steps: 3 | Train Loss: 1.7614988 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.00it/s]
+3it [00:00, 13.00it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 312, Steps: 3 | Train Loss: 1.7429196 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.28it/s]
+3it [00:00, 12.28it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 313, Steps: 3 | Train Loss: 1.7463450 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 314 cost time: 0.5872251987457275
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 314, Steps: 3 | Train Loss: 1.7436207 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 12.22it/s]
+3it [00:00, 12.22it/s]
+Epoch: 315 cost time: 0.5826618671417236
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 315, Steps: 3 | Train Loss: 1.7586970 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 12.17it/s]
+3it [00:00, 12.17it/s]
+Epoch: 316 cost time: 0.5978686809539795
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 316, Steps: 3 | Train Loss: 1.7548274 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 11.50it/s]
+3it [00:00, 11.50it/s]
+Epoch: 317 cost time: 0.5922403335571289
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 317, Steps: 3 | Train Loss: 1.7507634 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00, 10.70it/s]
+1it [00:00, 10.70it/s]
+Epoch: 318 cost time: 0.5757706165313721
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 318, Steps: 3 | Train Loss: 1.7570645 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00, 11.55it/s]
+1it [00:00, 11.55it/s]
+Epoch: 319 cost time: 0.6169888973236084
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 319, Steps: 3 | Train Loss: 1.7462938 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 12.63it/s]
+3it [00:00, 12.63it/s]
+Epoch: 320 cost time: 0.5754213333129883
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 320, Steps: 3 | Train Loss: 1.7394878 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.35it/s]
+3it [00:00, 12.35it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 321, Steps: 3 | Train Loss: 1.7437495 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.74it/s]
+3it [00:00, 12.74it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 322, Steps: 3 | Train Loss: 1.7404715 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 323 cost time: 0.5957658290863037
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 323, Steps: 3 | Train Loss: 1.7491989 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 11.45it/s]
+3it [00:00, 11.45it/s]
+Epoch: 324 cost time: 0.572662353515625
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 324, Steps: 3 | Train Loss: 1.7411712 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 12.56it/s]
+3it [00:00, 12.56it/s]
+Epoch: 325 cost time: 0.5978724956512451
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 325, Steps: 3 | Train Loss: 1.7458167 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 12.15it/s]
+3it [00:00, 12.15it/s]
+Epoch: 326 cost time: 0.5760016441345215
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 326, Steps: 3 | Train Loss: 1.7442211 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00, 10.58it/s]
+1it [00:00, 10.58it/s]
+Epoch: 327 cost time: 0.5705416202545166
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 327, Steps: 3 | Train Loss: 1.7500312 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.31it/s]
+3it [00:00, 12.31it/s]
+Epoch: 328 cost time: 0.5861749649047852
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 328, Steps: 3 | Train Loss: 1.7485050 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.09it/s]
+3it [00:00, 13.09it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 329, Steps: 3 | Train Loss: 1.7441680 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 330 cost time: 0.5740876197814941
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 330, Steps: 3 | Train Loss: 1.7421242 Vali Loss: nan
+lr = 0.0000000100
+3it [00:00, 12.10it/s]
+3it [00:00, 12.10it/s]
+Epoch: 331 cost time: 0.5766658782958984
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 331, Steps: 3 | Train Loss: 1.7372799 Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 13.46it/s]
+3it [00:00, 13.46it/s]
+Epoch: 332 cost time: 0.5879454612731934
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 332, Steps: 3 | Train Loss: 1.7545201 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 11.95it/s]
+3it [00:00, 11.95it/s]
+Epoch: 333 cost time: 0.5979022979736328
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 333, Steps: 3 | Train Loss: 1.7393613 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 11.71it/s]
+3it [00:00, 11.71it/s]
+Epoch: 334 cost time: 0.5797441005706787
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 334, Steps: 3 | Train Loss: 1.7398847 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  9.89it/s]
+1it [00:00,  9.89it/s]
+Epoch: 335 cost time: 0.5756688117980957
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 335, Steps: 3 | Train Loss: 1.7423263 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.12it/s]
+3it [00:00, 13.12it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 336, Steps: 3 | Train Loss: 1.7470525 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.72it/s]
+3it [00:00, 13.72it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 337, Steps: 3 | Train Loss: 1.7415964 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 338 cost time: 0.5738067626953125
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 338, Steps: 3 | Train Loss: 1.7523566 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 12.39it/s]
+3it [00:00, 12.39it/s]
+Epoch: 339 cost time: 0.575918436050415
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 339, Steps: 3 | Train Loss: 1.7424270 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 13.53it/s]
+3it [00:00, 13.53it/s]
+Epoch: 340 cost time: 0.5805187225341797
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 340, Steps: 3 | Train Loss: 1.7394200 Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 12.15it/s]
+3it [00:00, 12.15it/s]
+Epoch: 341 cost time: 0.5686192512512207
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 341, Steps: 3 | Train Loss: 1.7352413 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00, 11.23it/s]
+1it [00:00, 11.23it/s]
+Epoch: 342 cost time: 0.597301721572876
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 342, Steps: 3 | Train Loss: 1.7423100 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00, 10.33it/s]
+1it [00:00, 10.33it/s]
+Epoch: 343 cost time: 0.5744197368621826
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 343, Steps: 3 | Train Loss: 1.7394768 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 11.93it/s]
+3it [00:00, 11.93it/s]
+Epoch: 344 cost time: 0.6000316143035889
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 344, Steps: 3 | Train Loss: 1.7516607 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.03it/s]
+3it [00:00, 12.03it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 345, Steps: 3 | Train Loss: 1.7377809 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.93it/s]
+3it [00:00, 13.93it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 346, Steps: 3 | Train Loss: 1.7273949 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 347 cost time: 0.5884783267974854
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 347, Steps: 3 | Train Loss: 1.7328796 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.20it/s]
+3it [00:00, 12.20it/s]
+Epoch: 348 cost time: 0.5781497955322266
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 348, Steps: 3 | Train Loss: 1.7437880 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.85it/s]
+3it [00:00, 12.85it/s]
+Epoch: 349 cost time: 0.5779509544372559
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 349, Steps: 3 | Train Loss: 1.7374072 Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 12.84it/s]
+3it [00:00, 12.84it/s]
+Epoch: 350 cost time: 0.5718047618865967
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 350, Steps: 3 | Train Loss: 1.7357920 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  9.75it/s]
+1it [00:00,  9.75it/s]
+Epoch: 351 cost time: 0.5787458419799805
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 351, Steps: 3 | Train Loss: 1.7421528 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00, 10.47it/s]
+1it [00:00, 10.47it/s]
+Epoch: 352 cost time: 0.570819616317749
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 352, Steps: 3 | Train Loss: 1.7430569 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 11.93it/s]
+3it [00:00, 11.93it/s]
+Epoch: 353 cost time: 0.6049120426177979
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 353, Steps: 3 | Train Loss: 1.7250228 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.50it/s]
+3it [00:00, 12.50it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 354, Steps: 3 | Train Loss: 1.7455510 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 355 cost time: 0.5746622085571289
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+3it [00:00, 12.69it/s]
+3it [00:00, 12.69it/s]
+Epoch: 355, Steps: 3 | Train Loss: 1.7329390 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 356 cost time: 0.6001601219177246
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 356, Steps: 3 | Train Loss: 1.7332499 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 11.58it/s]
+3it [00:00, 11.58it/s]
+Epoch: 357 cost time: 0.5872623920440674
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 357, Steps: 3 | Train Loss: 1.7389590 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 12.41it/s]
+3it [00:00, 12.41it/s]
+Epoch: 358 cost time: 0.584080696105957
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 358, Steps: 3 | Train Loss: 1.7417046 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 11.55it/s]
+3it [00:00, 11.55it/s]
+Epoch: 359 cost time: 0.5927779674530029
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 359, Steps: 3 | Train Loss: 1.7483455 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 12.95it/s]
+3it [00:00, 12.95it/s]
+Epoch: 360 cost time: 0.5945420265197754
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 360, Steps: 3 | Train Loss: 1.7254203 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00, 11.04it/s]
+1it [00:00, 11.04it/s]
+Epoch: 361 cost time: 0.5905601978302002
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 361, Steps: 3 | Train Loss: 1.7328359 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 12.98it/s]
+3it [00:00, 12.98it/s]
+Epoch: 362 cost time: 0.578582763671875
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 362, Steps: 3 | Train Loss: 1.7369158 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.87it/s]
+3it [00:00, 11.87it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 363, Steps: 3 | Train Loss: 1.7297523 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 364 cost time: 0.5851857662200928
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 364, Steps: 3 | Train Loss: 1.7270450 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 12.07it/s]
+3it [00:00, 12.07it/s]
+Epoch: 365 cost time: 0.5751032829284668
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 365, Steps: 3 | Train Loss: 1.7357097 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 12.44it/s]
+3it [00:00, 12.44it/s]
+Epoch: 366 cost time: 0.562835693359375
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 366, Steps: 3 | Train Loss: 1.7317152 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 12.62it/s]
+3it [00:00, 12.62it/s]
+Epoch: 367 cost time: 0.5810751914978027
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 367, Steps: 3 | Train Loss: 1.7310652 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.61it/s]
+3it [00:00, 12.61it/s]
+Epoch: 368 cost time: 0.576195240020752
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 368, Steps: 3 | Train Loss: 1.7285252 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00, 11.68it/s]
+1it [00:00, 11.68it/s]
+Epoch: 369 cost time: 0.5824687480926514
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 369, Steps: 3 | Train Loss: 1.7366912 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.69it/s]
+3it [00:00, 11.69it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 370, Steps: 3 | Train Loss: 1.7331066 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.37it/s]
+3it [00:00, 11.37it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 371, Steps: 3 | Train Loss: 1.7222170 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 372 cost time: 0.5797839164733887
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 372, Steps: 3 | Train Loss: 1.7311976 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.68it/s]
+3it [00:00, 12.68it/s]
+Epoch: 373 cost time: 0.5654687881469727
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 373, Steps: 3 | Train Loss: 1.7387631 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.62it/s]
+3it [00:00, 12.62it/s]
+Epoch: 374 cost time: 0.5844237804412842
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 374, Steps: 3 | Train Loss: 1.7285897 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 11.90it/s]
+3it [00:00, 11.90it/s]
+Epoch: 375 cost time: 0.5790529251098633
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 375, Steps: 3 | Train Loss: 1.7381638 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00, 10.63it/s]
+1it [00:00, 10.63it/s]
+Epoch: 376 cost time: 0.5701289176940918
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 376, Steps: 3 | Train Loss: 1.7474219 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00, 11.52it/s]
+1it [00:00, 11.52it/s]
+Epoch: 377 cost time: 0.5791323184967041
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 377, Steps: 3 | Train Loss: 1.7336461 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.74it/s]
+3it [00:00, 12.74it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 378, Steps: 3 | Train Loss: 1.7293468 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 379 cost time: 0.5885467529296875
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 379, Steps: 3 | Train Loss: 1.7320694 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 11.86it/s]
+3it [00:00, 11.86it/s]
+Epoch: 380 cost time: 0.5885589122772217
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 380, Steps: 3 | Train Loss: 1.7327614 Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 12.12it/s]
+3it [00:00, 12.12it/s]
+Epoch: 381 cost time: 0.5838029384613037
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 381, Steps: 3 | Train Loss: 1.7317874 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 12.10it/s]
+3it [00:00, 12.10it/s]
+Epoch: 382 cost time: 0.5901839733123779
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 382, Steps: 3 | Train Loss: 1.7371200 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00, 11.40it/s]
+1it [00:00, 11.40it/s]
+Epoch: 383 cost time: 0.6072142124176025
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 383, Steps: 3 | Train Loss: 1.7067082 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00, 10.30it/s]
+1it [00:00, 10.30it/s]
+Epoch: 384 cost time: 0.5957276821136475
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 384, Steps: 3 | Train Loss: 1.7383296 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.54it/s]
+3it [00:00, 12.54it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 385, Steps: 3 | Train Loss: 1.7306288 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 386 cost time: 0.5927038192749023
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 386, Steps: 3 | Train Loss: 1.7284224 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 11.17it/s]
+3it [00:00, 11.17it/s]
+Epoch: 387 cost time: 0.5816328525543213
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 387, Steps: 3 | Train Loss: 1.7332260 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 11.96it/s]
+3it [00:00, 11.96it/s]
+Epoch: 388 cost time: 0.5752973556518555
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 388, Steps: 3 | Train Loss: 1.7207452 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.26it/s]
+3it [00:00, 12.26it/s]
+Epoch: 389 cost time: 0.5850350856781006
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 389, Steps: 3 | Train Loss: 1.7170327 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00, 10.31it/s]
+1it [00:00, 10.31it/s]
+Epoch: 390 cost time: 0.5748584270477295
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 390, Steps: 3 | Train Loss: 1.7244584 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00, 10.76it/s]
+1it [00:00, 10.76it/s]
+Epoch: 391 cost time: 0.5904362201690674
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 391, Steps: 3 | Train Loss: 1.7229540 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.01it/s]
+3it [00:00, 12.01it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 392, Steps: 3 | Train Loss: 1.7275252 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 393 cost time: 0.5638377666473389
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 393, Steps: 3 | Train Loss: 1.7306697 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.82it/s]
+3it [00:00, 12.82it/s]
+Epoch: 394 cost time: 0.5578727722167969
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 394, Steps: 3 | Train Loss: 1.7326143 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 13.59it/s]
+3it [00:00, 13.59it/s]
+Epoch: 395 cost time: 0.5863802433013916
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 395, Steps: 3 | Train Loss: 1.7245942 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 12.36it/s]
+3it [00:00, 12.36it/s]
+Epoch: 396 cost time: 0.5719683170318604
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 396, Steps: 3 | Train Loss: 1.7302039 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00, 10.69it/s]
+1it [00:00, 10.69it/s]
+Epoch: 397 cost time: 0.5804998874664307
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 397, Steps: 3 | Train Loss: 1.7175941 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 11.04it/s]
+1it [00:00, 11.04it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 398, Steps: 3 | Train Loss: 1.7169472 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.42it/s]
+3it [00:00, 11.42it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 399, Steps: 3 | Train Loss: 1.7176199 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 400 cost time: 0.5740609169006348
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 400, Steps: 3 | Train Loss: 1.7210781 Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 12.39it/s]
+3it [00:00, 12.39it/s]
+Epoch: 401 cost time: 0.5823714733123779
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 401, Steps: 3 | Train Loss: 1.7235653 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 11.86it/s]
+3it [00:00, 11.86it/s]
+Epoch: 402 cost time: 0.5825917720794678
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 402, Steps: 3 | Train Loss: 1.7214766 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 13.51it/s]
+3it [00:00, 13.51it/s]
+Epoch: 403 cost time: 0.5771238803863525
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 403, Steps: 3 | Train Loss: 1.7173891 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00, 10.75it/s]
+1it [00:00, 10.75it/s]
+Epoch: 404 cost time: 0.5886576175689697
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 404, Steps: 3 | Train Loss: 1.7287808 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  9.76it/s]
+1it [00:00,  9.76it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 405, Steps: 3 | Train Loss: 1.7247091 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.79it/s]
+3it [00:00, 12.79it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 406, Steps: 3 | Train Loss: 1.7213689 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 407 cost time: 0.5703074932098389
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 407, Steps: 3 | Train Loss: 1.7192266 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.90it/s]
+3it [00:00, 12.90it/s]
+Epoch: 408 cost time: 0.5749692916870117
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 408, Steps: 3 | Train Loss: 1.7128363 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.04it/s]
+3it [00:00, 12.04it/s]
+Epoch: 409 cost time: 0.596947193145752
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 409, Steps: 3 | Train Loss: 1.7110550 Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 11.23it/s]
+3it [00:00, 11.23it/s]
+Epoch: 410 cost time: 0.5728013515472412
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 410, Steps: 3 | Train Loss: 1.7168945 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00, 10.56it/s]
+1it [00:00, 10.56it/s]
+Epoch: 411 cost time: 0.5742092132568359
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 411, Steps: 3 | Train Loss: 1.7186648 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.28it/s]
+1it [00:00, 10.28it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 412, Steps: 3 | Train Loss: 1.7187297 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.21it/s]
+3it [00:00, 13.21it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 413, Steps: 3 | Train Loss: 1.7216229 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 414 cost time: 0.5752100944519043
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 414, Steps: 3 | Train Loss: 1.7207317 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 12.57it/s]
+3it [00:00, 12.57it/s]
+Epoch: 415 cost time: 0.5720677375793457
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 415, Steps: 3 | Train Loss: 1.7220501 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 13.16it/s]
+3it [00:00, 13.16it/s]
+Epoch: 416 cost time: 0.57698655128479
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 416, Steps: 3 | Train Loss: 1.7241677 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 12.88it/s]
+3it [00:00, 12.88it/s]
+Epoch: 417 cost time: 0.578758955001831
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 417, Steps: 3 | Train Loss: 1.7256146 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00, 10.39it/s]
+1it [00:00, 10.39it/s]
+Epoch: 418 cost time: 0.577225923538208
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 418, Steps: 3 | Train Loss: 1.7120730 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.76it/s]
+3it [00:00, 12.76it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 419, Steps: 3 | Train Loss: 1.7179210 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 420 cost time: 0.574934720993042
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+3it [00:00, 13.41it/s]
+3it [00:00, 13.41it/s]
+Epoch: 420, Steps: 3 | Train Loss: 1.7176031 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 421 cost time: 0.5841491222381592
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 421, Steps: 3 | Train Loss: 1.7240870 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 12.60it/s]
+3it [00:00, 12.60it/s]
+Epoch: 422 cost time: 0.5973000526428223
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 422, Steps: 3 | Train Loss: 1.7168868 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 10.87it/s]
+3it [00:00, 10.87it/s]
+Epoch: 423 cost time: 0.5842385292053223
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 423, Steps: 3 | Train Loss: 1.7050647 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 12.10it/s]
+3it [00:00, 12.10it/s]
+Epoch: 424 cost time: 0.570073127746582
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 424, Steps: 3 | Train Loss: 1.7270375 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00, 10.64it/s]
+1it [00:00, 10.64it/s]
+Epoch: 425 cost time: 0.5696506500244141
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 425, Steps: 3 | Train Loss: 1.7075074 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.18it/s]
+3it [00:00, 12.18it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 426, Steps: 3 | Train Loss: 1.7060148 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 427 cost time: 0.5729906558990479
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 427, Steps: 3 | Train Loss: 1.7080814 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 13.22it/s]
+3it [00:00, 13.22it/s]
+Epoch: 428 cost time: 0.5969460010528564
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 428, Steps: 3 | Train Loss: 1.7194146 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.18it/s]
+3it [00:00, 12.18it/s]
+Epoch: 429 cost time: 0.5674755573272705
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 429, Steps: 3 | Train Loss: 1.7133818 Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 13.84it/s]
+3it [00:00, 13.84it/s]
+Epoch: 430 cost time: 0.5746879577636719
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 430, Steps: 3 | Train Loss: 1.7081996 Vali Loss: nan
+lr = 0.0000000100
+3it [00:00, 12.63it/s]
+3it [00:00, 12.63it/s]
+Epoch: 431 cost time: 0.5900838375091553
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 431, Steps: 3 | Train Loss: 1.7171455 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00, 10.65it/s]
+1it [00:00, 10.65it/s]
+Epoch: 432 cost time: 0.5687158107757568
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 432, Steps: 3 | Train Loss: 1.7137344 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.60it/s]
+3it [00:00, 12.60it/s]
+Epoch: 433 cost time: 0.5590314865112305
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 433, Steps: 3 | Train Loss: 1.7167581 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.34it/s]
+3it [00:00, 12.34it/s]
+Epoch: 434 cost time: 0.5759069919586182
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 434, Steps: 3 | Train Loss: 1.7137691 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.31it/s]
+3it [00:00, 13.31it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 435, Steps: 3 | Train Loss: 1.7034784 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 436 cost time: 0.6997830867767334
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+3it [00:00,  8.01it/s]
+3it [00:00,  8.01it/s]
+Epoch: 436, Steps: 3 | Train Loss: 1.7102458 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 437 cost time: 0.6972100734710693
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 437, Steps: 3 | Train Loss: 1.7133297 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00,  8.32it/s]
+3it [00:00,  8.32it/s]
+Epoch: 438 cost time: 0.6941695213317871
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 438, Steps: 3 | Train Loss: 1.7075303 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00,  8.14it/s]
+3it [00:00,  8.14it/s]
+Epoch: 439 cost time: 0.6878249645233154
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 439, Steps: 3 | Train Loss: 1.7100273 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00,  8.31it/s]
+3it [00:00,  8.31it/s]
+Epoch: 440 cost time: 0.7068028450012207
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 440, Steps: 3 | Train Loss: 1.6987290 Vali Loss: nan
+lr = 0.0001000000
+3it [00:00,  8.48it/s]
+3it [00:00,  8.48it/s]
+Epoch: 441 cost time: 0.5770399570465088
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 441, Steps: 3 | Train Loss: 1.7199961 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00, 10.30it/s]
+1it [00:00, 10.30it/s]
+Epoch: 442 cost time: 0.707817554473877
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 442, Steps: 3 | Train Loss: 1.7087067 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00, 10.61it/s]
+1it [00:00, 10.61it/s]
+Epoch: 443 cost time: 0.7166261672973633
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 443, Steps: 3 | Train Loss: 1.7080209 Vali Loss: nan
+lr = 0.0000793913
+3it [00:00,  7.94it/s]
+3it [00:00,  7.94it/s]
+Epoch: 444 cost time: 0.7025840282440186
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 444, Steps: 3 | Train Loss: 1.7109920 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00,  8.64it/s]
+3it [00:00,  8.64it/s]
+Epoch: 445 cost time: 0.6973376274108887
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 445, Steps: 3 | Train Loss: 1.7018176 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00,  8.07it/s]
+3it [00:00,  8.07it/s]
+Epoch: 446 cost time: 0.6960124969482422
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 446, Steps: 3 | Train Loss: 1.7058454 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00,  8.25it/s]
+3it [00:00,  8.25it/s]
+Epoch: 447 cost time: 0.6871261596679688
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 447, Steps: 3 | Train Loss: 1.7158687 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00,  7.92it/s]
+3it [00:00,  7.92it/s]
+Epoch: 448 cost time: 0.7237329483032227
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 448, Steps: 3 | Train Loss: 1.7170114 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.26it/s]
+3it [00:00, 12.26it/s]
+Epoch: 449 cost time: 0.5769155025482178
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 449, Steps: 3 | Train Loss: 1.7147883 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.57it/s]
+3it [00:00, 12.57it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 450, Steps: 3 | Train Loss: 1.7162860 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 451 cost time: 0.570518970489502
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 451, Steps: 3 | Train Loss: 1.7070839 Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 12.38it/s]
+3it [00:00, 12.38it/s]
+Epoch: 452 cost time: 0.5819036960601807
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 452, Steps: 3 | Train Loss: 1.7119509 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.70it/s]
+3it [00:00, 12.70it/s]
+Epoch: 453 cost time: 0.5920755863189697
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 453, Steps: 3 | Train Loss: 1.7140958 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00, 11.27it/s]
+1it [00:00, 11.27it/s]
+Epoch: 454 cost time: 0.571169376373291
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 454, Steps: 3 | Train Loss: 1.7216302 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00, 11.15it/s]
+1it [00:00, 11.15it/s]
+Epoch: 455 cost time: 0.5797786712646484
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 455, Steps: 3 | Train Loss: 1.7130630 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 12.68it/s]
+3it [00:00, 12.68it/s]
+Epoch: 456 cost time: 0.5726132392883301
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 456, Steps: 3 | Train Loss: 1.7090832 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.21it/s]
+3it [00:00, 12.21it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 457, Steps: 3 | Train Loss: 1.7131819 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 458 cost time: 0.5902237892150879
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+3it [00:00, 12.34it/s]
+3it [00:00, 12.34it/s]
+Epoch: 458, Steps: 3 | Train Loss: 1.7226037 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 459 cost time: 0.5726034641265869
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 459, Steps: 3 | Train Loss: 1.7166605 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 12.48it/s]
+3it [00:00, 12.48it/s]
+Epoch: 460 cost time: 0.5703539848327637
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 460, Steps: 3 | Train Loss: 1.7077646 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  9.53it/s]
+1it [00:00,  9.53it/s]
+Epoch: 461 cost time: 0.5809307098388672
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 461, Steps: 3 | Train Loss: 1.7128464 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  9.82it/s]
+1it [00:00,  9.82it/s]
+Epoch: 462 cost time: 0.5625338554382324
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 462, Steps: 3 | Train Loss: 1.7047457 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 12.44it/s]
+3it [00:00, 12.44it/s]
+Epoch: 463 cost time: 0.5826935768127441
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 463, Steps: 3 | Train Loss: 1.7022391 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.41it/s]
+3it [00:00, 12.41it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 464, Steps: 3 | Train Loss: 1.7180099 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.04it/s]
+3it [00:00, 13.04it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 465, Steps: 3 | Train Loss: 1.7094799 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 466 cost time: 0.5775773525238037
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 466, Steps: 3 | Train Loss: 1.7156727 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 12.06it/s]
+3it [00:00, 12.06it/s]
+Epoch: 467 cost time: 0.5747182369232178
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 467, Steps: 3 | Train Loss: 1.6936910 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.53it/s]
+3it [00:00, 12.53it/s]
+Epoch: 468 cost time: 0.5959479808807373
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 468, Steps: 3 | Train Loss: 1.7086201 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00, 10.01it/s]
+1it [00:00, 10.01it/s]
+Epoch: 469 cost time: 0.5857851505279541
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 469, Steps: 3 | Train Loss: 1.7027985 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00, 10.36it/s]
+1it [00:00, 10.36it/s]
+Epoch: 470 cost time: 0.5866982936859131
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 470, Steps: 3 | Train Loss: 1.7103238 Vali Loss: nan
+lr = 0.0000000100
+3it [00:00, 12.80it/s]
+3it [00:00, 12.80it/s]
+Epoch: 471 cost time: 0.5865743160247803
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 471, Steps: 3 | Train Loss: 1.7056278 Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 12.41it/s]
+3it [00:00, 12.41it/s]
+Epoch: 472 cost time: 0.57470703125
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 472, Steps: 3 | Train Loss: 1.6990601 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.14it/s]
+3it [00:00, 12.14it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 473, Steps: 3 | Train Loss: 1.7028648 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 474 cost time: 0.5637519359588623
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 474, Steps: 3 | Train Loss: 1.7059920 Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 12.47it/s]
+3it [00:00, 12.47it/s]
+Epoch: 475 cost time: 0.5874118804931641
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 475, Steps: 3 | Train Loss: 1.6993500 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 12.92it/s]
+3it [00:00, 12.92it/s]
+Epoch: 476 cost time: 0.5787003040313721
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 476, Steps: 3 | Train Loss: 1.7072314 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 11.95it/s]
+3it [00:00, 11.95it/s]
+Epoch: 477 cost time: 0.5905556678771973
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 477, Steps: 3 | Train Loss: 1.7037878 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00, 10.67it/s]
+1it [00:00, 10.67it/s]
+Epoch: 478 cost time: 0.5783259868621826
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 478, Steps: 3 | Train Loss: 1.7129546 Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 11.66it/s]
+3it [00:00, 11.66it/s]
+Epoch: 479 cost time: 0.6058552265167236
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 479, Steps: 3 | Train Loss: 1.7005990 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 11.50it/s]
+3it [00:00, 11.50it/s]
+Epoch: 480 cost time: 0.5993354320526123
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 480, Steps: 3 | Train Loss: 1.6994043 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.13it/s]
+3it [00:00, 11.13it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 481, Steps: 3 | Train Loss: 1.7003031 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.74it/s]
+3it [00:00, 11.74it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 482, Steps: 3 | Train Loss: 1.7086831 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 483 cost time: 0.630866527557373
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+3it [00:00, 10.61it/s]
+3it [00:00, 10.61it/s]
+Epoch: 483, Steps: 3 | Train Loss: 1.6969976 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 484 cost time: 0.571636438369751
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 484, Steps: 3 | Train Loss: 1.7063580 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 12.39it/s]
+3it [00:00, 12.39it/s]
+Epoch: 485 cost time: 0.5944552421569824
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 485, Steps: 3 | Train Loss: 1.7084392 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 12.34it/s]
+3it [00:00, 12.34it/s]
+Epoch: 486 cost time: 0.5745174884796143
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 486, Steps: 3 | Train Loss: 1.7102284 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00, 10.52it/s]
+1it [00:00, 10.52it/s]
+Epoch: 487 cost time: 0.581000566482544
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 487, Steps: 3 | Train Loss: 1.6977452 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00, 11.30it/s]
+1it [00:00, 11.30it/s]
+Epoch: 488 cost time: 0.5659008026123047
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 488, Steps: 3 | Train Loss: 1.6968528 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 11.94it/s]
+3it [00:00, 11.94it/s]
+Epoch: 489 cost time: 0.6011598110198975
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 489, Steps: 3 | Train Loss: 1.7058758 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.86it/s]
+3it [00:00, 13.86it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 490, Steps: 3 | Train Loss: 1.6921293 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 491 cost time: 0.5558187961578369
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+3it [00:00, 12.59it/s]
+3it [00:00, 12.59it/s]
+Epoch: 491, Steps: 3 | Train Loss: 1.7022729 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 492 cost time: 0.5729756355285645
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 492, Steps: 3 | Train Loss: 1.7028765 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 13.03it/s]
+3it [00:00, 13.03it/s]
+Epoch: 493 cost time: 0.5616841316223145
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 493, Steps: 3 | Train Loss: 1.7037007 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00, 11.70it/s]
+1it [00:00, 11.70it/s]
+Epoch: 494 cost time: 0.568040132522583
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 494, Steps: 3 | Train Loss: 1.7019556 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00, 10.74it/s]
+1it [00:00, 10.74it/s]
+Epoch: 495 cost time: 0.5909750461578369
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 495, Steps: 3 | Train Loss: 1.6970949 Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 12.51it/s]
+3it [00:00, 12.51it/s]
+Epoch: 496 cost time: 0.5703909397125244
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 496, Steps: 3 | Train Loss: 1.7048930 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.87it/s]
+3it [00:00, 12.87it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 497, Steps: 3 | Train Loss: 1.6887350 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.80it/s]
+3it [00:00, 11.80it/s]
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 498, Steps: 3 | Train Loss: 1.7031421 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 499 cost time: 0.5752508640289307
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 499, Steps: 3 | Train Loss: 1.7015092 Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 12.55it/s]
+3it [00:00, 12.55it/s]
+Epoch: 500 cost time: 0.5710618495941162
+missing_idx_len: 774
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 500, Steps: 3 | Train Loss: 1.7083635 Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 12.41it/s]
+3it [00:00, 12.41it/s]
+------------------------------------
+ValueError: cannot reshape array of size 0 into shape (1,0)ice, ii)
+ValueError: cannot reshape array of size 0 into shape (1,0)ice, ii)

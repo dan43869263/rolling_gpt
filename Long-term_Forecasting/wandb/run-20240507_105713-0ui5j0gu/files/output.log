@@ -1,0 +1,1280 @@
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+train 337
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+val 43
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+test 93
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (1): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (2): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (3): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (4): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (5): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+1it [00:01,  1.13s/it]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 1 cost time: 1.507835865020752
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 1, Steps: 1 | Train Loss: 0.1330869 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (inf --> nan).  Saving model ...
+1it [00:00, 11.78it/s]
+1it [00:00,  5.49it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 2 cost time: 0.6861269474029541
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 2, Steps: 1 | Train Loss: 0.1363177 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 11.28it/s]
+1it [00:00,  5.75it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 3 cost time: 0.6675376892089844
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 3, Steps: 1 | Train Loss: 0.1291507 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.20it/s]
+1it [00:00,  5.40it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 4 cost time: 0.6959202289581299
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 4, Steps: 1 | Train Loss: 0.1304136 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.73it/s]
+1it [00:00,  5.35it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 5 cost time: 0.6863644123077393
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 5, Steps: 1 | Train Loss: 0.1300884 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.79it/s]
+1it [00:00,  5.54it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 6 cost time: 0.6764986515045166
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 6, Steps: 1 | Train Loss: 0.1357574 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 11.15it/s]
+1it [00:00,  4.88it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 7 cost time: 0.7039062976837158
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 7, Steps: 1 | Train Loss: 0.1259902 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.29it/s]
+1it [00:00,  5.50it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 8 cost time: 0.6787533760070801
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 8, Steps: 1 | Train Loss: 0.1302934 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 11.80it/s]
+1it [00:00,  5.53it/s]
+1it [00:00, 11.26it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 9 cost time: 0.6845214366912842
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 9, Steps: 1 | Train Loss: 0.1322010 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.53it/s]
+1it [00:00,  9.76it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 10 cost time: 0.6781754493713379
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 10, Steps: 1 | Train Loss: 0.1290487 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.46it/s]
+1it [00:00, 10.34it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 11 cost time: 0.6699488162994385
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 11, Steps: 1 | Train Loss: 0.1287414 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.44it/s]
+1it [00:00, 10.98it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 12 cost time: 0.6750278472900391
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 12, Steps: 1 | Train Loss: 0.1286559 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.74it/s]
+1it [00:00,  9.37it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 13 cost time: 0.6706638336181641
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 13, Steps: 1 | Train Loss: 0.1290680 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.87it/s]
+1it [00:00, 11.66it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 14 cost time: 0.6762139797210693
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 14, Steps: 1 | Train Loss: 0.1261295 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.64it/s]
+1it [00:00,  9.72it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 15 cost time: 0.6693410873413086
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 15, Steps: 1 | Train Loss: 0.1293273 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.43it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 16 cost time: 0.6882808208465576
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 16, Steps: 1 | Train Loss: 0.1293468 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 11.50it/s]
+1it [00:00,  6.29it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 17 cost time: 0.6563396453857422
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 17, Steps: 1 | Train Loss: 0.1251648 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00, 10.96it/s]
+1it [00:00,  5.62it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 18 cost time: 0.6737110614776611
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 18, Steps: 1 | Train Loss: 0.1253439 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00, 10.17it/s]
+1it [00:00,  5.65it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 19 cost time: 0.670525312423706
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 19, Steps: 1 | Train Loss: 0.1255919 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  9.47it/s]
+1it [00:00,  5.99it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 20 cost time: 0.6608734130859375
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 20, Steps: 1 | Train Loss: 0.1284763 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00, 11.28it/s]
+1it [00:00,  5.50it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 21 cost time: 0.6844797134399414
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 21, Steps: 1 | Train Loss: 0.1269368 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00, 11.65it/s]
+1it [00:00,  5.45it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 22 cost time: 0.6902732849121094
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 22, Steps: 1 | Train Loss: 0.1260927 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00, 11.15it/s]
+1it [00:00,  5.83it/s]
+1it [00:00, 10.10it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 23 cost time: 0.6653361320495605
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 23, Steps: 1 | Train Loss: 0.1269253 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.41it/s]
+1it [00:00, 11.01it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 24 cost time: 0.6830987930297852
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 24, Steps: 1 | Train Loss: 0.1237902 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.48it/s]
+1it [00:00, 10.39it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 25 cost time: 0.6829404830932617
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 25, Steps: 1 | Train Loss: 0.1240937 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.15it/s]
+1it [00:00, 10.33it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 26 cost time: 0.6962008476257324
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 26, Steps: 1 | Train Loss: 0.1256112 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  4.91it/s]
+1it [00:00, 11.86it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 27 cost time: 0.7026712894439697
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 27, Steps: 1 | Train Loss: 0.1193094 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.29it/s]
+1it [00:00,  9.04it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 28 cost time: 0.684039831161499
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 28, Steps: 1 | Train Loss: 0.1233231 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.89it/s]
+1it [00:00, 11.52it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 29 cost time: 0.6639914512634277
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 29, Steps: 1 | Train Loss: 0.1215579 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.60it/s]
+1it [00:00, 10.34it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 30 cost time: 0.6765568256378174
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 30, Steps: 1 | Train Loss: 0.1221541 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  6.25it/s]
+1it [00:00, 10.04it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 31 cost time: 0.6582071781158447
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 31, Steps: 1 | Train Loss: 0.1263393 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.41it/s]
+1it [00:00, 10.91it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 32 cost time: 0.6813802719116211
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 32, Steps: 1 | Train Loss: 0.1229546 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  4.98it/s]
+1it [00:00, 10.55it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 33 cost time: 0.7097952365875244
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 33, Steps: 1 | Train Loss: 0.1267031 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.43it/s]
+1it [00:00, 10.09it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 34 cost time: 0.6907351016998291
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 34, Steps: 1 | Train Loss: 0.1254262 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.66it/s]
+1it [00:00, 10.48it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 35 cost time: 0.6768383979797363
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 35, Steps: 1 | Train Loss: 0.1202139 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.98it/s]
+1it [00:00, 11.31it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 36 cost time: 0.6652417182922363
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 36, Steps: 1 | Train Loss: 0.1222410 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.26it/s]
+1it [00:00, 10.98it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 37 cost time: 0.6876347064971924
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 37, Steps: 1 | Train Loss: 0.1244067 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.73it/s]
+1it [00:00,  9.59it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 38 cost time: 0.6703274250030518
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 38, Steps: 1 | Train Loss: 0.1282967 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.87it/s]
+1it [00:00, 11.59it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 39 cost time: 0.6613771915435791
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 39, Steps: 1 | Train Loss: 0.1202726 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.36it/s]
+1it [00:00,  9.93it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 40 cost time: 0.6778509616851807
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 40, Steps: 1 | Train Loss: 0.1206453 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.36it/s]
+1it [00:00, 11.74it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 41 cost time: 0.6918387413024902
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 41, Steps: 1 | Train Loss: 0.1139423 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.84it/s]
+1it [00:00, 10.43it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 42 cost time: 0.6628701686859131
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 42, Steps: 1 | Train Loss: 0.1195951 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.52it/s]
+1it [00:00,  9.52it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 43 cost time: 0.6731784343719482
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 43, Steps: 1 | Train Loss: 0.1184829 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.16it/s]
+1it [00:00, 10.27it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 44 cost time: 0.688410758972168
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 44, Steps: 1 | Train Loss: 0.1177048 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.60it/s]
+1it [00:00, 10.86it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 45 cost time: 0.6744508743286133
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 45, Steps: 1 | Train Loss: 0.1194106 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.45it/s]
+1it [00:00,  9.33it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 46 cost time: 0.6768310070037842
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 46, Steps: 1 | Train Loss: 0.1191923 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.59it/s]
+1it [00:00,  8.45it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 47 cost time: 0.6709244251251221
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 47, Steps: 1 | Train Loss: 0.1149047 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  4.91it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 48 cost time: 0.7126076221466064
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 48, Steps: 1 | Train Loss: 0.1123970 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00, 10.62it/s]
+1it [00:00,  5.21it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 49 cost time: 0.6936721801757812
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 49, Steps: 1 | Train Loss: 0.1175492 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00, 10.20it/s]
+1it [00:00,  5.08it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 50 cost time: 0.7051451206207275
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 50, Steps: 1 | Train Loss: 0.1185849 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00, 10.57it/s]
+1it [00:00,  5.79it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 51 cost time: 0.6700353622436523
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 51, Steps: 1 | Train Loss: 0.1170353 Vali Loss: nan
+lr = 0.0000024569
+0it [00:00, ?it/s]t/s]
+1it [00:00,  5.38it/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 52 cost time: 0.683892011642456
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 52, Steps: 1 | Train Loss: 0.1187350 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.73it/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 53 cost time: 0.6902124881744385
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 53, Steps: 1 | Train Loss: 0.1189734 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00, 10.39it/s]
+1it [00:00,  5.71it/s]
+1it [00:00, 10.39it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 54 cost time: 0.6722428798675537
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 54, Steps: 1 | Train Loss: 0.1155805 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  6.00it/s]
+1it [00:00, 11.43it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 55 cost time: 0.6605110168457031
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 55, Steps: 1 | Train Loss: 0.1148951 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.72it/s]
+1it [00:00, 11.02it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 56 cost time: 0.6763851642608643
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 56, Steps: 1 | Train Loss: 0.1185801 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.52it/s]
+1it [00:00, 11.62it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 57 cost time: 0.6873080730438232
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 57, Steps: 1 | Train Loss: 0.1175273 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.65it/s]
+1it [00:00, 10.71it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 58 cost time: 0.6783421039581299
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 58, Steps: 1 | Train Loss: 0.1178574 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.75it/s]
+1it [00:00,  9.94it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 59 cost time: 0.6764814853668213
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 59, Steps: 1 | Train Loss: 0.1112416 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.14it/s]
+1it [00:00,  9.54it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 60 cost time: 0.6954190731048584
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 60, Steps: 1 | Train Loss: 0.1107917 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.81it/s]
+1it [00:00, 11.33it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 61 cost time: 0.6701486110687256
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 61, Steps: 1 | Train Loss: 0.1103448 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.43it/s]
+1it [00:00, 11.21it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 62 cost time: 0.6843371391296387
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 62, Steps: 1 | Train Loss: 0.1068722 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.55it/s]
+1it [00:00,  9.39it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 63 cost time: 0.6810150146484375
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 63, Steps: 1 | Train Loss: 0.1067006 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  5.97it/s]
+1it [00:00, 11.60it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 64 cost time: 0.6621038913726807
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 64, Steps: 1 | Train Loss: 0.1090084 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  6.05it/s]
+1it [00:00,  9.56it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 65 cost time: 0.6619396209716797
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+missing_idx_len: 43
+val_pred has nan or not: tensor(0, device='cuda:0')
+val_true has nan or not: tensor(0, device='cuda:0')
+pred tensor([])
+Epoch: 65, Steps: 1 | Train Loss: 0.1064588 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...

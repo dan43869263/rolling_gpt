@@ -1,0 +1,71 @@
+
+
+Output: earnings per share EPS (variable name "value" in both data)
+    However, finance literature sometimes suggest to use scaled EPS, which is value/prc
+    Please be aware prc has extreme values, so when scaling, can trim. For example, if prc<1, value/1, if prc>500, value/500 (you can try different cutoffs)
+
+==============================================================
+#########DATA 1 '20240216_balancedEPS.csv'
+Quarterly actual earnings per share EPS
+753144 obs unique by ticker+yq (balanced) by 13149 ticker
+For a given firm, some quarters do not have data (i.e., pends is missing)
+---------
+VARIABLES
+---------
+ $ permno : firm ID to merge other dataset
+ $ ym     : year+month, for example:201001 = year 2010 Jan
+ $ ticker : main ID
+ $ yq     : year+quarter, for example:201001 = year 2010 Q1
+ $ cusip  : firm ID to merge other dataset
+ $ oftic  : firm ID to merge other dataset
+ $ pends  : end of forecast period, for example:2010-03-31 = quarterly period from 2010Jan to 2010Mar
+ $ anndats: announcement date of actual EPS 
+ $ anntims: announcement time of actual EPS 
+ $ value  : actual EPS in US dollars
+ $ gvkey  : firm ID to merge other dataset
+ $ prc    : last month stock price
+
+==============================================================
+#########DATA 2 '20240216_M_EPS w firm variables.csv'
+Monthly data
+Quarterly actual earnings per share EPS, with quarterly firm characteristics, along with monthly variables
+2312303 obs unique by ticker+ym (balanced) by 13149 ticker
+---------
+VARIABLES (empty means NOT important, just for my data cleaning)
+---------
+ $ ticker  : main ID
+ $ pends   : end of forecast period, for example:2010-03-31 = quarterly period from 2010Jan to 2010Mar
+ $ ym      : year+month, for example:201001 = year 2010 Jan
+ $ permno  : firm ID to merge other dataset
+ $ gvkey   : firm ID to merge other dataset
+ $ datadate: date variables with gvkey
+ $ yq      : int  201304 201401 201402 201403 201404 201501 201502 201503 201504 201601 ...
+ $ cusip   : firm ID to merge other dataset
+ $ value   : actual EPS in US dollars
+ $ anndats : announcement date of actual EPS 
+ $ begin   : 
+ $ end     : 
+ $ seq     : 
+ $ fyearq  : 
+ $ fqtr    : 
+ $ fyr     : 
+ $ sic     : industry code
+ $ industry: broad 10 industries grouping
+ $ atq     : quarterly firm characteristics (for example, EPS at pends=2010-03-31, quarterly firm characteristics from 2009Q4)
+ $ ni      : quarterly firm characteristics
+ $ dv      : quarterly firm characteristics
+ $ acc     : quarterly firm characteristics
+ $ invest  : quarterly firm characteristics
+ $ mc      : quarterly firm characteristics
+ $ bm      : quarterly firm characteristics
+ $ dinvt   : quarterly firm characteristics
+ $ dar     : quarterly firm characteristics
+ $ capx    : quarterly firm characteristics
+ $ gm      : quarterly firm characteristics
+ $ sga     : quarterly firm characteristics
+ $ prc     : monthly stock price (for example, EPS at pends=2010-03-31, monthly information from 2010Feb, 2010Jan, 2009Dec)
+ $ ret     : monthly stock return
+ $ vol     : monthly trading volume
+ $ shrout  : monthly outstanding shares
+ $ medest  : monthly analyst median forecasts 
+ $ meanest : monthly analyst mean forecasts 

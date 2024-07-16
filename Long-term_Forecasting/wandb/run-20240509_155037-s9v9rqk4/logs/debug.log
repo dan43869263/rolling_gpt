@@ -1,0 +1,28 @@
+2024-05-09 15:50:37,192 INFO    MainThread:2569016 [wandb_setup.py:_flush():76] Current SDK version is 0.16.4
+2024-05-09 15:50:37,192 INFO    MainThread:2569016 [wandb_setup.py:_flush():76] Configure stats pid to 2569016
+2024-05-09 15:50:37,192 INFO    MainThread:2569016 [wandb_setup.py:_flush():76] Loading settings from /home/dan/.config/wandb/settings
+2024-05-09 15:50:37,192 INFO    MainThread:2569016 [wandb_setup.py:_flush():76] Loading settings from /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/settings
+2024-05-09 15:50:37,192 INFO    MainThread:2569016 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-05-09 15:50:37,192 INFO    MainThread:2569016 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-05-09 15:50:37,192 INFO    MainThread:2569016 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'Long-term_Forecasting/main.py', 'program_abspath': '/home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/main.py', 'program': '/home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/main.py'}
+2024-05-09 15:50:37,192 INFO    MainThread:2569016 [wandb_init.py:_log_setup():526] Logging user logs to /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240509_155037-s9v9rqk4/logs/debug.log
+2024-05-09 15:50:37,193 INFO    MainThread:2569016 [wandb_init.py:_log_setup():527] Logging internal logs to /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240509_155037-s9v9rqk4/logs/debug-internal.log
+2024-05-09 15:50:37,193 INFO    MainThread:2569016 [wandb_init.py:init():566] calling init triggers
+2024-05-09 15:50:37,193 INFO    MainThread:2569016 [wandb_init.py:init():573] wandb.init called with sweep_config: {}
+config: {'model_id': 'imp_EPS_scaled_GPT4TS__18_12_100', 'checkpoints': './checkpoints/', 'root_path': '/home/dan/NeurIPS2023-One-Fits-All/dataset/Data/', 'data_path': 'df_EPS_CHAR.csv', 'data': 'eps', 'features': 'MS', 'freq': '0', 'target': 'value', 'embed': 'timeF', 'percent': 100, 'seq_len': 18, 'pred_len': 12, 'label_len': 9, 'decay_fac': 0.75, 'learning_rate': 0.0001, 'batch_size': 2048, 'num_workers': 10, 'train_epochs': 500, 'lradj': 'type1', 'patience': 3, 'gpt_layers': 6, 'is_gpt': 1, 'e_layers': 3, 'd_model': 768, 'n_heads': 2, 'd_ff': 768, 'dropout': 0.3, 'enc_in': 13149, 'c_out': 13149, 'patch_size': 16, 'kernel_size': 25, 'loss_func': 'mse', 'pretrain': 1, 'freeze': 1, 'model': 'GPT4TS', 'stride': 8, 'max_len': -1, 'hid_dim': 16, 'tmax': 10, 'itr': 1, 'cos': 1, 'which_firm': 338, 'num_variables': 18}
+2024-05-09 15:50:37,193 INFO    MainThread:2569016 [wandb_init.py:init():616] starting backend
+2024-05-09 15:50:37,193 INFO    MainThread:2569016 [wandb_init.py:init():620] setting up manager
+2024-05-09 15:50:37,196 INFO    MainThread:2569016 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-05-09 15:50:37,199 INFO    MainThread:2569016 [wandb_init.py:init():628] backend started and connected
+2024-05-09 15:50:37,207 INFO    MainThread:2569016 [wandb_init.py:init():720] updated telemetry
+2024-05-09 15:50:37,236 INFO    MainThread:2569016 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2024-05-09 15:50:37,498 INFO    MainThread:2569016 [wandb_run.py:_on_init():2262] communicating current version
+2024-05-09 15:50:37,607 INFO    MainThread:2569016 [wandb_run.py:_on_init():2271] got version response upgrade_message: "wandb version 0.17.0 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2024-05-09 15:50:37,608 INFO    MainThread:2569016 [wandb_init.py:init():804] starting run threads in backend
+2024-05-09 15:50:41,966 INFO    MainThread:2569016 [wandb_run.py:_console_start():2241] atexit reg
+2024-05-09 15:50:41,966 INFO    MainThread:2569016 [wandb_run.py:_redirect():2096] redirect: wrap_raw
+2024-05-09 15:50:41,966 INFO    MainThread:2569016 [wandb_run.py:_redirect():2161] Wrapping output streams.
+2024-05-09 15:50:41,966 INFO    MainThread:2569016 [wandb_run.py:_redirect():2186] Redirects installed.
+2024-05-09 15:50:41,967 INFO    MainThread:2569016 [wandb_init.py:init():847] run started, returning control to user process
+2024-05-09 15:51:29,516 WARNING MsgRouterThr:2569016 [router.py:message_loop():77] message_loop has been closed

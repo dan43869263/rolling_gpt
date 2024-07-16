@@ -1,0 +1,254 @@
+2024-05-07 13:38:14,224 INFO    StreamThr :1777818 [internal.py:wandb_internal():86] W&B internal server running at pid: 1777818, started at: 2024-05-07 13:38:14.223006
+2024-05-07 13:38:14,228 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: status
+2024-05-07 13:38:14,233 INFO    WriterThread:1777818 [datastore.py:open_for_write():87] open: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/run-ri2sy41s.wandb
+2024-05-07 13:38:14,234 DEBUG   SenderThread:1777818 [sender.py:send():378] send: header
+2024-05-07 13:38:14,259 DEBUG   SenderThread:1777818 [sender.py:send():378] send: run
+2024-05-07 13:38:14,542 INFO    SenderThread:1777818 [dir_watcher.py:__init__():211] watching files in: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files
+2024-05-07 13:38:14,543 INFO    SenderThread:1777818 [sender.py:_start_run_threads():1099] run started: ri2sy41s with start time 1715103494.22242
+2024-05-07 13:38:14,561 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: check_version
+2024-05-07 13:38:14,561 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: check_version
+2024-05-07 13:38:14,677 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: run_start
+2024-05-07 13:38:14,701 DEBUG   HandlerThread:1777818 [system_info.py:__init__():26] System info init
+2024-05-07 13:38:14,702 DEBUG   HandlerThread:1777818 [system_info.py:__init__():41] System info init done
+2024-05-07 13:38:14,702 INFO    HandlerThread:1777818 [system_monitor.py:start():194] Starting system monitor
+2024-05-07 13:38:14,702 INFO    SystemMonitor:1777818 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-05-07 13:38:14,702 INFO    HandlerThread:1777818 [system_monitor.py:probe():214] Collecting system info
+2024-05-07 13:38:14,703 INFO    SystemMonitor:1777818 [interfaces.py:start():190] Started cpu monitoring
+2024-05-07 13:38:14,705 INFO    SystemMonitor:1777818 [interfaces.py:start():190] Started disk monitoring
+2024-05-07 13:38:14,706 INFO    SystemMonitor:1777818 [interfaces.py:start():190] Started gpu monitoring
+2024-05-07 13:38:14,707 INFO    SystemMonitor:1777818 [interfaces.py:start():190] Started memory monitoring
+2024-05-07 13:38:14,708 INFO    SystemMonitor:1777818 [interfaces.py:start():190] Started network monitoring
+2024-05-07 13:38:14,738 DEBUG   HandlerThread:1777818 [system_info.py:probe():150] Probing system
+2024-05-07 13:38:14,750 DEBUG   HandlerThread:1777818 [system_info.py:_probe_git():135] Probing git
+2024-05-07 13:38:14,776 DEBUG   HandlerThread:1777818 [system_info.py:_probe_git():143] Probing git done
+2024-05-07 13:38:14,776 DEBUG   HandlerThread:1777818 [system_info.py:probe():198] Probing system done
+2024-05-07 13:38:14,776 DEBUG   HandlerThread:1777818 [system_monitor.py:probe():223] {'os': 'Linux-6.5.0-26-generic-x86_64-with-glibc2.35', 'python': '3.9.18', 'heartbeatAt': '2024-05-07T17:38:14.738910', 'startedAt': '2024-05-07T17:38:14.212498', 'docker': None, 'cuda': None, 'args': ('--root_path', '/home/dan/NeurIPS2023-One-Fits-All/dataset/Data/', '--data_path', 'df_EPS_CHAR.csv', '--model_id', 'imp_EPS_scaled_GPT4TS__18_12_100', '--data', 'eps', '--seq_len', '18', '--label_len', '9', '--pred_len', '12', '--batch_size', '2048', '--learning_rate', '0.0001', '--train_epochs', '500', '--decay_fac', '0.75', '--d_model', '768', '--n_heads', '2', '--d_ff', '768', '--dropout', '0.3', '--enc_in', '13149', '--c_out', '13149', '--freq', '0', '--patch_size', '16', '--stride', '8', '--percent', '100', '--gpt_layer', '6', '--itr', '1', '--model', 'GPT4TS', '--cos', '1', '--tmax', '10', '--is_gpt', '1', '--target', 'value', '--which_firm', '238'), 'state': 'running', 'program': '/home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/main.py', 'codePathLocal': 'main.py', 'codePath': 'Long-term_Forecasting/main.py', 'git': {'remote': 'https://github.com/DAMO-DI-ML/NeurIPS2023-One-Fits-All.git', 'commit': '9f3875dbba9f52ee534ac0902572502746f3b29d'}, 'email': None, 'root': '/home/dan/NeurIPS2023-One-Fits-All', 'host': 'dantong-Precision-7820-Tower', 'username': 'dan', 'executable': '/home/dan/anaconda3/envs/geo/bin/python', 'cpu_count': 20, 'cpu_count_logical': 40, 'cpu_freq': {'current': 1020.0455750000001, 'min': 1000.0, 'max': 3700.0}, 'cpu_freq_per_core': [{'current': 1000.448, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.158, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.109, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.446, 'min': 1000.0, 'max': 3700.0}, {'current': 1137.169, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.091, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1001.321, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.031, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.499, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 2094.927, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.067, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}, {'current': 1000.0, 'min': 1000.0, 'max': 3700.0}], 'disk': {'/': {'total': 1876.2189445495605, 'used': 663.3634834289551}}, 'gpu': 'NVIDIA RTX A6000', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}], 'memory': {'total': 92.94909286499023}}
+2024-05-07 13:38:14,776 INFO    HandlerThread:1777818 [system_monitor.py:probe():224] Finished collecting system info
+2024-05-07 13:38:14,777 INFO    HandlerThread:1777818 [system_monitor.py:probe():227] Publishing system info
+2024-05-07 13:38:14,777 DEBUG   HandlerThread:1777818 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-05-07 13:38:15,548 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_created():271] file/dir created: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/conda-environment.yaml
+2024-05-07 13:38:18,893 DEBUG   HandlerThread:1777818 [system_info.py:_save_conda():219] Saving conda packages done
+2024-05-07 13:38:18,895 INFO    HandlerThread:1777818 [system_monitor.py:probe():229] Finished publishing system info
+2024-05-07 13:38:18,907 DEBUG   SenderThread:1777818 [sender.py:send():378] send: files
+2024-05-07 13:38:18,907 INFO    SenderThread:1777818 [sender.py:_save_file():1365] saving file wandb-metadata.json with policy now
+2024-05-07 13:38:19,023 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: python_packages
+2024-05-07 13:38:19,024 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: stop_status
+2024-05-07 13:38:19,024 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: python_packages
+2024-05-07 13:38:19,025 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: stop_status
+2024-05-07 13:38:19,030 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: internal_messages
+2024-05-07 13:38:19,082 DEBUG   SenderThread:1777818 [sender.py:send():378] send: telemetry
+2024-05-07 13:38:19,211 INFO    wandb-upload_0:1777818 [upload_job.py:push():131] Uploaded file /tmp/tmp7rdck01dwandb/npyp22rc-wandb-metadata.json
+2024-05-07 13:38:19,546 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/conda-environment.yaml
+2024-05-07 13:38:19,546 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_created():271] file/dir created: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/wandb-metadata.json
+2024-05-07 13:38:19,547 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_created():271] file/dir created: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/requirements.txt
+2024-05-07 13:38:20,083 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: status_report
+2024-05-07 13:38:25,084 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: status_report
+2024-05-07 13:38:28,551 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_created():271] file/dir created: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:30,552 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:30,828 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: status_report
+2024-05-07 13:38:34,024 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: stop_status
+2024-05-07 13:38:34,025 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: stop_status
+2024-05-07 13:38:34,025 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: internal_messages
+2024-05-07 13:38:36,146 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: status_report
+2024-05-07 13:38:38,556 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:41,563 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: status_report
+2024-05-07 13:38:46,561 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:47,063 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: status_report
+2024-05-07 13:38:47,561 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/config.yaml
+2024-05-07 13:38:48,562 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:48,595 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-07 13:38:48,596 DEBUG   SenderThread:1777818 [sender.py:send():378] send: history
+2024-05-07 13:38:48,596 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: summary_record
+2024-05-07 13:38:48,597 INFO    SenderThread:1777818 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-05-07 13:38:49,032 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: internal_messages
+2024-05-07 13:38:49,032 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: stop_status
+2024-05-07 13:38:49,033 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: stop_status
+2024-05-07 13:38:49,562 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:49,563 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_created():271] file/dir created: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/wandb-summary.json
+2024-05-07 13:38:50,297 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-07 13:38:50,299 DEBUG   SenderThread:1777818 [sender.py:send():378] send: history
+2024-05-07 13:38:50,299 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: summary_record
+2024-05-07 13:38:50,300 INFO    SenderThread:1777818 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-05-07 13:38:50,563 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:50,564 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/wandb-summary.json
+2024-05-07 13:38:51,563 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:52,084 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-07 13:38:52,086 DEBUG   SenderThread:1777818 [sender.py:send():378] send: history
+2024-05-07 13:38:52,086 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: summary_record
+2024-05-07 13:38:52,087 INFO    SenderThread:1777818 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-05-07 13:38:52,420 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: status_report
+2024-05-07 13:38:52,564 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:52,565 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/wandb-summary.json
+2024-05-07 13:38:53,009 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-07 13:38:53,011 DEBUG   SenderThread:1777818 [sender.py:send():378] send: history
+2024-05-07 13:38:53,011 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: summary_record
+2024-05-07 13:38:53,012 INFO    SenderThread:1777818 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-05-07 13:38:53,565 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:53,565 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/wandb-summary.json
+2024-05-07 13:38:54,565 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:54,669 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-07 13:38:54,669 DEBUG   SenderThread:1777818 [sender.py:send():378] send: history
+2024-05-07 13:38:54,670 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: summary_record
+2024-05-07 13:38:54,670 INFO    SenderThread:1777818 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-05-07 13:38:55,566 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:55,566 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/wandb-summary.json
+2024-05-07 13:38:55,601 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-07 13:38:55,602 DEBUG   SenderThread:1777818 [sender.py:send():378] send: history
+2024-05-07 13:38:55,603 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: summary_record
+2024-05-07 13:38:55,604 INFO    SenderThread:1777818 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-05-07 13:38:56,545 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-07 13:38:56,548 DEBUG   SenderThread:1777818 [sender.py:send():378] send: history
+2024-05-07 13:38:56,549 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: summary_record
+2024-05-07 13:38:56,550 INFO    SenderThread:1777818 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-05-07 13:38:56,566 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:56,567 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/wandb-summary.json
+2024-05-07 13:38:57,216 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-07 13:38:57,218 DEBUG   SenderThread:1777818 [sender.py:send():378] send: history
+2024-05-07 13:38:57,218 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: summary_record
+2024-05-07 13:38:57,219 INFO    SenderThread:1777818 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-05-07 13:38:57,219 DEBUG   SenderThread:1777818 [sender.py:send():378] send: exit
+2024-05-07 13:38:57,219 INFO    SenderThread:1777818 [sender.py:send_exit():585] handling exit code: 0
+2024-05-07 13:38:57,219 INFO    SenderThread:1777818 [sender.py:send_exit():587] handling runtime: 42
+2024-05-07 13:38:57,219 INFO    SenderThread:1777818 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-05-07 13:38:57,219 INFO    SenderThread:1777818 [sender.py:send_exit():593] send defer
+2024-05-07 13:38:57,220 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:38:57,220 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 0
+2024-05-07 13:38:57,220 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:38:57,220 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 0
+2024-05-07 13:38:57,220 INFO    SenderThread:1777818 [sender.py:transition_state():613] send defer: 1
+2024-05-07 13:38:57,220 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:38:57,220 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 1
+2024-05-07 13:38:57,221 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:38:57,221 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 1
+2024-05-07 13:38:57,221 INFO    SenderThread:1777818 [sender.py:transition_state():613] send defer: 2
+2024-05-07 13:38:57,221 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:38:57,221 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 2
+2024-05-07 13:38:57,221 INFO    HandlerThread:1777818 [system_monitor.py:finish():203] Stopping system monitor
+2024-05-07 13:38:57,221 INFO    HandlerThread:1777818 [interfaces.py:finish():202] Joined cpu monitor
+2024-05-07 13:38:57,222 DEBUG   SystemMonitor:1777818 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-05-07 13:38:57,222 INFO    HandlerThread:1777818 [interfaces.py:finish():202] Joined disk monitor
+2024-05-07 13:38:57,222 DEBUG   SystemMonitor:1777818 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-05-07 13:38:57,223 DEBUG   SystemMonitor:1777818 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-05-07 13:38:57,303 INFO    HandlerThread:1777818 [interfaces.py:finish():202] Joined gpu monitor
+2024-05-07 13:38:57,303 INFO    HandlerThread:1777818 [interfaces.py:finish():202] Joined memory monitor
+2024-05-07 13:38:57,303 INFO    HandlerThread:1777818 [interfaces.py:finish():202] Joined network monitor
+2024-05-07 13:38:57,304 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:38:57,304 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 2
+2024-05-07 13:38:57,304 INFO    SenderThread:1777818 [sender.py:transition_state():613] send defer: 3
+2024-05-07 13:38:57,305 DEBUG   SenderThread:1777818 [sender.py:send():378] send: stats
+2024-05-07 13:38:57,305 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:38:57,306 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 3
+2024-05-07 13:38:57,307 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:38:57,307 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 3
+2024-05-07 13:38:57,307 INFO    SenderThread:1777818 [sender.py:transition_state():613] send defer: 4
+2024-05-07 13:38:57,307 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:38:57,307 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 4
+2024-05-07 13:38:57,308 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:38:57,308 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 4
+2024-05-07 13:38:57,308 INFO    SenderThread:1777818 [sender.py:transition_state():613] send defer: 5
+2024-05-07 13:38:57,308 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:38:57,309 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 5
+2024-05-07 13:38:57,309 DEBUG   SenderThread:1777818 [sender.py:send():378] send: summary
+2024-05-07 13:38:57,310 INFO    SenderThread:1777818 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-05-07 13:38:57,310 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:38:57,311 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 5
+2024-05-07 13:38:57,311 INFO    SenderThread:1777818 [sender.py:transition_state():613] send defer: 6
+2024-05-07 13:38:57,311 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:38:57,311 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 6
+2024-05-07 13:38:57,312 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:38:57,312 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 6
+2024-05-07 13:38:57,312 INFO    SenderThread:1777818 [sender.py:transition_state():613] send defer: 7
+2024-05-07 13:38:57,312 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: status_report
+2024-05-07 13:38:57,312 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:38:57,313 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 7
+2024-05-07 13:38:57,313 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:38:57,313 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 7
+2024-05-07 13:38:57,567 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:57,567 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/wandb-summary.json
+2024-05-07 13:38:58,219 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: poll_exit
+2024-05-07 13:38:58,567 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:59,078 INFO    SenderThread:1777818 [sender.py:transition_state():613] send defer: 8
+2024-05-07 13:38:59,078 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: poll_exit
+2024-05-07 13:38:59,079 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:38:59,079 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 8
+2024-05-07 13:38:59,080 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:38:59,080 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 8
+2024-05-07 13:38:59,080 INFO    SenderThread:1777818 [job_builder.py:build():298] Attempting to build job artifact
+2024-05-07 13:38:59,081 INFO    SenderThread:1777818 [job_builder.py:_get_source_type():428] is repo sourced job
+2024-05-07 13:38:59,138 INFO    SenderThread:1777818 [job_builder.py:build():404] adding wandb-job metadata file
+2024-05-07 13:38:59,146 INFO    SenderThread:1777818 [sender.py:transition_state():613] send defer: 9
+2024-05-07 13:38:59,148 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:38:59,148 DEBUG   SenderThread:1777818 [sender.py:send():378] send: artifact
+2024-05-07 13:38:59,148 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 9
+2024-05-07 13:38:59,220 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: poll_exit
+2024-05-07 13:38:59,444 INFO    SenderThread:1777818 [sender.py:send_artifact():1443] sent artifact job-https___github.com_DAMO-DI-ML_NeurIPS2023-One-Fits-All.git_Long-term_Forecasting_main.py - {'id': 'QXJ0aWZhY3Q6ODI1Njk1NDk4', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE1MjgxMjA0NQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6ODI1ODU0OTgx', 'versionIndex': 6}}}
+2024-05-07 13:38:59,444 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:38:59,444 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 9
+2024-05-07 13:38:59,444 INFO    SenderThread:1777818 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-05-07 13:38:59,568 INFO    Thread-12 :1777818 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:38:59,569 INFO    SenderThread:1777818 [dir_watcher.py:finish():388] scan: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files
+2024-05-07 13:38:59,570 INFO    SenderThread:1777818 [dir_watcher.py:finish():402] scan save: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log output.log
+2024-05-07 13:38:59,570 INFO    SenderThread:1777818 [dir_watcher.py:finish():402] scan save: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/wandb-summary.json wandb-summary.json
+2024-05-07 13:38:59,571 INFO    SenderThread:1777818 [dir_watcher.py:finish():402] scan save: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/requirements.txt requirements.txt
+2024-05-07 13:38:59,582 INFO    SenderThread:1777818 [dir_watcher.py:finish():402] scan save: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/conda-environment.yaml conda-environment.yaml
+2024-05-07 13:38:59,582 INFO    SenderThread:1777818 [dir_watcher.py:finish():402] scan save: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/wandb-metadata.json wandb-metadata.json
+2024-05-07 13:38:59,583 INFO    SenderThread:1777818 [dir_watcher.py:finish():402] scan save: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/config.yaml config.yaml
+2024-05-07 13:38:59,593 INFO    SenderThread:1777818 [sender.py:transition_state():613] send defer: 10
+2024-05-07 13:38:59,594 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: poll_exit
+2024-05-07 13:38:59,594 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:38:59,595 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 10
+2024-05-07 13:38:59,601 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:38:59,601 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 10
+2024-05-07 13:38:59,601 INFO    SenderThread:1777818 [file_pusher.py:finish():172] shutting down file pusher
+2024-05-07 13:38:59,771 INFO    wandb-upload_0:1777818 [upload_job.py:push():131] Uploaded file /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/wandb-summary.json
+2024-05-07 13:38:59,952 INFO    wandb-upload_2:1777818 [upload_job.py:push():131] Uploaded file /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/requirements.txt
+2024-05-07 13:38:59,983 INFO    wandb-upload_1:1777818 [upload_job.py:push():131] Uploaded file /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/output.log
+2024-05-07 13:39:00,064 INFO    wandb-upload_3:1777818 [upload_job.py:push():131] Uploaded file /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/conda-environment.yaml
+2024-05-07 13:39:00,084 INFO    wandb-upload_4:1777818 [upload_job.py:push():131] Uploaded file /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/files/config.yaml
+2024-05-07 13:39:00,222 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: poll_exit
+2024-05-07 13:39:00,223 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: poll_exit
+2024-05-07 13:39:00,285 INFO    Thread-11 :1777818 [sender.py:transition_state():613] send defer: 11
+2024-05-07 13:39:00,285 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:39:00,285 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 11
+2024-05-07 13:39:00,286 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:39:00,286 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 11
+2024-05-07 13:39:00,286 INFO    SenderThread:1777818 [file_pusher.py:join():178] waiting for file pusher
+2024-05-07 13:39:00,287 INFO    SenderThread:1777818 [sender.py:transition_state():613] send defer: 12
+2024-05-07 13:39:00,287 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:39:00,287 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 12
+2024-05-07 13:39:00,288 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:39:00,288 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 12
+2024-05-07 13:39:00,288 INFO    SenderThread:1777818 [file_stream.py:finish():595] file stream finish called
+2024-05-07 13:39:00,386 INFO    SenderThread:1777818 [file_stream.py:finish():599] file stream finish is done
+2024-05-07 13:39:00,386 INFO    SenderThread:1777818 [sender.py:transition_state():613] send defer: 13
+2024-05-07 13:39:00,386 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:39:00,387 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 13
+2024-05-07 13:39:00,387 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:39:00,387 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 13
+2024-05-07 13:39:00,388 INFO    SenderThread:1777818 [sender.py:transition_state():613] send defer: 14
+2024-05-07 13:39:00,388 DEBUG   SenderThread:1777818 [sender.py:send():378] send: final
+2024-05-07 13:39:00,389 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: defer
+2024-05-07 13:39:00,389 DEBUG   SenderThread:1777818 [sender.py:send():378] send: footer
+2024-05-07 13:39:00,389 INFO    HandlerThread:1777818 [handler.py:handle_request_defer():172] handle defer: 14
+2024-05-07 13:39:00,390 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: defer
+2024-05-07 13:39:00,390 INFO    SenderThread:1777818 [sender.py:send_request_defer():609] handle sender defer: 14
+2024-05-07 13:39:00,391 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: poll_exit
+2024-05-07 13:39:00,391 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: poll_exit
+2024-05-07 13:39:00,392 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: poll_exit
+2024-05-07 13:39:00,393 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: poll_exit
+2024-05-07 13:39:00,394 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: server_info
+2024-05-07 13:39:00,394 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: server_info
+2024-05-07 13:39:00,400 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: get_summary
+2024-05-07 13:39:00,400 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: sampled_history
+2024-05-07 13:39:00,402 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: internal_messages
+2024-05-07 13:39:00,402 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: job_info
+2024-05-07 13:39:00,445 DEBUG   SenderThread:1777818 [sender.py:send_request():405] send_request: job_info
+2024-05-07 13:39:00,446 INFO    MainThread:1777818 [wandb_run.py:_footer_history_summary_info():3851] rendering history
+2024-05-07 13:39:00,447 INFO    MainThread:1777818 [wandb_run.py:_footer_history_summary_info():3883] rendering summary
+2024-05-07 13:39:00,447 INFO    MainThread:1777818 [wandb_run.py:_footer_sync_info():3810] logging synced files
+2024-05-07 13:39:00,448 DEBUG   HandlerThread:1777818 [handler.py:handle_request():146] handle_request: shutdown
+2024-05-07 13:39:00,448 INFO    HandlerThread:1777818 [handler.py:finish():869] shutting down handler
+2024-05-07 13:39:01,403 INFO    WriterThread:1777818 [datastore.py:close():296] close: /home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/wandb/run-20240507_133814-ri2sy41s/run-ri2sy41s.wandb
+2024-05-07 13:39:01,446 INFO    SenderThread:1777818 [sender.py:finish():1521] shutting down sender
+2024-05-07 13:39:01,446 INFO    SenderThread:1777818 [file_pusher.py:finish():172] shutting down file pusher
+2024-05-07 13:39:01,446 INFO    SenderThread:1777818 [file_pusher.py:join():178] waiting for file pusher

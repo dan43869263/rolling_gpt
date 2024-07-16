@@ -1,0 +1,284 @@
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+train 337
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+val 43
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+test 93
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (1): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (2): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (3): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (4): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (5): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+1it [00:01,  1.10s/it]
+0it [00:00, ?it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 1 cost time: 1.3734173774719238
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+total vali observation: torch.Size([2])
+missing_idx_len: 43
+pred tensor([0.1901, 0.2158])
+true tensor([-0.7200, -0.7200])
+Epoch: 1, Steps: 1 | Train Loss: 0.0837191 Vali Loss: 0.8519458
+lr = 0.0000975531
+1it [00:00, 11.71it/s]
+1it [00:00,  6.20it/s]
+1it [00:00, 11.96it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 2 cost time: 0.5019047260284424
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+total vali observation: torch.Size([2])
+missing_idx_len: 43
+pred tensor([0.2442, 0.2170])
+true tensor([-0.7200, -0.7200])
+Epoch: 2, Steps: 1 | Train Loss: 0.0861359 Vali Loss: 0.9037762
+lr = 0.0000904518
+EarlyStopping counter: 1 out of 3
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 3 cost time: 0.49720072746276855
+1it [00:00,  6.24it/s]
+1it [00:00, 11.39it/s]
+1it [00:00,  6.19it/s]
+1it [00:00, 11.71it/s]
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+total vali observation: torch.Size([2])
+missing_idx_len: 43
+pred tensor([0.1873, 0.2422])
+true tensor([-0.7200, -0.7200])
+Epoch: 3, Steps: 1 | Train Loss: 0.0829669 Vali Loss: 0.8745707
+lr = 0.0000793913
+EarlyStopping counter: 2 out of 3
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 4 cost time: 0.4962174892425537
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+total vali observation: torch.Size([2])
+missing_idx_len: 43
+pred tensor([0.1774, 0.2116])
+true tensor([-0.7200, -0.7200])
+Epoch: 4, Steps: 1 | Train Loss: 0.0841943 Vali Loss: 0.8366435
+lr = 0.0000654543
+Validation loss decreased (0.851946 --> 0.836643).  Saving model ...
+1it [00:00,  6.38it/s]
+1it [00:00, 11.92it/s]
+1it [00:00,  6.11it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 5 cost time: 0.5066847801208496
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+total vali observation: torch.Size([2])
+missing_idx_len: 43
+pred tensor([0.1878, 0.2028])
+true tensor([-0.7200, -0.7200])
+Epoch: 5, Steps: 1 | Train Loss: 0.0835972 Vali Loss: 0.8377935
+lr = 0.0000500050
+EarlyStopping counter: 1 out of 3
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 6 cost time: 0.5068135261535645
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+total vali observation: torch.Size([2])
+missing_idx_len: 43
+pred tensor([0.1721, 0.1912])
+true tensor([-0.7200, -0.7200])
+Epoch: 6, Steps: 1 | Train Loss: 0.0830605 Vali Loss: 0.8130893
+lr = 0.0000345557
+Validation loss decreased (0.836643 --> 0.813089).  Saving model ...
+1it [00:00, 12.38it/s]
+1it [00:00,  5.94it/s]
+1it [00:00, 12.11it/s]
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 7 cost time: 0.5100064277648926
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+total vali observation: torch.Size([2])
+missing_idx_len: 43
+pred tensor([0.2386, 0.2037])
+true tensor([-0.7200, -0.7200])
+Epoch: 7, Steps: 1 | Train Loss: 0.0831812 Vali Loss: 0.8860418
+lr = 0.0000206187
+EarlyStopping counter: 1 out of 3
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+1it [00:00,  6.28it/s]
+1it [00:00, 11.89it/s]
+1it [00:00,  6.06it/s]
+1it [00:00, 10.84it/s]
+Epoch: 8 cost time: 0.4974710941314697
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+total vali observation: torch.Size([2])
+missing_idx_len: 43
+pred tensor([0.2249, 0.1866])
+true tensor([-0.7200, -0.7200])
+Epoch: 8, Steps: 1 | Train Loss: 0.0848768 Vali Loss: 0.8573612
+lr = 0.0000095582
+EarlyStopping counter: 2 out of 3
+outputs torch.Size([337, 12, 18])
+B 337
+L 18
+M 18
+Epoch: 9 cost time: 0.510434627532959
+outputs torch.Size([43, 12, 18])
+B 43
+L 18
+M 18
+total vali observation: torch.Size([2])
+missing_idx_len: 43
+pred tensor([0.1783, 0.1877])
+true tensor([-0.7200, -0.7200])
+Epoch: 9, Steps: 1 | Train Loss: 0.0826828 Vali Loss: 0.8153929
+lr = 0.0000024569
+EarlyStopping counter: 3 out of 3
+Early stopping
+------------------------------------
+outputs torch.Size([93, 12, 18])
+B 93
+L 18
+M 18
+1it [00:00,  9.81it/s]
+test shape: (1, 222) (1, 222)
+test shape: (1, 1, 222) (1, 1, 222)
+mae:0.5483, mse:0.7320, rmse:0.8556, r2:-0.6532
+mse_mean = 0.7320, mse_std = 0.0000
+r2_mean = -0.6532, mae_std = 0.0000

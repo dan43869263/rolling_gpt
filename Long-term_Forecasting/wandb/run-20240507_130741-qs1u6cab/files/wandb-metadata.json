@@ -1,0 +1,307 @@
+{
+    "os": "Linux-6.5.0-26-generic-x86_64-with-glibc2.35",
+    "python": "3.9.18",
+    "heartbeatAt": "2024-05-07T17:07:42.337105",
+    "startedAt": "2024-05-07T17:07:41.783596",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--root_path",
+        "/home/dan/NeurIPS2023-One-Fits-All/dataset/Data/",
+        "--data_path",
+        "df_EPS_CHAR.csv",
+        "--model_id",
+        "imp_EPS_scaled_GPT4TS__18_12_100",
+        "--data",
+        "eps",
+        "--seq_len",
+        "18",
+        "--label_len",
+        "9",
+        "--pred_len",
+        "12",
+        "--batch_size",
+        "2048",
+        "--learning_rate",
+        "0.0001",
+        "--train_epochs",
+        "500",
+        "--decay_fac",
+        "0.75",
+        "--d_model",
+        "768",
+        "--n_heads",
+        "2",
+        "--d_ff",
+        "768",
+        "--dropout",
+        "0.3",
+        "--enc_in",
+        "13149",
+        "--c_out",
+        "13149",
+        "--freq",
+        "0",
+        "--patch_size",
+        "16",
+        "--stride",
+        "8",
+        "--percent",
+        "100",
+        "--gpt_layer",
+        "6",
+        "--itr",
+        "1",
+        "--model",
+        "GPT4TS",
+        "--cos",
+        "1",
+        "--tmax",
+        "10",
+        "--is_gpt",
+        "1",
+        "--target",
+        "value",
+        "--which_firm",
+        "134"
+    ],
+    "state": "running",
+    "program": "/home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/main.py",
+    "codePathLocal": "main.py",
+    "codePath": "Long-term_Forecasting/main.py",
+    "git": {
+        "remote": "https://github.com/DAMO-DI-ML/NeurIPS2023-One-Fits-All.git",
+        "commit": "9f3875dbba9f52ee534ac0902572502746f3b29d"
+    },
+    "email": null,
+    "root": "/home/dan/NeurIPS2023-One-Fits-All",
+    "host": "dantong-Precision-7820-Tower",
+    "username": "dan",
+    "executable": "/home/dan/anaconda3/envs/geo/bin/python",
+    "cpu_count": 20,
+    "cpu_count_logical": 40,
+    "cpu_freq": {
+        "current": 1085.2138,
+        "min": 1000.0,
+        "max": 3700.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1700.001,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.217,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 3356.051,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.184,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.123,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.017,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 999.499,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 999.995,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.026,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.294,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.07,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.437,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.0,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1099.809,
+            "min": 1000.0,
+            "max": 3700.0
+        },
+        {
+            "current": 1000.074,
+            "min": 1000.0,
+            "max": 3700.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1876.2189445495605,
+            "used": 663.3565979003906
+        }
+    },
+    "gpu": "NVIDIA RTX A6000",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA RTX A6000",
+            "memory_total": 51527024640
+        }
+    ],
+    "memory": {
+        "total": 92.94909286499023
+    }
+}

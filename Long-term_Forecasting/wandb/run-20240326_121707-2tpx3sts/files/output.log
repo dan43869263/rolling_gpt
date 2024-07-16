@@ -1,0 +1,3119 @@
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+train 6403
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+val 817
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+test 1767
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (1): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (2): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (3): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (4): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (5): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+3it [00:01,  2.83it/s]
+0it [00:00, ?it/s]
+Epoch: 1 cost time: 1.246959924697876
+Epoch: 1, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (inf --> nan).  Saving model ...
+3it [00:00, 13.51it/s]
+0it [00:00, ?it/s]
+Epoch: 2 cost time: 0.4484689235687256
+Epoch: 2, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 3 cost time: 0.4619107246398926
+Epoch: 3, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.54it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.95it/s]
+0it [00:00, ?it/s]
+Epoch: 4 cost time: 0.4306926727294922
+Epoch: 4, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.25it/s]
+0it [00:00, ?it/s]
+Epoch: 5 cost time: 0.4492332935333252
+Epoch: 5, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 6 cost time: 0.4639549255371094
+Epoch: 6, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.22it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.34it/s]
+0it [00:00, ?it/s]
+Epoch: 7 cost time: 0.449798583984375
+Epoch: 7, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.72it/s]
+0it [00:00, ?it/s]
+Epoch: 8 cost time: 0.4230308532714844
+Epoch: 8, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 9 cost time: 0.4470522403717041
+3it [00:00, 14.66it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.84it/s]
+0it [00:00, ?it/s]
+Epoch: 9, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 10 cost time: 0.45074987411499023
+Epoch: 10, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.41it/s]
+0it [00:00, ?it/s]
+Epoch: 11 cost time: 0.4317643642425537
+Epoch: 11, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 12 cost time: 0.43902111053466797
+Epoch: 12, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.10it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.38it/s]
+0it [00:00, ?it/s]
+Epoch: 13 cost time: 0.4463772773742676
+Epoch: 13, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.22it/s]
+0it [00:00, ?it/s]
+Epoch: 14 cost time: 0.44559335708618164
+Epoch: 14, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 15 cost time: 0.44352293014526367
+3it [00:00, 14.75it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.31it/s]
+0it [00:00, ?it/s]
+Epoch: 15, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 16 cost time: 0.4448211193084717
+Epoch: 16, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.03it/s]
+0it [00:00, ?it/s]
+Epoch: 17 cost time: 0.47420692443847656
+Epoch: 17, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 18 cost time: 0.46604275703430176
+3it [00:00, 15.17it/s]
+0it [00:00, ?it/s]
+2it [00:00, 18.40it/s]
+Epoch: 18, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 19 cost time: 0.475719690322876
+Epoch: 19, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 14.27it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.72it/s]
+0it [00:00, ?it/s]
+Epoch: 20 cost time: 0.45212650299072266
+Epoch: 20, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.71it/s]
+0it [00:00, ?it/s]
+Epoch: 21 cost time: 0.45474839210510254
+Epoch: 21, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 22 cost time: 0.4467000961303711
+Epoch: 22, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.64it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.19it/s]
+0it [00:00, ?it/s]
+Epoch: 23 cost time: 0.439943790435791
+Epoch: 23, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.08it/s]
+0it [00:00, ?it/s]
+Epoch: 24 cost time: 0.4535799026489258
+Epoch: 24, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 25 cost time: 0.4475276470184326
+Epoch: 25, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.53it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.95it/s]
+Epoch: 26 cost time: 0.4661250114440918
+Epoch: 26, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.81it/s]
+0it [00:00, ?it/s]
+Epoch: 27 cost time: 0.4451432228088379
+Epoch: 27, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 28 cost time: 0.45254969596862793
+3it [00:00, 14.18it/s]
+0it [00:00, ?it/s]
+2it [00:00, 16.62it/s]
+Epoch: 28, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 29 cost time: 0.4680356979370117
+Epoch: 29, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 13.65it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.25it/s]
+0it [00:00, ?it/s]
+Epoch: 30 cost time: 0.46663427352905273
+Epoch: 30, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.68it/s]
+0it [00:00, ?it/s]
+Epoch: 31 cost time: 0.4727132320404053
+Epoch: 31, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 32 cost time: 0.47680020332336426
+3it [00:00, 14.58it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.64it/s]
+Epoch: 32, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 33 cost time: 0.43620848655700684
+Epoch: 33, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 12.96it/s]
+0it [00:00, ?it/s]
+Epoch: 34 cost time: 0.4450829029083252
+Epoch: 34, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 35 cost time: 0.4701831340789795
+3it [00:00, 12.19it/s]
+0it [00:00, ?it/s]
+2it [00:00, 16.25it/s]
+Epoch: 35, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 36 cost time: 0.444183349609375
+Epoch: 36, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 13.57it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.77it/s]
+0it [00:00, ?it/s]
+Epoch: 37 cost time: 0.4768073558807373
+Epoch: 37, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.89it/s]
+0it [00:00, ?it/s]
+Epoch: 38 cost time: 0.4614372253417969
+Epoch: 38, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 39 cost time: 0.45083093643188477
+Epoch: 39, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.94it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.30it/s]
+0it [00:00, ?it/s]
+Epoch: 40 cost time: 0.4619941711425781
+Epoch: 40, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.78it/s]
+0it [00:00, ?it/s]
+Epoch: 41 cost time: 0.4533698558807373
+Epoch: 41, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 42 cost time: 0.43766307830810547
+3it [00:00, 14.03it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.85it/s]
+Epoch: 42, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 43 cost time: 0.4882535934448242
+Epoch: 43, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.77it/s]
+0it [00:00, ?it/s]
+Epoch: 44 cost time: 0.4766879081726074
+Epoch: 44, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 45 cost time: 0.4426572322845459
+3it [00:00, 13.79it/s]
+0it [00:00, ?it/s]
+2it [00:00, 15.85it/s]
+Epoch: 45, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 46 cost time: 0.47402191162109375
+Epoch: 46, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 13.23it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.04it/s]
+0it [00:00, ?it/s]
+Epoch: 47 cost time: 0.4758608341217041
+Epoch: 47, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.53it/s]
+0it [00:00, ?it/s]
+Epoch: 48 cost time: 0.4539070129394531
+Epoch: 48, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 49 cost time: 0.4721977710723877
+3it [00:00, 13.09it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.42it/s]
+Epoch: 49, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 50 cost time: 0.43903231620788574
+Epoch: 50, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.57it/s]
+0it [00:00, ?it/s]
+Epoch: 51 cost time: 0.4631319046020508
+Epoch: 51, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.46it/s]
+0it [00:00, ?it/s]
+Epoch: 52 cost time: 0.4925062656402588
+Epoch: 52, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 53 cost time: 0.4685859680175781
+Epoch: 53, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.04it/s]
+0it [00:00, ?it/s]
+3it [00:00, 15.51it/s]
+0it [00:00, ?it/s]
+Epoch: 54 cost time: 0.46599912643432617
+Epoch: 54, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.13it/s]
+0it [00:00, ?it/s]
+Epoch: 55 cost time: 0.46990442276000977
+Epoch: 55, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 56 cost time: 0.430999755859375
+3it [00:00, 13.78it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.69it/s]
+Epoch: 56, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 57 cost time: 0.4714334011077881
+Epoch: 57, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.88it/s]
+0it [00:00, ?it/s]
+Epoch: 58 cost time: 0.47955989837646484
+Epoch: 58, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.85it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 59 cost time: 0.43454408645629883
+Epoch: 59, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 60 cost time: 0.4618198871612549
+Epoch: 60, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 13.48it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.98it/s]
+0it [00:00, ?it/s]
+Epoch: 61 cost time: 0.4598257541656494
+Epoch: 61, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.50it/s]
+0it [00:00, ?it/s]
+Epoch: 62 cost time: 0.45577454566955566
+Epoch: 62, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 63 cost time: 0.4499979019165039
+Epoch: 63, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.27it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.90it/s]
+Epoch: 64 cost time: 0.4693009853363037
+Epoch: 64, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 14.69it/s]
+0it [00:00, ?it/s]
+Epoch: 65 cost time: 0.4514775276184082
+Epoch: 65, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 66 cost time: 0.4456663131713867
+3it [00:00, 14.51it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 66, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 67 cost time: 0.5573899745941162
+Epoch: 67, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+3it [00:00,  9.23it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.67it/s]
+0it [00:00, ?it/s]
+Epoch: 68 cost time: 0.48929381370544434
+Epoch: 68, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.02it/s]
+0it [00:00, ?it/s]
+Epoch: 69 cost time: 0.4435997009277344
+Epoch: 69, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 70 cost time: 0.5841286182403564
+3it [00:00,  9.29it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 70, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 71 cost time: 0.5736074447631836
+Epoch: 71, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+3it [00:00,  9.72it/s]
+0it [00:00, ?it/s]
+3it [00:00,  9.40it/s]
+0it [00:00, ?it/s]
+Epoch: 72 cost time: 0.5609264373779297
+Epoch: 72, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00,  8.94it/s]
+0it [00:00, ?it/s]
+Epoch: 73 cost time: 0.5817017555236816
+Epoch: 73, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.68it/s]
+0it [00:00, ?it/s]
+Epoch: 74 cost time: 0.4670891761779785
+Epoch: 74, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 75 cost time: 0.5895247459411621
+Epoch: 75, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00,  8.82it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.21it/s]
+Epoch: 76 cost time: 0.44643259048461914
+Epoch: 76, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.54it/s]
+0it [00:00, ?it/s]
+Epoch: 77 cost time: 0.46062612533569336
+Epoch: 77, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 15.07it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 78 cost time: 0.4533703327178955
+Epoch: 78, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 79 cost time: 0.44466161727905273
+Epoch: 79, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 13.55it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.78it/s]
+0it [00:00, ?it/s]
+Epoch: 80 cost time: 0.4720754623413086
+Epoch: 80, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.61it/s]
+0it [00:00, ?it/s]
+Epoch: 81 cost time: 0.46189141273498535
+Epoch: 81, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 82 cost time: 0.46928906440734863
+3it [00:00, 15.36it/s]
+0it [00:00, ?it/s]
+2it [00:00, 18.89it/s]
+Epoch: 82, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 83 cost time: 0.4433023929595947
+Epoch: 83, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 14.38it/s]
+0it [00:00, ?it/s]
+3it [00:00, 15.70it/s]
+0it [00:00, ?it/s]
+Epoch: 84 cost time: 0.4570906162261963
+Epoch: 84, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.41it/s]
+0it [00:00, ?it/s]
+Epoch: 85 cost time: 0.44951558113098145
+Epoch: 85, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 86 cost time: 0.43071842193603516
+Epoch: 86, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.04it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.66it/s]
+Epoch: 87 cost time: 0.48474574089050293
+Epoch: 87, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.86it/s]
+0it [00:00, ?it/s]
+Epoch: 88 cost time: 0.4590187072753906
+Epoch: 88, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 89 cost time: 0.46434879302978516
+3it [00:00, 15.04it/s]
+0it [00:00, ?it/s]
+2it [00:00, 19.07it/s]
+Epoch: 89, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 90 cost time: 0.45622849464416504
+Epoch: 90, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+3it [00:00, 13.99it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.80it/s]
+0it [00:00, ?it/s]
+Epoch: 91 cost time: 0.4637451171875
+Epoch: 91, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.94it/s]
+0it [00:00, ?it/s]
+Epoch: 92 cost time: 0.4784374237060547
+Epoch: 92, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 93 cost time: 0.4858253002166748
+3it [00:00, 14.00it/s]
+0it [00:00, ?it/s]
+2it [00:00, 15.23it/s]
+Epoch: 93, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 94 cost time: 0.49980616569519043
+Epoch: 94, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 13.02it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.53it/s]
+0it [00:00, ?it/s]
+Epoch: 95 cost time: 0.4463353157043457
+Epoch: 95, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.36it/s]
+0it [00:00, ?it/s]
+Epoch: 96 cost time: 0.5012176036834717
+Epoch: 96, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 97 cost time: 0.49687671661376953
+3it [00:00, 12.33it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 97, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 98 cost time: 0.46053624153137207
+Epoch: 98, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 12.40it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.94it/s]
+0it [00:00, ?it/s]
+Epoch: 99 cost time: 0.4832301139831543
+Epoch: 99, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.40it/s]
+0it [00:00, ?it/s]
+Epoch: 100 cost time: 0.49190735816955566
+Epoch: 100, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 101 cost time: 0.4842350482940674
+3it [00:00, 14.49it/s]
+0it [00:00, ?it/s]
+Epoch: 101, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 102 cost time: 0.4870600700378418
+Epoch: 102, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.70it/s]
+0it [00:00, ?it/s]
+2it [00:00, 11.45it/s]
+Epoch: 103 cost time: 0.6575195789337158
+Epoch: 103, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+3it [00:00,  9.30it/s]
+0it [00:00, ?it/s]
+3it [00:00, 11.99it/s]
+Epoch: 104 cost time: 0.5048916339874268
+Epoch: 104, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00,  6.75it/s]
+0it [00:00, ?it/s]
+Epoch: 105 cost time: 0.7282235622406006
+Epoch: 105, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00,  9.12it/s]
+0it [00:00, ?it/s]
+Epoch: 106 cost time: 0.6063063144683838
+Epoch: 106, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.65it/s]
+0it [00:00, ?it/s]
+Epoch: 107 cost time: 0.45896077156066895
+Epoch: 107, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 108 cost time: 0.4626336097717285
+3it [00:00, 12.98it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.42it/s]
+Epoch: 108, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 109 cost time: 0.4782295227050781
+Epoch: 109, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 14.95it/s]
+0it [00:00, ?it/s]
+Epoch: 110 cost time: 0.49764013290405273
+Epoch: 110, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.37it/s]
+0it [00:00, ?it/s]
+Epoch: 111 cost time: 0.47089648246765137
+Epoch: 111, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 112 cost time: 0.4819529056549072
+3it [00:00, 13.92it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.16it/s]
+Epoch: 112, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 113 cost time: 0.5161819458007812
+Epoch: 113, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 14.20it/s]
+0it [00:00, ?it/s]
+Epoch: 114 cost time: 0.4641704559326172
+Epoch: 114, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.63it/s]
+0it [00:00, ?it/s]
+Epoch: 115 cost time: 0.4764590263366699
+Epoch: 115, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 116 cost time: 0.4705162048339844
+Epoch: 116, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.49it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 117 cost time: 0.6736423969268799
+Epoch: 117, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+3it [00:00,  9.34it/s]
+0it [00:00, ?it/s]
+3it [00:00,  9.03it/s]
+Epoch: 118 cost time: 0.6300508975982666
+Epoch: 118, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 12.04it/s]
+0it [00:00, ?it/s]
+Epoch: 119 cost time: 0.5535368919372559
+Epoch: 119, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 10.30it/s]
+0it [00:00, ?it/s]
+Epoch: 120 cost time: 0.578056812286377
+Epoch: 120, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00,  9.31it/s]
+0it [00:00, ?it/s]
+Epoch: 121 cost time: 0.6506772041320801
+Epoch: 121, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 122 cost time: 0.47304582595825195
+3it [00:00, 13.63it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.19it/s]
+Epoch: 122, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 123 cost time: 0.4638335704803467
+Epoch: 123, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.62it/s]
+0it [00:00, ?it/s]
+Epoch: 124 cost time: 0.48093461990356445
+Epoch: 124, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.97it/s]
+0it [00:00, ?it/s]
+Epoch: 125 cost time: 0.4865074157714844
+Epoch: 125, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 126 cost time: 0.4642455577850342
+Epoch: 126, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.37it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.83it/s]
+Epoch: 127 cost time: 0.4669334888458252
+Epoch: 127, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.92it/s]
+0it [00:00, ?it/s]
+Epoch: 128 cost time: 0.48000407218933105
+Epoch: 128, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 129 cost time: 0.4368302822113037
+3it [00:00, 13.91it/s]
+0it [00:00, ?it/s]
+2it [00:00, 16.32it/s]
+Epoch: 129, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 130 cost time: 0.4362301826477051
+Epoch: 130, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+3it [00:00, 13.50it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.75it/s]
+0it [00:00, ?it/s]
+Epoch: 131 cost time: 0.4733152389526367
+Epoch: 131, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.84it/s]
+0it [00:00, ?it/s]
+Epoch: 132 cost time: 0.4556257724761963
+Epoch: 132, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 133 cost time: 0.46857595443725586
+Epoch: 133, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.96it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.43it/s]
+0it [00:00, ?it/s]
+Epoch: 134 cost time: 0.468280553817749
+Epoch: 134, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.36it/s]
+0it [00:00, ?it/s]
+Epoch: 135 cost time: 0.45900726318359375
+Epoch: 135, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 136 cost time: 0.4489107131958008
+Epoch: 136, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.05it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.51it/s]
+Epoch: 137 cost time: 0.4278736114501953
+Epoch: 137, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.45it/s]
+0it [00:00, ?it/s]
+Epoch: 138 cost time: 0.5045192241668701
+Epoch: 138, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 139 cost time: 0.4589056968688965
+3it [00:00, 13.21it/s]
+0it [00:00, ?it/s]
+2it [00:00, 18.25it/s]
+Epoch: 139, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 140 cost time: 0.48235464096069336
+Epoch: 140, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 13.53it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.11it/s]
+0it [00:00, ?it/s]
+Epoch: 141 cost time: 0.430269718170166
+Epoch: 141, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 142 cost time: 0.43738555908203125
+3it [00:00, 13.07it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 142, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 143 cost time: 0.45813488960266113
+Epoch: 143, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 13.65it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.67it/s]
+0it [00:00, ?it/s]
+Epoch: 144 cost time: 0.46210598945617676
+Epoch: 144, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.59it/s]
+0it [00:00, ?it/s]
+Epoch: 145 cost time: 0.46004366874694824
+Epoch: 145, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 146 cost time: 0.6926159858703613
+3it [00:00,  8.33it/s]
+0it [00:00, ?it/s]
+Epoch: 146, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 147 cost time: 0.6456875801086426
+3it [00:00,  9.34it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 147, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 148 cost time: 0.5303418636322021
+Epoch: 148, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 12.30it/s]
+0it [00:00, ?it/s]
+3it [00:00, 10.75it/s]
+Epoch: 149 cost time: 0.6592516899108887
+Epoch: 149, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 14.38it/s]
+0it [00:00, ?it/s]
+Epoch: 150 cost time: 0.45713329315185547
+Epoch: 150, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.45it/s]
+0it [00:00, ?it/s]
+Epoch: 151 cost time: 0.4593319892883301
+Epoch: 151, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 152 cost time: 0.4477694034576416
+Epoch: 152, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.71it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.89it/s]
+0it [00:00, ?it/s]
+Epoch: 153 cost time: 0.4477102756500244
+Epoch: 153, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.37it/s]
+0it [00:00, ?it/s]
+Epoch: 154 cost time: 0.45572733879089355
+Epoch: 154, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 155 cost time: 0.48018527030944824
+Epoch: 155, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.89it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.37it/s]
+Epoch: 156 cost time: 0.45773983001708984
+Epoch: 156, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 14.39it/s]
+0it [00:00, ?it/s]
+Epoch: 157 cost time: 0.47106218338012695
+Epoch: 157, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 158 cost time: 0.43135690689086914
+3it [00:00, 14.71it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.11it/s]
+Epoch: 158, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 159 cost time: 0.43680286407470703
+Epoch: 159, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 14.27it/s]
+0it [00:00, ?it/s]
+Epoch: 160 cost time: 0.4583005905151367
+Epoch: 160, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.70it/s]
+0it [00:00, ?it/s]
+Epoch: 161 cost time: 0.4595906734466553
+Epoch: 161, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 162 cost time: 0.45210838317871094
+Epoch: 162, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.76it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.14it/s]
+0it [00:00, ?it/s]
+Epoch: 163 cost time: 0.45156097412109375
+Epoch: 163, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.58it/s]
+0it [00:00, ?it/s]
+Epoch: 164 cost time: 0.47243618965148926
+Epoch: 164, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 165 cost time: 0.44260549545288086
+3it [00:00, 14.16it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.79it/s]
+Epoch: 165, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 166 cost time: 0.4592306613922119
+Epoch: 166, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.28it/s]
+0it [00:00, ?it/s]
+Epoch: 167 cost time: 0.47688746452331543
+Epoch: 167, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.12it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 168 cost time: 0.48577117919921875
+Epoch: 168, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 169 cost time: 0.46574902534484863
+Epoch: 169, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 12.82it/s]
+0it [00:00, ?it/s]
+3it [00:00, 10.97it/s]
+0it [00:00, ?it/s]
+Epoch: 170 cost time: 0.5073039531707764
+Epoch: 170, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 10.97it/s]
+0it [00:00, ?it/s]
+Epoch: 171 cost time: 0.6495790481567383
+Epoch: 171, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 10.00it/s]
+0it [00:00, ?it/s]
+Epoch: 172 cost time: 0.6448252201080322
+Epoch: 172, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 10.65it/s]
+0it [00:00, ?it/s]
+Epoch: 173 cost time: 0.6341531276702881
+Epoch: 173, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 174 cost time: 0.638866662979126
+3it [00:00,  9.43it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.37it/s]
+Epoch: 174, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 175 cost time: 0.45476841926574707
+Epoch: 175, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 12.47it/s]
+0it [00:00, ?it/s]
+Epoch: 176 cost time: 0.48329710960388184
+Epoch: 176, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 177 cost time: 0.4396681785583496
+3it [00:00, 13.43it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 177, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 178 cost time: 0.46811890602111816
+Epoch: 178, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 13.44it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.08it/s]
+0it [00:00, ?it/s]
+Epoch: 179 cost time: 0.46099162101745605
+Epoch: 179, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.97it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 180 cost time: 0.4553873538970947
+Epoch: 180, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 181 cost time: 0.4432826042175293
+Epoch: 181, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 14.74it/s]
+0it [00:00, ?it/s]
+3it [00:00, 15.08it/s]
+0it [00:00, ?it/s]
+Epoch: 182 cost time: 0.4494912624359131
+Epoch: 182, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.77it/s]
+0it [00:00, ?it/s]
+Epoch: 183 cost time: 0.44244909286499023
+Epoch: 183, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 184 cost time: 0.47097039222717285
+Epoch: 184, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.91it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.53it/s]
+0it [00:00, ?it/s]
+Epoch: 185 cost time: 0.46109580993652344
+Epoch: 185, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.05it/s]
+0it [00:00, ?it/s]
+Epoch: 186 cost time: 0.47492456436157227
+Epoch: 186, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 187 cost time: 0.46030116081237793
+Epoch: 187, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.90it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.34it/s]
+Epoch: 188 cost time: 0.46550798416137695
+Epoch: 188, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.14it/s]
+0it [00:00, ?it/s]
+Epoch: 189 cost time: 0.4390699863433838
+Epoch: 189, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 190 cost time: 0.4639718532562256
+3it [00:00, 13.27it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 190, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 191 cost time: 0.4686880111694336
+Epoch: 191, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 14.45it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.44it/s]
+0it [00:00, ?it/s]
+Epoch: 192 cost time: 0.4541599750518799
+Epoch: 192, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.74it/s]
+0it [00:00, ?it/s]
+Epoch: 193 cost time: 0.4802515506744385
+Epoch: 193, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 194 cost time: 0.487490177154541
+Epoch: 194, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.41it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.27it/s]
+Epoch: 195 cost time: 0.4477345943450928
+Epoch: 195, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 14.18it/s]
+0it [00:00, ?it/s]
+Epoch: 196 cost time: 0.4474630355834961
+Epoch: 196, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 197 cost time: 0.4628298282623291
+3it [00:00, 11.82it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.28it/s]
+Epoch: 197, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 198 cost time: 0.48307323455810547
+Epoch: 198, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 15.15it/s]
+0it [00:00, ?it/s]
+Epoch: 199 cost time: 0.4294288158416748
+Epoch: 199, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 200 cost time: 0.47661352157592773
+Epoch: 200, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 201 cost time: 0.47317957878112793
+Epoch: 201, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.28it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.12it/s]
+0it [00:00, ?it/s]
+3it [00:00,  9.14it/s]
+Epoch: 202 cost time: 0.6187050342559814
+Epoch: 202, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 10.44it/s]
+0it [00:00, ?it/s]
+Epoch: 203 cost time: 0.581528902053833
+Epoch: 203, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00,  9.86it/s]
+0it [00:00, ?it/s]
+Epoch: 204 cost time: 0.6281783580780029
+Epoch: 204, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00,  8.52it/s]
+0it [00:00, ?it/s]
+Epoch: 205 cost time: 0.6227250099182129
+Epoch: 205, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 206 cost time: 0.4269278049468994
+3it [00:00, 14.26it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.34it/s]
+Epoch: 206, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 207 cost time: 0.4831235408782959
+Epoch: 207, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.18it/s]
+0it [00:00, ?it/s]
+Epoch: 208 cost time: 0.43357157707214355
+Epoch: 208, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 209 cost time: 0.4522395133972168
+3it [00:00, 12.98it/s]
+0it [00:00, ?it/s]
+2it [00:00, 18.85it/s]
+Epoch: 209, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 210 cost time: 0.4669826030731201
+Epoch: 210, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+3it [00:00, 14.48it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.66it/s]
+0it [00:00, ?it/s]
+Epoch: 211 cost time: 0.46764707565307617
+Epoch: 211, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.50it/s]
+0it [00:00, ?it/s]
+Epoch: 212 cost time: 0.4576239585876465
+Epoch: 212, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 213 cost time: 0.4594709873199463
+Epoch: 213, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.71it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.43it/s]
+0it [00:00, ?it/s]
+Epoch: 214 cost time: 0.4621312618255615
+Epoch: 214, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.28it/s]
+0it [00:00, ?it/s]
+Epoch: 215 cost time: 0.4573216438293457
+Epoch: 215, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 216 cost time: 0.4637718200683594
+3it [00:00, 13.60it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.24it/s]
+Epoch: 216, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 217 cost time: 0.46424198150634766
+Epoch: 217, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.54it/s]
+0it [00:00, ?it/s]
+Epoch: 218 cost time: 0.5006954669952393
+Epoch: 218, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.81it/s]
+0it [00:00, ?it/s]
+Epoch: 219 cost time: 0.4695603847503662
+Epoch: 219, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 220 cost time: 0.4587371349334717
+Epoch: 220, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.23it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.07it/s]
+Epoch: 221 cost time: 0.4862639904022217
+Epoch: 221, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 12.53it/s]
+0it [00:00, ?it/s]
+Epoch: 222 cost time: 0.453747034072876
+Epoch: 222, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 223 cost time: 0.46775364875793457
+3it [00:00, 13.34it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 223, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 224 cost time: 0.4688127040863037
+Epoch: 224, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 13.60it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.56it/s]
+0it [00:00, ?it/s]
+Epoch: 225 cost time: 0.49420881271362305
+Epoch: 225, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.68it/s]
+0it [00:00, ?it/s]
+Epoch: 226 cost time: 0.4741342067718506
+Epoch: 226, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 227 cost time: 0.44709134101867676
+3it [00:00, 14.13it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.66it/s]
+Epoch: 227, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 228 cost time: 0.45249199867248535
+Epoch: 228, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.16it/s]
+0it [00:00, ?it/s]
+Epoch: 229 cost time: 0.45796728134155273
+Epoch: 229, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.82it/s]
+0it [00:00, ?it/s]
+Epoch: 230 cost time: 0.48619890213012695
+Epoch: 230, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 231 cost time: 0.48536014556884766
+Epoch: 231, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.97it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.44it/s]
+Epoch: 232 cost time: 0.4857017993927002
+Epoch: 232, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 12.83it/s]
+0it [00:00, ?it/s]
+Epoch: 233 cost time: 0.4879875183105469
+Epoch: 233, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 234 cost time: 0.4763650894165039
+3it [00:00, 12.93it/s]
+0it [00:00, ?it/s]
+Epoch: 234, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 235 cost time: 0.4830200672149658
+Epoch: 235, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.88it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.92it/s]
+0it [00:00, ?it/s]
+Epoch: 236 cost time: 0.4645097255706787
+Epoch: 236, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.17it/s]
+0it [00:00, ?it/s]
+Epoch: 237 cost time: 0.4859499931335449
+Epoch: 237, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 238 cost time: 0.45226311683654785
+3it [00:00, 14.01it/s]
+0it [00:00, ?it/s]
+2it [00:00, 16.12it/s]
+Epoch: 238, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 239 cost time: 0.47518420219421387
+Epoch: 239, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 13.95it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.09it/s]
+0it [00:00, ?it/s]
+Epoch: 240 cost time: 0.460493803024292
+Epoch: 240, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.92it/s]
+0it [00:00, ?it/s]
+Epoch: 241 cost time: 0.4629862308502197
+Epoch: 241, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 242 cost time: 0.43794918060302734
+Epoch: 242, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.92it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.42it/s]
+Epoch: 243 cost time: 0.4811384677886963
+Epoch: 243, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.89it/s]
+0it [00:00, ?it/s]
+Epoch: 244 cost time: 0.4892237186431885
+Epoch: 244, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 245 cost time: 0.4634983539581299
+3it [00:00, 13.39it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 245, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 246 cost time: 0.4436221122741699
+Epoch: 246, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 14.32it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.71it/s]
+0it [00:00, ?it/s]
+Epoch: 247 cost time: 0.45911574363708496
+Epoch: 247, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.23it/s]
+0it [00:00, ?it/s]
+Epoch: 248 cost time: 0.47553277015686035
+Epoch: 248, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 249 cost time: 0.47647953033447266
+3it [00:00, 14.40it/s]
+0it [00:00, ?it/s]
+2it [00:00, 16.21it/s]
+Epoch: 249, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 250 cost time: 0.46859288215637207
+Epoch: 250, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+3it [00:00, 13.47it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.43it/s]
+0it [00:00, ?it/s]
+Epoch: 251 cost time: 0.46253538131713867
+Epoch: 251, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.47it/s]
+0it [00:00, ?it/s]
+Epoch: 252 cost time: 0.47249460220336914
+Epoch: 252, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 253 cost time: 0.47423887252807617
+Epoch: 253, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.12it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.64it/s]
+Epoch: 254 cost time: 0.4586172103881836
+Epoch: 254, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 14.26it/s]
+0it [00:00, ?it/s]
+Epoch: 255 cost time: 0.46496057510375977
+Epoch: 255, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 256 cost time: 0.4370434284210205
+3it [00:00, 14.13it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 256, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 257 cost time: 0.46105432510375977
+Epoch: 257, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 15.40it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.99it/s]
+0it [00:00, ?it/s]
+Epoch: 258 cost time: 0.42763209342956543
+Epoch: 258, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.73it/s]
+0it [00:00, ?it/s]
+Epoch: 259 cost time: 0.4603614807128906
+Epoch: 259, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 260 cost time: 0.4750854969024658
+Epoch: 260, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.69it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.66it/s]
+0it [00:00, ?it/s]
+Epoch: 261 cost time: 0.4505288600921631
+Epoch: 261, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.39it/s]
+0it [00:00, ?it/s]
+Epoch: 262 cost time: 0.4685525894165039
+Epoch: 262, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 263 cost time: 0.4995887279510498
+3it [00:00, 14.10it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 263, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 264 cost time: 0.47615957260131836
+Epoch: 264, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 13.31it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.73it/s]
+0it [00:00, ?it/s]
+Epoch: 265 cost time: 0.4927208423614502
+Epoch: 265, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.21it/s]
+0it [00:00, ?it/s]
+Epoch: 266 cost time: 0.4655323028564453
+Epoch: 266, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 267 cost time: 0.48987317085266113
+3it [00:00, 13.73it/s]
+0it [00:00, ?it/s]
+2it [00:00, 16.47it/s]
+Epoch: 267, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 268 cost time: 0.4887261390686035
+Epoch: 268, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 13.02it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.48it/s]
+0it [00:00, ?it/s]
+Epoch: 269 cost time: 0.4780557155609131
+Epoch: 269, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.22it/s]
+0it [00:00, ?it/s]
+Epoch: 270 cost time: 0.46259164810180664
+Epoch: 270, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 271 cost time: 0.4741783142089844
+Epoch: 271, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.05it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.38it/s]
+Epoch: 272 cost time: 0.4743540287017822
+Epoch: 272, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.45it/s]
+0it [00:00, ?it/s]
+Epoch: 273 cost time: 0.4668102264404297
+Epoch: 273, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 274 cost time: 0.49672961235046387
+3it [00:00, 13.30it/s]
+0it [00:00, ?it/s]
+Epoch: 274, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 275 cost time: 0.49890899658203125
+Epoch: 275, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.62it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.53it/s]
+Epoch: 276 cost time: 0.438565731048584
+Epoch: 276, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.33it/s]
+0it [00:00, ?it/s]
+Epoch: 277 cost time: 0.43429040908813477
+Epoch: 277, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 278 cost time: 0.47301292419433594
+3it [00:00, 13.41it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 278, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 279 cost time: 0.4838428497314453
+Epoch: 279, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 13.86it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.36it/s]
+0it [00:00, ?it/s]
+Epoch: 280 cost time: 0.4843480587005615
+Epoch: 280, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.10it/s]
+0it [00:00, ?it/s]
+Epoch: 281 cost time: 0.4564933776855469
+Epoch: 281, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 282 cost time: 0.4556858539581299
+Epoch: 282, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.28it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.30it/s]
+Epoch: 283 cost time: 0.45613622665405273
+Epoch: 283, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 15.12it/s]
+0it [00:00, ?it/s]
+Epoch: 284 cost time: 0.44577503204345703
+Epoch: 284, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.83it/s]
+0it [00:00, ?it/s]
+Epoch: 285 cost time: 0.4537210464477539
+Epoch: 285, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 286 cost time: 0.45378947257995605
+Epoch: 286, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.75it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.35it/s]
+0it [00:00, ?it/s]
+Epoch: 287 cost time: 0.46811938285827637
+Epoch: 287, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.82it/s]
+0it [00:00, ?it/s]
+Epoch: 288 cost time: 0.45337867736816406
+Epoch: 288, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 289 cost time: 0.4637787342071533
+3it [00:00, 12.74it/s]
+0it [00:00, ?it/s]
+2it [00:00, 19.12it/s]
+Epoch: 289, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 290 cost time: 0.4449446201324463
+Epoch: 290, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+3it [00:00, 14.11it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.84it/s]
+0it [00:00, ?it/s]
+Epoch: 291 cost time: 0.43288469314575195
+Epoch: 291, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 292 cost time: 0.4529554843902588
+3it [00:00, 13.22it/s]
+0it [00:00, ?it/s]
+Epoch: 292, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 293 cost time: 0.4527556896209717
+Epoch: 293, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.42it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.92it/s]
+0it [00:00, ?it/s]
+Epoch: 294 cost time: 0.4466557502746582
+Epoch: 294, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.95it/s]
+0it [00:00, ?it/s]
+Epoch: 295 cost time: 0.44653892517089844
+Epoch: 295, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 296 cost time: 0.44272470474243164
+Epoch: 296, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.65it/s]
+0it [00:00, ?it/s]
+2it [00:00, 16.67it/s]
+Epoch: 297 cost time: 0.46662211418151855
+Epoch: 297, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 13.64it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.21it/s]
+0it [00:00, ?it/s]
+Epoch: 298 cost time: 0.46830320358276367
+Epoch: 298, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.72it/s]
+0it [00:00, ?it/s]
+Epoch: 299 cost time: 0.4587421417236328
+Epoch: 299, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 300 cost time: 0.4571807384490967
+Epoch: 300, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.34it/s]
+0it [00:00, ?it/s]
+2it [00:00, 15.39it/s]
+Epoch: 301 cost time: 0.46970415115356445
+Epoch: 301, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+3it [00:00, 12.99it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.15it/s]
+0it [00:00, ?it/s]
+Epoch: 302 cost time: 0.4531686305999756
+Epoch: 302, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.71it/s]
+0it [00:00, ?it/s]
+Epoch: 303 cost time: 0.463223934173584
+Epoch: 303, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 304 cost time: 0.46506786346435547
+Epoch: 304, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.98it/s]
+0it [00:00, ?it/s]
+2it [00:00, 15.35it/s]
+Epoch: 305 cost time: 0.49097776412963867
+Epoch: 305, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+3it [00:00, 13.08it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.57it/s]
+0it [00:00, ?it/s]
+Epoch: 306 cost time: 0.4748411178588867
+Epoch: 306, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.79it/s]
+0it [00:00, ?it/s]
+Epoch: 307 cost time: 0.469219446182251
+Epoch: 307, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 308 cost time: 0.46464991569519043
+Epoch: 308, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.47it/s]
+0it [00:00, ?it/s]
+3it [00:00, 19.87it/s]
+Epoch: 309 cost time: 0.4654810428619385
+Epoch: 309, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 14.47it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.91it/s]
+0it [00:00, ?it/s]
+Epoch: 310 cost time: 0.4582083225250244
+Epoch: 310, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.84it/s]
+0it [00:00, ?it/s]
+Epoch: 311 cost time: 0.4420003890991211
+Epoch: 311, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 312 cost time: 0.45954418182373047
+Epoch: 312, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.05it/s]
+0it [00:00, ?it/s]
+3it [00:00, 15.53it/s]
+Epoch: 313 cost time: 0.4553077220916748
+Epoch: 313, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.93it/s]
+0it [00:00, ?it/s]
+Epoch: 314 cost time: 0.45769762992858887
+Epoch: 314, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.37it/s]
+0it [00:00, ?it/s]
+Epoch: 315 cost time: 0.4635601043701172
+Epoch: 315, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 316 cost time: 0.48029303550720215
+Epoch: 316, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.58it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.58it/s]
+Epoch: 317 cost time: 0.4670577049255371
+Epoch: 317, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 14.73it/s]
+0it [00:00, ?it/s]
+Epoch: 318 cost time: 0.46040916442871094
+Epoch: 318, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.95it/s]
+0it [00:00, ?it/s]
+Epoch: 319 cost time: 0.44616079330444336
+Epoch: 319, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 320 cost time: 0.47789645195007324
+Epoch: 320, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.62it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.95it/s]
+Epoch: 321 cost time: 0.46317100524902344
+Epoch: 321, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 14.83it/s]
+0it [00:00, ?it/s]
+Epoch: 322 cost time: 0.4606900215148926
+Epoch: 322, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.26it/s]
+0it [00:00, ?it/s]
+Epoch: 323 cost time: 0.47098255157470703
+Epoch: 323, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 324 cost time: 0.48746657371520996
+Epoch: 324, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.51it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.67it/s]
+Epoch: 325 cost time: 0.4606640338897705
+Epoch: 325, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.36it/s]
+0it [00:00, ?it/s]
+Epoch: 326 cost time: 0.43693971633911133
+Epoch: 326, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.29it/s]
+0it [00:00, ?it/s]
+Epoch: 327 cost time: 0.49607062339782715
+Epoch: 327, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 328 cost time: 0.45594310760498047
+Epoch: 328, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.71it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.88it/s]
+Epoch: 329 cost time: 0.4690375328063965
+Epoch: 329, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 12.41it/s]
+0it [00:00, ?it/s]
+Epoch: 330 cost time: 0.5112428665161133
+Epoch: 330, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.17it/s]
+0it [00:00, ?it/s]
+Epoch: 331 cost time: 0.46173644065856934
+Epoch: 331, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 332 cost time: 0.46428894996643066
+Epoch: 332, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 15.01it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.03it/s]
+Epoch: 333 cost time: 0.49720048904418945
+Epoch: 333, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.47it/s]
+0it [00:00, ?it/s]
+Epoch: 334 cost time: 0.4699687957763672
+Epoch: 334, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 335 cost time: 0.47507762908935547
+3it [00:00, 13.55it/s]
+0it [00:00, ?it/s]
+Epoch: 335, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 336 cost time: 0.4583742618560791
+Epoch: 336, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.62it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.03it/s]
+Epoch: 337 cost time: 0.4864680767059326
+Epoch: 337, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 14.96it/s]
+0it [00:00, ?it/s]
+Epoch: 338 cost time: 0.4600667953491211
+Epoch: 338, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 339 cost time: 0.4440269470214844
+3it [00:00, 14.26it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 339, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 340 cost time: 0.4665391445159912
+Epoch: 340, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 13.12it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.56it/s]
+0it [00:00, ?it/s]
+Epoch: 341 cost time: 0.4771544933319092
+Epoch: 341, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.87it/s]
+0it [00:00, ?it/s]
+Epoch: 342 cost time: 0.44538092613220215
+Epoch: 342, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 343 cost time: 0.4929196834564209
+Epoch: 343, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 344 cost time: 0.4634993076324463
+Epoch: 344, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.30it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.56it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.04it/s]
+0it [00:00, ?it/s]
+Epoch: 345 cost time: 0.4721057415008545
+Epoch: 345, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 346 cost time: 0.4309544563293457
+3it [00:00, 13.85it/s]
+0it [00:00, ?it/s]
+2it [00:00, 14.80it/s]
+Epoch: 346, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 347 cost time: 0.4663851261138916
+Epoch: 347, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.64it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.06it/s]
+0it [00:00, ?it/s]
+Epoch: 348 cost time: 0.46805500984191895
+Epoch: 348, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 349 cost time: 0.4451441764831543
+3it [00:00, 13.32it/s]
+0it [00:00, ?it/s]
+Epoch: 349, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 350 cost time: 0.4426290988922119
+Epoch: 350, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.93it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.35it/s]
+0it [00:00, ?it/s]
+Epoch: 351 cost time: 0.452472448348999
+Epoch: 351, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.20it/s]
+0it [00:00, ?it/s]
+Epoch: 352 cost time: 0.47624707221984863
+Epoch: 352, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 353 cost time: 0.47782182693481445
+Epoch: 353, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.06it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.70it/s]
+0it [00:00, ?it/s]
+Epoch: 354 cost time: 0.4434835910797119
+Epoch: 354, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.20it/s]
+0it [00:00, ?it/s]
+Epoch: 355 cost time: 0.4443225860595703
+Epoch: 355, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 356 cost time: 0.4643819332122803
+Epoch: 356, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.06it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.96it/s]
+Epoch: 357 cost time: 0.4536254405975342
+Epoch: 357, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 11.97it/s]
+0it [00:00, ?it/s]
+Epoch: 358 cost time: 0.501807451248169
+Epoch: 358, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 359 cost time: 0.47882628440856934
+3it [00:00, 13.69it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 359, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 360 cost time: 0.4531991481781006
+Epoch: 360, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 13.52it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.01it/s]
+0it [00:00, ?it/s]
+Epoch: 361 cost time: 0.4750699996948242
+Epoch: 361, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.20it/s]
+0it [00:00, ?it/s]
+Epoch: 362 cost time: 0.4781162738800049
+Epoch: 362, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 363 cost time: 0.4619574546813965
+Epoch: 363, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.64it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.55it/s]
+Epoch: 364 cost time: 0.4532923698425293
+Epoch: 364, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 12.80it/s]
+0it [00:00, ?it/s]
+Epoch: 365 cost time: 0.46355557441711426
+Epoch: 365, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 366 cost time: 0.47866392135620117
+3it [00:00, 13.55it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.77it/s]
+Epoch: 366, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 367 cost time: 0.45841217041015625
+Epoch: 367, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.66it/s]
+0it [00:00, ?it/s]
+Epoch: 368 cost time: 0.44650959968566895
+Epoch: 368, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 369 cost time: 0.45951318740844727
+3it [00:00, 14.86it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 369, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 370 cost time: 0.4779930114746094
+Epoch: 370, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+3it [00:00, 14.14it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.17it/s]
+0it [00:00, ?it/s]
+Epoch: 371 cost time: 0.4507579803466797
+Epoch: 371, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.68it/s]
+0it [00:00, ?it/s]
+Epoch: 372 cost time: 0.45989489555358887
+Epoch: 372, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 373 cost time: 0.4517202377319336
+Epoch: 373, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 15.13it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.57it/s]
+0it [00:00, ?it/s]
+Epoch: 374 cost time: 0.4356060028076172
+Epoch: 374, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.24it/s]
+0it [00:00, ?it/s]
+Epoch: 375 cost time: 0.4460792541503906
+Epoch: 375, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 376 cost time: 0.4545409679412842
+Epoch: 376, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.56it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.19it/s]
+Epoch: 377 cost time: 0.4573390483856201
+Epoch: 377, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.17it/s]
+0it [00:00, ?it/s]
+Epoch: 378 cost time: 0.4382150173187256
+Epoch: 378, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 379 cost time: 0.4379591941833496
+Epoch: 379, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.27it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.70it/s]
+Epoch: 380 cost time: 0.45279788970947266
+Epoch: 380, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.56it/s]
+0it [00:00, ?it/s]
+Epoch: 381 cost time: 0.4742591381072998
+Epoch: 381, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 382 cost time: 0.44083261489868164
+3it [00:00, 13.38it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 382, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 383 cost time: 0.46541762351989746
+Epoch: 383, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 13.02it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.48it/s]
+0it [00:00, ?it/s]
+Epoch: 384 cost time: 0.4423859119415283
+Epoch: 384, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.09it/s]
+0it [00:00, ?it/s]
+Epoch: 385 cost time: 0.47931408882141113
+Epoch: 385, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 386 cost time: 0.4901566505432129
+Epoch: 386, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.15it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.58it/s]
+0it [00:00, ?it/s]
+Epoch: 387 cost time: 0.43961024284362793
+Epoch: 387, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.14it/s]
+0it [00:00, ?it/s]
+Epoch: 388 cost time: 0.4548523426055908
+Epoch: 388, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 389 cost time: 0.47429776191711426
+Epoch: 389, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.11it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.98it/s]
+Epoch: 390 cost time: 0.46581363677978516
+Epoch: 390, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.78it/s]
+0it [00:00, ?it/s]
+Epoch: 391 cost time: 0.4619598388671875
+Epoch: 391, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 392 cost time: 0.4766845703125
+3it [00:00, 12.93it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 392, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 393 cost time: 0.4466516971588135
+Epoch: 393, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 13.01it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.69it/s]
+0it [00:00, ?it/s]
+Epoch: 394 cost time: 0.4629848003387451
+Epoch: 394, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 395 cost time: 0.4457406997680664
+3it [00:00, 13.40it/s]
+0it [00:00, ?it/s]
+Epoch: 395, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 396 cost time: 0.45570850372314453
+Epoch: 396, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.58it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.46it/s]
+0it [00:00, ?it/s]
+Epoch: 397 cost time: 0.4805021286010742
+Epoch: 397, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.65it/s]
+0it [00:00, ?it/s]
+Epoch: 398 cost time: 0.4631011486053467
+Epoch: 398, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 399 cost time: 0.48407840728759766
+Epoch: 399, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.39it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.84it/s]
+Epoch: 400 cost time: 0.43087315559387207
+Epoch: 400, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 12.62it/s]
+0it [00:00, ?it/s]
+Epoch: 401 cost time: 0.47675538063049316
+Epoch: 401, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 402 cost time: 0.4735908508300781
+3it [00:00, 13.29it/s]
+0it [00:00, ?it/s]
+3it [00:00, 19.91it/s]
+Epoch: 402, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 403 cost time: 0.46937084197998047
+Epoch: 403, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+3it [00:00, 14.65it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.90it/s]
+0it [00:00, ?it/s]
+Epoch: 404 cost time: 0.4541168212890625
+Epoch: 404, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 405 cost time: 0.43568873405456543
+3it [00:00, 13.47it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 405, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 406 cost time: 0.4454936981201172
+Epoch: 406, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 13.27it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 407 cost time: 0.46898865699768066
+Epoch: 407, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 408 cost time: 0.47241973876953125
+Epoch: 408, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 409 cost time: 0.4905421733856201
+Epoch: 409, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 13.29it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.52it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.90it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.18it/s]
+Epoch: 410 cost time: 0.43880248069763184
+Epoch: 410, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 14.44it/s]
+0it [00:00, ?it/s]
+Epoch: 411 cost time: 0.4464602470397949
+Epoch: 411, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 412 cost time: 0.4791388511657715
+Epoch: 412, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.28it/s]
+0it [00:00, ?it/s]
+2it [00:00, 15.23it/s]
+Epoch: 413 cost time: 0.456906795501709
+Epoch: 413, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.97it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.48it/s]
+0it [00:00, ?it/s]
+Epoch: 414 cost time: 0.4484529495239258
+Epoch: 414, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 415 cost time: 0.4494514465332031
+3it [00:00, 14.35it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 415, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 416 cost time: 0.4893765449523926
+Epoch: 416, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 12.27it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.62it/s]
+0it [00:00, ?it/s]
+Epoch: 417 cost time: 0.47847843170166016
+Epoch: 417, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.87it/s]
+0it [00:00, ?it/s]
+Epoch: 418 cost time: 0.4682588577270508
+Epoch: 418, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 419 cost time: 0.4576075077056885
+Epoch: 419, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.55it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.97it/s]
+Epoch: 420 cost time: 0.4596402645111084
+Epoch: 420, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.24it/s]
+0it [00:00, ?it/s]
+Epoch: 421 cost time: 0.455857515335083
+Epoch: 421, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 422 cost time: 0.4392404556274414
+Epoch: 422, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.10it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.11it/s]
+Epoch: 423 cost time: 0.44170618057250977
+Epoch: 423, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.29it/s]
+0it [00:00, ?it/s]
+Epoch: 424 cost time: 0.4456961154937744
+Epoch: 424, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 425 cost time: 0.4400637149810791
+Epoch: 425, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.76it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.39it/s]
+Epoch: 426 cost time: 0.4659442901611328
+Epoch: 426, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.57it/s]
+0it [00:00, ?it/s]
+Epoch: 427 cost time: 0.4430844783782959
+Epoch: 427, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 428 cost time: 0.5936355590820312
+3it [00:00,  8.87it/s]
+0it [00:00, ?it/s]
+Epoch: 428, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00,  8.71it/s]
+0it [00:00, ?it/s]
+3it [00:00,  9.10it/s]
+Epoch: 429 cost time: 0.5735819339752197
+Epoch: 429, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 430 cost time: 0.5746657848358154
+Epoch: 430, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00,  8.72it/s]
+0it [00:00, ?it/s]
+Epoch: 431 cost time: 0.5984311103820801
+Epoch: 431, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00,  9.09it/s]
+0it [00:00, ?it/s]
+Epoch: 432 cost time: 0.5743191242218018
+Epoch: 432, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 433 cost time: 0.4617922306060791
+Epoch: 433, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.61it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.36it/s]
+Epoch: 434 cost time: 0.48152685165405273
+Epoch: 434, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00,  8.89it/s]
+0it [00:00, ?it/s]
+Epoch: 435 cost time: 0.5938520431518555
+Epoch: 435, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00,  9.24it/s]
+0it [00:00, ?it/s]
+Epoch: 436 cost time: 0.5775055885314941
+Epoch: 436, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 437 cost time: 0.5832729339599609
+3it [00:00,  8.70it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 437, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 438 cost time: 0.589796781539917
+Epoch: 438, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+3it [00:00,  8.87it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.35it/s]
+0it [00:00, ?it/s]
+Epoch: 439 cost time: 0.4810025691986084
+Epoch: 439, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00,  8.83it/s]
+0it [00:00, ?it/s]
+Epoch: 440 cost time: 0.5665297508239746
+Epoch: 440, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 441 cost time: 0.4613192081451416
+3it [00:00, 12.58it/s]
+0it [00:00, ?it/s]
+Epoch: 441, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 442 cost time: 0.4729142189025879
+Epoch: 442, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.96it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.33it/s]
+0it [00:00, ?it/s]
+Epoch: 443 cost time: 0.44296741485595703
+Epoch: 443, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.34it/s]
+0it [00:00, ?it/s]
+Epoch: 444 cost time: 0.4518733024597168
+Epoch: 444, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 445 cost time: 0.4615600109100342
+Epoch: 445, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.28it/s]
+0it [00:00, ?it/s]
+2it [00:00, 16.81it/s]
+Epoch: 446 cost time: 0.4759945869445801
+Epoch: 446, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+3it [00:00, 13.85it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.84it/s]
+0it [00:00, ?it/s]
+Epoch: 447 cost time: 0.4807257652282715
+Epoch: 447, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.93it/s]
+0it [00:00, ?it/s]
+Epoch: 448 cost time: 0.48777341842651367
+Epoch: 448, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 449 cost time: 0.45577478408813477
+Epoch: 449, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.27it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.27it/s]
+Epoch: 450 cost time: 0.46790075302124023
+Epoch: 450, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.51it/s]
+0it [00:00, ?it/s]
+Epoch: 451 cost time: 0.45894598960876465
+Epoch: 451, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 452 cost time: 0.4698474407196045
+3it [00:00, 14.38it/s]
+0it [00:00, ?it/s]
+2it [00:00, 19.07it/s]
+Epoch: 452, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 453 cost time: 0.4313983917236328
+Epoch: 453, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 14.57it/s]
+0it [00:00, ?it/s]
+3it [00:00, 15.50it/s]
+0it [00:00, ?it/s]
+Epoch: 454 cost time: 0.4338531494140625
+Epoch: 454, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.74it/s]
+0it [00:00, ?it/s]
+Epoch: 455 cost time: 0.4584362506866455
+Epoch: 455, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 456 cost time: 0.47573161125183105
+Epoch: 456, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.73it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.87it/s]
+Epoch: 457 cost time: 0.45708131790161133
+Epoch: 457, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.88it/s]
+0it [00:00, ?it/s]
+Epoch: 458 cost time: 0.4638824462890625
+Epoch: 458, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 459 cost time: 0.48407411575317383
+3it [00:00, 13.38it/s]
+0it [00:00, ?it/s]
+Epoch: 459, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 460 cost time: 0.4670217037200928
+Epoch: 460, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.62it/s]
+0it [00:00, ?it/s]
+3it [00:00, 15.31it/s]
+0it [00:00, ?it/s]
+Epoch: 461 cost time: 0.44251465797424316
+Epoch: 461, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.87it/s]
+0it [00:00, ?it/s]
+Epoch: 462 cost time: 0.493485689163208
+Epoch: 462, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 463 cost time: 0.44956159591674805
+Epoch: 463, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.76it/s]
+0it [00:00, ?it/s]
+2it [00:00, 16.87it/s]
+Epoch: 464 cost time: 0.46497082710266113
+Epoch: 464, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 13.95it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.18it/s]
+0it [00:00, ?it/s]
+Epoch: 465 cost time: 0.4644756317138672
+Epoch: 465, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 466 cost time: 0.4306497573852539
+3it [00:00, 13.56it/s]
+0it [00:00, ?it/s]
+Epoch: 466, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 467 cost time: 0.4676957130432129
+Epoch: 467, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.73it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.64it/s]
+Epoch: 468 cost time: 0.46129560470581055
+Epoch: 468, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.76it/s]
+0it [00:00, ?it/s]
+Epoch: 469 cost time: 0.46973490715026855
+3it [00:00, 13.49it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 469, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 470 cost time: 0.44809556007385254
+Epoch: 470, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 471 cost time: 0.47222423553466797
+Epoch: 471, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 14.60it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.21it/s]
+0it [00:00, ?it/s]
+Epoch: 472 cost time: 0.47791552543640137
+Epoch: 472, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.03it/s]
+0it [00:00, ?it/s]
+Epoch: 473 cost time: 0.4521768093109131
+Epoch: 473, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 474 cost time: 0.4500844478607178
+Epoch: 474, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.73it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.71it/s]
+Epoch: 475 cost time: 0.4519972801208496
+Epoch: 475, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.71it/s]
+0it [00:00, ?it/s]
+Epoch: 476 cost time: 0.48393726348876953
+Epoch: 476, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 477 cost time: 0.44847631454467773
+3it [00:00, 14.50it/s]
+0it [00:00, ?it/s]
+Epoch: 477, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 478 cost time: 0.45000457763671875
+Epoch: 478, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.53it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.94it/s]
+0it [00:00, ?it/s]
+Epoch: 479 cost time: 0.4452691078186035
+Epoch: 479, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.43it/s]
+0it [00:00, ?it/s]
+Epoch: 480 cost time: 0.4970567226409912
+Epoch: 480, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 481 cost time: 0.46303343772888184
+Epoch: 481, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.06it/s]
+0it [00:00, ?it/s]
+2it [00:00, 16.32it/s]
+Epoch: 482 cost time: 0.43970155715942383
+Epoch: 482, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+3it [00:00, 13.50it/s]
+0it [00:00, ?it/s]
+3it [00:00, 12.38it/s]
+0it [00:00, ?it/s]
+Epoch: 483 cost time: 0.4810523986816406
+Epoch: 483, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 484 cost time: 0.44896841049194336
+3it [00:00, 14.40it/s]
+0it [00:00, ?it/s]
+Epoch: 484, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 485 cost time: 0.46919727325439453
+Epoch: 485, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.13it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.10it/s]
+0it [00:00, ?it/s]
+Epoch: 486 cost time: 0.4664609432220459
+Epoch: 486, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.15it/s]
+0it [00:00, ?it/s]
+Epoch: 487 cost time: 0.462510347366333
+Epoch: 487, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 488 cost time: 0.464946985244751
+3it [00:00, 13.48it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 488, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 489 cost time: 0.468203067779541
+Epoch: 489, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+3it [00:00, 12.14it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.56it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.71it/s]
+0it [00:00, ?it/s]
+Epoch: 490 cost time: 0.47073841094970703
+Epoch: 490, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 491 cost time: 0.4742555618286133
+Epoch: 491, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 492 cost time: 0.4770691394805908
+Epoch: 492, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.97it/s]
+0it [00:00, ?it/s]
+3it [00:00, 13.85it/s]
+Epoch: 493 cost time: 0.4564356803894043
+Epoch: 493, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 12.96it/s]
+0it [00:00, ?it/s]
+Epoch: 494 cost time: 0.4450035095214844
+Epoch: 494, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 495 cost time: 0.46422576904296875
+3it [00:00, 12.86it/s]
+0it [00:00, ?it/s]
+Epoch: 495, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 496 cost time: 0.46251821517944336
+Epoch: 496, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.60it/s]
+0it [00:00, ?it/s]
+3it [00:00, 14.21it/s]
+Epoch: 497 cost time: 0.46858668327331543
+Epoch: 497, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]
+3it [00:00, 13.27it/s]
+0it [00:00, ?it/s]
+Epoch: 498 cost time: 0.44788241386413574
+Epoch: 498, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 499 cost time: 0.45400118827819824
+Epoch: 499, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 14.60it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Epoch: 500 cost time: 0.474323034286499
+Epoch: 500, Steps: 3 | Train Loss: nan Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 13.96it/s]
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+Traceback (most recent call last):
+  File "/home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/main.py", line 228, in <module>
+    mse, r2 = test(model, test_data, test_loader, args, device, ii)
+  File "/home/dan/NeurIPS2023-One-Fits-All/Long-term_Forecasting/utils/tools.py", line 329, in test
+    preds = preds.reshape(-1, preds.shape[-2], preds.shape[-1])
+IndexError: tuple index out of range
+------------------------------------
+test shape: (0,) (0,)

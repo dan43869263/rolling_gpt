@@ -7,7 +7,7 @@ for pred_len in 96 192 336 720
 do
 
 python main.py \
-    --root_path ./datasets/traffic/ \
+    --root_path /home/dan/NeurIPS2023-One-Fits-All/datasets/traffic/ \
     --data_path traffic.csv \
     --model_id traffic_$model'_'$gpt_layer'_'$seq_len'_'$pred_len'_'$percent \
     --data custom \

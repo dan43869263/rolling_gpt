@@ -33,8 +33,10 @@ class GPT4TS(nn.Module):
         
         self.in_layer = nn.Linear(configs.patch_size, configs.d_model)
         self.out_layer = nn.Linear(configs.d_model * self.patch_num, configs.pred_len)
+        print('configs.patch_size',configs.patch_size,'configs.d_model',configs.d_model,'configs.d_model * self.patch_num',configs.d_model * self.patch_num,'configs.pred_len',configs.pred_len)
         
-        if configs.freeze and configs.pretrain:
+        #if configs.freeze and configs.pretrain:
+        if configs.pretrain:
             for i, (name, param) in enumerate(self.gpt2.named_parameters()):
                 if 'ln' in name or 'wpe' in name:
                     param.requires_grad = True
@@ -50,6 +52,7 @@ class GPT4TS(nn.Module):
 
     def forward(self, x, itr):
         B, L, M = x.shape
+        print('x',x.shape)
 
         means = x.mean(1, keepdim=True).detach()
         x = x - means
@@ -63,13 +66,18 @@ class GPT4TS(nn.Module):
         x = rearrange(x, 'b m n p -> (b m) n p')
 
         outputs = self.in_layer(x)
+        print('input',outputs.shape)
         if self.is_gpt:
             outputs = self.gpt2(inputs_embeds=outputs).last_hidden_state
 
         outputs = self.out_layer(outputs.reshape(B*M, -1))
+        print('output',outputs.shape)
+        
         outputs = rearrange(outputs, '(b m) l -> b l m', b=B)
+        print('final',outputs.shape)
 
         outputs = outputs * stdev
         outputs = outputs + means
+        print
 
         return outputs

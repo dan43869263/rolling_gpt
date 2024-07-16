@@ -1,0 +1,382 @@
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+train 6066
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+val 774
+['date', 'atq', 'ni', 'dv', 'acc', 'invest', 'mc', 'bm', 'dinvt', 'dar', 'capx', 'gm', 'sga', 'prc', 'ret', 'vol', 'shrout', 'medest', 'meanest', 'value']
+test 1674
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (1): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (2): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (3): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (4): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (5): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+3it [00:01,  2.55it/s]
+1it [00:00, 11.34it/s]
+Epoch: 1 cost time: 1.4454901218414307
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 1, Steps: 3 | Train Loss: 2.1904223 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (inf --> nan).  Saving model ...
+3it [00:00, 13.48it/s]
+1it [00:00, 10.36it/s]
+Epoch: 2 cost time: 0.5865426063537598
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 2, Steps: 3 | Train Loss: 2.1301096 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.49it/s]
+1it [00:00, 10.77it/s]
+Epoch: 3 cost time: 0.5559945106506348
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 3, Steps: 3 | Train Loss: 2.0837742 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.70it/s]
+1it [00:00, 10.63it/s]
+0it [00:00, ?it/s]
+Epoch: 4 cost time: 0.5694172382354736
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 4, Steps: 3 | Train Loss: 2.0546043 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.74it/s]
+1it [00:00, 11.12it/s]
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 5, Steps: 3 | Train Loss: 2.0306711 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 6 cost time: 0.5789811611175537
+val_pred has nan or not: tensor(0, device='cuda:0')
+3it [00:00, 12.14it/s]
+1it [00:00,  9.52it/s]
+2it [00:00, 14.81it/s]
+Epoch: 6, Steps: 3 | Train Loss: 2.0187688 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 7 cost time: 0.5774495601654053
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 7, Steps: 3 | Train Loss: 2.0016360 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 11.46it/s]
+1it [00:00, 11.78it/s]
+3it [00:00, 12.70it/s]
+Epoch: 8 cost time: 0.575955867767334
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 8, Steps: 3 | Train Loss: 2.0031996 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 11.01it/s]
+3it [00:00, 11.83it/s]
+1it [00:00, 10.69it/s]
+Epoch: 9 cost time: 0.5842652320861816
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 9, Steps: 3 | Train Loss: 1.9980745 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.97it/s]
+1it [00:00, 10.62it/s]
+Epoch: 10 cost time: 0.5797841548919678
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 10, Steps: 3 | Train Loss: 1.9959313 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.53it/s]
+1it [00:00, 11.73it/s]
+Epoch: 11 cost time: 0.5754525661468506
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 11, Steps: 3 | Train Loss: 1.9986294 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 12 cost time: 0.5794696807861328
+3it [00:00, 11.73it/s]
+1it [00:00, 10.81it/s]
+2it [00:00, 16.49it/s]
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 12, Steps: 3 | Train Loss: 1.9966290 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 13 cost time: 0.5625436305999756
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 13, Steps: 3 | Train Loss: 2.0060794 Vali Loss: nan
+lr = 0.0000206187
+3it [00:00, 12.91it/s]
+1it [00:00, 10.12it/s]
+3it [00:00, 12.78it/s]
+Epoch: 14 cost time: 0.5596098899841309
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 14, Steps: 3 | Train Loss: 1.9956311 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.88it/s]
+3it [00:00, 12.89it/s]
+1it [00:00, 10.51it/s]
+Epoch: 15 cost time: 0.5646951198577881
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 15, Steps: 3 | Train Loss: 1.9986893 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.49it/s]
+1it [00:00, 10.57it/s]
+Epoch: 16 cost time: 0.5610496997833252
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 16, Steps: 3 | Train Loss: 1.9858541 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.11it/s]
+1it [00:00, 12.03it/s]
+Epoch: 17 cost time: 0.5918495655059814
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 17, Steps: 3 | Train Loss: 1.9742261 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 18 cost time: 0.5654733180999756
+3it [00:00, 12.35it/s]
+1it [00:00, 10.23it/s]
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 18, Steps: 3 | Train Loss: 1.9770804 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 19 cost time: 0.6074974536895752
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 19, Steps: 3 | Train Loss: 1.9661680 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.59it/s]
+1it [00:00, 10.99it/s]
+2it [00:00, 14.95it/s]
+Epoch: 20 cost time: 0.6016218662261963
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 20, Steps: 3 | Train Loss: 1.9610753 Vali Loss: nan
+lr = 0.0001000000
+3it [00:00, 11.45it/s]
+1it [00:00, 11.08it/s]
+3it [00:00, 12.17it/s]
+Epoch: 21 cost time: 0.5834476947784424
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 21, Steps: 3 | Train Loss: 1.9563065 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.29it/s]
+3it [00:00, 13.03it/s]
+1it [00:00, 10.75it/s]
+Epoch: 22 cost time: 0.580712080001831
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 22, Steps: 3 | Train Loss: 1.9500252 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.18it/s]
+1it [00:00, 10.51it/s]
+Epoch: 23 cost time: 0.5927450656890869
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 23, Steps: 3 | Train Loss: 1.9510269 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.76it/s]
+1it [00:00, 10.59it/s]
+Epoch: 24 cost time: 0.5911986827850342
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 24, Steps: 3 | Train Loss: 1.9466614 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.06it/s]
+1it [00:00, 11.31it/s]
+Epoch: 25 cost time: 0.5896000862121582
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 25, Steps: 3 | Train Loss: 1.9491612 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 26 cost time: 0.5846953392028809
+3it [00:00, 13.27it/s]
+1it [00:00, 10.87it/s]
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 26, Steps: 3 | Train Loss: 1.9494965 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 27 cost time: 0.5897278785705566
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 27, Steps: 3 | Train Loss: 1.9431150 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.87it/s]
+1it [00:00, 10.79it/s]
+2it [00:00, 18.49it/s]
+Epoch: 28 cost time: 0.5800752639770508
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 28, Steps: 3 | Train Loss: 1.9465136 Vali Loss: nan
+lr = 0.0000095582
+3it [00:00, 13.12it/s]
+1it [00:00, 10.78it/s]
+3it [00:00, 12.59it/s]
+Epoch: 29 cost time: 0.5777065753936768
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 29, Steps: 3 | Train Loss: 1.9466101 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 10.53it/s]
+3it [00:00, 11.49it/s]
+0it [00:00, ?it/s]
+Epoch: 30 cost time: 0.5994298458099365
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 30, Steps: 3 | Train Loss: 1.9439443 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00, 11.08it/s]
+3it [00:00, 13.21it/s]
+1it [00:00, 11.85it/s]
+Epoch: 31 cost time: 0.5813839435577393
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 31, Steps: 3 | Train Loss: 1.9397891 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 11.07it/s]
+1it [00:00, 10.30it/s]
+Epoch: 32 cost time: 0.6121418476104736
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 32, Steps: 3 | Train Loss: 1.9540691 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.24it/s]
+1it [00:00, 10.69it/s]
+Epoch: 33 cost time: 0.5763254165649414
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 33, Steps: 3 | Train Loss: 1.9465233 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 34 cost time: 0.5941336154937744
+3it [00:00, 12.39it/s]
+1it [00:00,  9.97it/s]
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 34, Steps: 3 | Train Loss: 1.9399610 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+Epoch: 35 cost time: 0.5864503383636475
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 35, Steps: 3 | Train Loss: 1.9461320 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 12.99it/s]
+1it [00:00, 10.90it/s]
+2it [00:00, 15.42it/s]
+Epoch: 36 cost time: 0.5772597789764404
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 36, Steps: 3 | Train Loss: 1.9445245 Vali Loss: nan
+lr = 0.0000654543
+3it [00:00, 12.45it/s]
+1it [00:00, 11.60it/s]
+3it [00:00, 11.81it/s]
+Epoch: 37 cost time: 0.5886609554290771
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 37, Steps: 3 | Train Loss: 1.9376875 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00, 11.75it/s]
+3it [00:00, 13.80it/s]
+1it [00:00, 11.63it/s]
+Epoch: 38 cost time: 0.584120512008667
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 38, Steps: 3 | Train Loss: 1.9438541 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+3it [00:00, 13.52it/s]
+1it [00:00, 10.32it/s]
+Epoch: 39 cost time: 0.5803353786468506
+val_pred has nan or not: tensor(0, device='cuda:0')
+Epoch: 39, Steps: 3 | Train Loss: 1.9427357 Vali Loss: nan
+lr = 0.0000975531

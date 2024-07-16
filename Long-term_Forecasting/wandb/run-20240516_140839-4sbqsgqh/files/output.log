@@ -1,0 +1,8738 @@
+['date', 'atq_1', 'atq_2', 'atq_3', 'ni_1', 'ni_2', 'ni_3', 'dv_1', 'dv_2', 'dv_3', 'acc_1', 'acc_2', 'acc_3', 'invest_1', 'invest_2', 'invest_3', 'mc_1', 'mc_2', 'mc_3', 'bm_1', 'bm_2', 'bm_3', 'dinvt_1', 'dinvt_2', 'dinvt_3', 'dar_1', 'dar_2', 'dar_3', 'capx_1', 'capx_2', 'capx_3', 'gm_1', 'gm_2', 'gm_3', 'sga_1', 'sga_2', 'sga_3', 'prc_1', 'prc_2', 'prc_3', 'ret_1', 'ret_2', 'ret_3', 'vol_1', 'vol_2', 'vol_3', 'shrout_1', 'shrout_2', 'shrout_3', 'medest_1', 'medest_2', 'medest_3', 'meanest_1', 'meanest_2', 'meanest_3', 'value']
+train 92
+['date', 'atq_1', 'atq_2', 'atq_3', 'ni_1', 'ni_2', 'ni_3', 'dv_1', 'dv_2', 'dv_3', 'acc_1', 'acc_2', 'acc_3', 'invest_1', 'invest_2', 'invest_3', 'mc_1', 'mc_2', 'mc_3', 'bm_1', 'bm_2', 'bm_3', 'dinvt_1', 'dinvt_2', 'dinvt_3', 'dar_1', 'dar_2', 'dar_3', 'capx_1', 'capx_2', 'capx_3', 'gm_1', 'gm_2', 'gm_3', 'sga_1', 'sga_2', 'sga_3', 'prc_1', 'prc_2', 'prc_3', 'ret_1', 'ret_2', 'ret_3', 'vol_1', 'vol_2', 'vol_3', 'shrout_1', 'shrout_2', 'shrout_3', 'medest_1', 'medest_2', 'medest_3', 'meanest_1', 'meanest_2', 'meanest_3', 'value']
+val 8
+['date', 'atq_1', 'atq_2', 'atq_3', 'ni_1', 'ni_2', 'ni_3', 'dv_1', 'dv_2', 'dv_3', 'acc_1', 'acc_2', 'acc_3', 'invest_1', 'invest_2', 'invest_3', 'mc_1', 'mc_2', 'mc_3', 'bm_1', 'bm_2', 'bm_3', 'dinvt_1', 'dinvt_2', 'dinvt_3', 'dar_1', 'dar_2', 'dar_3', 'capx_1', 'capx_2', 'capx_3', 'gm_1', 'gm_2', 'gm_3', 'sga_1', 'sga_2', 'sga_3', 'prc_1', 'prc_2', 'prc_3', 'ret_1', 'ret_2', 'ret_3', 'vol_1', 'vol_2', 'vol_3', 'shrout_1', 'shrout_2', 'shrout_3', 'medest_1', 'medest_2', 'medest_3', 'meanest_1', 'meanest_2', 'meanest_3', 'value']
+test 23
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (1): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (2): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (3): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (4): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (5): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+0it [00:00, ?it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+
+1it [00:05,  5.02s/it]
+Epoch: 1 cost time: 5.392382621765137
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 1, Steps: 1 | Train Loss: 0.0717252 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (inf --> nan).  Saving model ...
+1it [00:00,  7.94it/s]
+1it [00:00,  3.24it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 2 cost time: 0.813096284866333
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 2, Steps: 1 | Train Loss: 0.0681427 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  7.63it/s]
+1it [00:00,  4.33it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 3 cost time: 0.8178970813751221
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 3, Steps: 1 | Train Loss: 0.0581985 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.20it/s]
+1it [00:00,  6.91it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 4 cost time: 0.8295290470123291
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 4, Steps: 1 | Train Loss: 0.0569686 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.27it/s]
+1it [00:00,  7.76it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 5 cost time: 0.8305377960205078
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 5, Steps: 1 | Train Loss: 0.0499298 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.26it/s]
+1it [00:00,  7.49it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 6 cost time: 0.8229179382324219
+1it [00:00,  3.30it/s]
+1it [00:00,  7.87it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 6, Steps: 1 | Train Loss: 0.0537713 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 7 cost time: 0.8472154140472412
+1it [00:00,  3.18it/s]
+1it [00:00,  7.10it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 7, Steps: 1 | Train Loss: 0.0501331 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 8 cost time: 0.8195145130157471
+1it [00:00,  3.24it/s]
+1it [00:00,  6.91it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 8, Steps: 1 | Train Loss: 0.0552809 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.16it/s]
+Epoch: 9 cost time: 0.8315718173980713
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 9, Steps: 1 | Train Loss: 0.0460514 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  6.94it/s]
+1it [00:00,  3.36it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 10 cost time: 0.8442168235778809
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 10, Steps: 1 | Train Loss: 0.0481900 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  7.29it/s]
+1it [00:00,  4.37it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 11 cost time: 0.8315129280090332
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 11, Steps: 1 | Train Loss: 0.0517213 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.27it/s]
+1it [00:00,  7.21it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 12 cost time: 0.8316705226898193
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 12, Steps: 1 | Train Loss: 0.0483520 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.27it/s]
+1it [00:00,  7.72it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 13 cost time: 0.8385970592498779
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 13, Steps: 1 | Train Loss: 0.0473594 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.08it/s]
+1it [00:00,  7.81it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 14 cost time: 0.8339476585388184
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+1it [00:00,  3.31it/s]
+1it [00:00,  7.96it/s]
+Epoch: 14, Steps: 1 | Train Loss: 0.0476683 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 15 cost time: 0.8686859607696533
+1it [00:00,  3.07it/s]
+1it [00:00,  6.88it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 15, Steps: 1 | Train Loss: 0.0474103 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 16 cost time: 0.8385324478149414
+1it [00:00,  3.12it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 16, Steps: 1 | Train Loss: 0.0434359 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  7.42it/s]
+1it [00:00,  3.40it/s]
+Epoch: 17 cost time: 0.811884880065918
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 17, Steps: 1 | Train Loss: 0.0490332 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  7.41it/s]
+1it [00:00,  3.27it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 18 cost time: 0.8320052623748779
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 18, Steps: 1 | Train Loss: 0.0471029 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  7.70it/s]
+1it [00:00,  4.55it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 19 cost time: 0.8155546188354492
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 19, Steps: 1 | Train Loss: 0.0407923 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.35it/s]
+1it [00:00,  7.78it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 20 cost time: 0.812490701675415
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 20, Steps: 1 | Train Loss: 0.0404613 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  3.36it/s]
+1it [00:00,  8.57it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 21 cost time: 0.8345208168029785
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 21, Steps: 1 | Train Loss: 0.0436603 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.16it/s]
+1it [00:00,  6.48it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 22 cost time: 0.8241093158721924
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+1it [00:00,  3.41it/s]
+1it [00:00,  7.80it/s]
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 22, Steps: 1 | Train Loss: 0.0472456 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 23 cost time: 0.8122947216033936
+1it [00:00,  3.22it/s]
+1it [00:00,  7.16it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 23, Steps: 1 | Train Loss: 0.0411616 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 24 cost time: 0.8248751163482666
+1it [00:00,  3.15it/s]
+1it [00:00,  7.28it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 24, Steps: 1 | Train Loss: 0.0392077 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.28it/s]
+Epoch: 25 cost time: 0.8361525535583496
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 25, Steps: 1 | Train Loss: 0.0472184 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  8.10it/s]
+1it [00:00,  3.13it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 26 cost time: 0.8376996517181396
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 26, Steps: 1 | Train Loss: 0.0474722 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  7.70it/s]
+1it [00:00,  3.47it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 27 cost time: 0.8072812557220459
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 27, Steps: 1 | Train Loss: 0.0445731 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  6.70it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 28 cost time: 0.8236997127532959
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 28, Steps: 1 | Train Loss: 0.0411301 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.22it/s]
+1it [00:00,  7.59it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 29 cost time: 0.8207271099090576
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 29, Steps: 1 | Train Loss: 0.0460749 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.19it/s]
+1it [00:00,  8.33it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 30 cost time: 0.8062870502471924
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 30, Steps: 1 | Train Loss: 0.0412122 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.38it/s]
+1it [00:00,  8.76it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 31 cost time: 0.8138525485992432
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+1it [00:00,  3.18it/s]
+1it [00:00,  8.77it/s]
+Epoch: 31, Steps: 1 | Train Loss: 0.0436507 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 32 cost time: 0.8308315277099609
+1it [00:00,  3.19it/s]
+1it [00:00,  7.27it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 32, Steps: 1 | Train Loss: 0.0444570 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 33 cost time: 0.8241112232208252
+1it [00:00,  3.37it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 33, Steps: 1 | Train Loss: 0.0433599 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  7.56it/s]
+1it [00:00,  3.16it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 34 cost time: 0.8682796955108643
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 34, Steps: 1 | Train Loss: 0.0439716 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  7.60it/s]
+1it [00:00,  3.13it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 35 cost time: 0.8234586715698242
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 35, Steps: 1 | Train Loss: 0.0435078 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  7.07it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 36 cost time: 0.7960412502288818
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 36, Steps: 1 | Train Loss: 0.0469088 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.41it/s]
+1it [00:00,  7.97it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 37 cost time: 0.8403823375701904
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 37, Steps: 1 | Train Loss: 0.0416985 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.15it/s]
+1it [00:00,  7.82it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 38 cost time: 0.8204259872436523
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 38, Steps: 1 | Train Loss: 0.0415945 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.31it/s]
+1it [00:00,  7.86it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 39 cost time: 0.8381466865539551
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+1it [00:00,  3.21it/s]
+1it [00:00,  6.42it/s]
+Epoch: 39, Steps: 1 | Train Loss: 0.0383797 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 40 cost time: 0.821528434753418
+1it [00:00,  3.23it/s]
+1it [00:00,  6.64it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 40, Steps: 1 | Train Loss: 0.0453634 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 41 cost time: 0.840745210647583
+1it [00:00,  3.19it/s]
+1it [00:00,  7.25it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 41, Steps: 1 | Train Loss: 0.0406291 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.19it/s]
+Epoch: 42 cost time: 0.8370707035064697
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 42, Steps: 1 | Train Loss: 0.0386318 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  7.16it/s]
+1it [00:00,  3.42it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 43 cost time: 0.7976524829864502
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 43, Steps: 1 | Train Loss: 0.0392162 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  7.44it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 44 cost time: 0.8296101093292236
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 44, Steps: 1 | Train Loss: 0.0368541 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.45it/s]
+1it [00:00,  7.02it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 45 cost time: 0.8241229057312012
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 45, Steps: 1 | Train Loss: 0.0408333 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.17it/s]
+1it [00:00,  7.73it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 46 cost time: 0.8523869514465332
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 46, Steps: 1 | Train Loss: 0.0364623 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.13it/s]
+1it [00:00,  8.28it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 47 cost time: 0.8228516578674316
+1it [00:00,  3.44it/s]
+1it [00:00,  7.14it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 47, Steps: 1 | Train Loss: 0.0408653 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 48 cost time: 0.8248462677001953
+1it [00:00,  3.28it/s]
+1it [00:00,  7.18it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 48, Steps: 1 | Train Loss: 0.0393228 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.24it/s]
+0it [00:00, ?it/s]
+Epoch: 49 cost time: 0.8568935394287109
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 49, Steps: 1 | Train Loss: 0.0346681 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  7.10it/s]
+1it [00:00,  3.15it/s]
+Epoch: 50 cost time: 0.8188214302062988
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 50, Steps: 1 | Train Loss: 0.0388537 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  6.17it/s]
+1it [00:00,  4.34it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 51 cost time: 0.8390967845916748
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 51, Steps: 1 | Train Loss: 0.0371473 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  7.32it/s]
+1it [00:00,  7.32it/s]
+0it [00:00, ?it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 52 cost time: 0.8275058269500732
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 52, Steps: 1 | Train Loss: 0.0411610 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.28it/s]
+1it [00:00,  7.36it/s]
+1it [00:00,  3.28it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 53 cost time: 0.8143463134765625
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 53, Steps: 1 | Train Loss: 0.0393720 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.31it/s]
+1it [00:00,  7.33it/s]
+1it [00:00,  3.31it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 54 cost time: 0.8294329643249512
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+1it [00:00,  3.24it/s]
+1it [00:00,  7.02it/s]
+1it [00:00,  3.24it/s]
+Epoch: 54, Steps: 1 | Train Loss: 0.0366342 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.34it/s]
+1it [00:00,  7.56it/s]
+1it [00:00,  3.34it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 55, Steps: 1 | Train Loss: 0.0402724 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  2.89it/s]
+0it [00:00, ?it/s]
+1it [00:00,  2.89it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 56, Steps: 1 | Train Loss: 0.0359923 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.40it/s]
+1it [00:00,  3.40it/s]
+Epoch: 57 cost time: 0.8242719173431396
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 57, Steps: 1 | Train Loss: 0.0376624 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.48it/s]
+1it [00:00,  3.48it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 58 cost time: 0.8034851551055908
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 58, Steps: 1 | Train Loss: 0.0388459 Vali Loss: nan
+lr = 0.0000904518
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 59 cost time: 0.834829568862915
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 59, Steps: 1 | Train Loss: 0.0414774 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 60 cost time: 0.8343212604522705
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 60, Steps: 1 | Train Loss: 0.0375961 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  3.40it/s]
+1it [00:00,  3.40it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 61 cost time: 0.8528990745544434
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+1it [00:00,  3.12it/s]
+1it [00:00,  3.12it/s]
+Epoch: 61, Steps: 1 | Train Loss: 0.0336725 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.16it/s]
+1it [00:00,  3.16it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 62, Steps: 1 | Train Loss: 0.0382908 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.28it/s]
+1it [00:00,  3.28it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 63, Steps: 1 | Train Loss: 0.0364856 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.46it/s]
+1it [00:00,  3.46it/s]
+Epoch: 64 cost time: 0.8136918544769287
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 64, Steps: 1 | Train Loss: 0.0353411 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.16it/s]
+1it [00:00,  3.16it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 65 cost time: 0.8407192230224609
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 65, Steps: 1 | Train Loss: 0.0330464 Vali Loss: nan
+lr = 0.0000500050
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 66 cost time: 0.8208749294281006
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 66, Steps: 1 | Train Loss: 0.0379555 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.24it/s]
+1it [00:00,  3.24it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 67 cost time: 0.8396949768066406
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 67, Steps: 1 | Train Loss: 0.0312385 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.19it/s]
+1it [00:00,  3.19it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 68 cost time: 0.8219232559204102
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 68, Steps: 1 | Train Loss: 0.0346045 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.16it/s]
+1it [00:00,  3.16it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.23it/s]
+1it [00:00,  3.23it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 69, Steps: 1 | Train Loss: 0.0343557 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.06it/s]
+1it [00:00,  3.06it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 70, Steps: 1 | Train Loss: 0.0345718 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.38it/s]
+1it [00:00,  3.38it/s]
+Epoch: 71 cost time: 0.8163449764251709
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 71, Steps: 1 | Train Loss: 0.0377469 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.37it/s]
+1it [00:00,  3.37it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 72 cost time: 0.8322594165802002
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 72, Steps: 1 | Train Loss: 0.0308999 Vali Loss: nan
+lr = 0.0000095582
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 73 cost time: 0.8322794437408447
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 73, Steps: 1 | Train Loss: 0.0358861 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.34it/s]
+1it [00:00,  3.34it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 74 cost time: 0.8153316974639893
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 74, Steps: 1 | Train Loss: 0.0369048 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.25it/s]
+1it [00:00,  3.25it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 75 cost time: 0.8283190727233887
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 75, Steps: 1 | Train Loss: 0.0368328 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.28it/s]
+1it [00:00,  3.28it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 76 cost time: 0.8389475345611572
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+1it [00:00,  3.23it/s]
+1it [00:00,  3.23it/s]
+Epoch: 76, Steps: 1 | Train Loss: 0.0364104 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.19it/s]
+1it [00:00,  3.19it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 77, Steps: 1 | Train Loss: 0.0341576 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.43it/s]
+1it [00:00,  3.43it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 78, Steps: 1 | Train Loss: 0.0347328 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.07it/s]
+1it [00:00,  3.07it/s]
+Epoch: 79 cost time: 0.8536458015441895
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 79, Steps: 1 | Train Loss: 0.0377308 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.37it/s]
+1it [00:00,  3.37it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 80 cost time: 0.8280429840087891
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 80, Steps: 1 | Train Loss: 0.0359908 Vali Loss: nan
+lr = 0.0001000000
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 81 cost time: 0.830378532409668
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 81, Steps: 1 | Train Loss: 0.0364911 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.30it/s]
+1it [00:00,  3.30it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 82 cost time: 0.8712403774261475
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 82, Steps: 1 | Train Loss: 0.0354169 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.12it/s]
+1it [00:00,  3.12it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 83 cost time: 0.8148388862609863
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 83, Steps: 1 | Train Loss: 0.0343859 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.24it/s]
+1it [00:00,  3.24it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 84 cost time: 0.8330686092376709
+1it [00:00,  3.24it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 84, Steps: 1 | Train Loss: 0.0344471 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.05it/s]
+1it [00:00,  3.05it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 85, Steps: 1 | Train Loss: 0.0295609 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.20it/s]
+1it [00:00,  3.20it/s]
+Epoch: 86 cost time: 0.8168497085571289
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 86, Steps: 1 | Train Loss: 0.0317723 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.24it/s]
+1it [00:00,  3.24it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 87 cost time: 0.8252580165863037
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 87, Steps: 1 | Train Loss: 0.0343527 Vali Loss: nan
+lr = 0.0000206187
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 88 cost time: 0.798504114151001
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 88, Steps: 1 | Train Loss: 0.0358650 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.49it/s]
+1it [00:00,  3.49it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 89 cost time: 0.8290688991546631
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 89, Steps: 1 | Train Loss: 0.0356368 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.29it/s]
+1it [00:00,  3.29it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 90 cost time: 0.8489606380462646
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 90, Steps: 1 | Train Loss: 0.0356187 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  3.10it/s]
+1it [00:00,  3.10it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 91 cost time: 0.8427202701568604
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+1it [00:00,  3.18it/s]
+1it [00:00,  3.18it/s]
+Epoch: 91, Steps: 1 | Train Loss: 0.0322329 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.19it/s]
+1it [00:00,  3.19it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 92, Steps: 1 | Train Loss: 0.0298952 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.20it/s]
+1it [00:00,  3.20it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 93, Steps: 1 | Train Loss: 0.0338361 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.24it/s]
+1it [00:00,  3.24it/s]
+Epoch: 94 cost time: 0.8475971221923828
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 94, Steps: 1 | Train Loss: 0.0324662 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.28it/s]
+1it [00:00,  3.28it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 95 cost time: 0.828378438949585
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 95, Steps: 1 | Train Loss: 0.0330575 Vali Loss: nan
+lr = 0.0000500050
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 96 cost time: 0.8231000900268555
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 96, Steps: 1 | Train Loss: 0.0314906 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.17it/s]
+1it [00:00,  3.17it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 97 cost time: 0.8336975574493408
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 97, Steps: 1 | Train Loss: 0.0317374 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 98 cost time: 0.8235921859741211
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 98, Steps: 1 | Train Loss: 0.0343435 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.27it/s]
+1it [00:00,  3.27it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 99 cost time: 0.8089838027954102
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 99, Steps: 1 | Train Loss: 0.0328681 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.48it/s]
+1it [00:00,  3.48it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.24it/s]
+1it [00:00,  3.24it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 100, Steps: 1 | Train Loss: 0.0342420 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.30it/s]
+1it [00:00,  3.30it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 101, Steps: 1 | Train Loss: 0.0338610 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.36it/s]
+1it [00:00,  3.36it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 102, Steps: 1 | Train Loss: 0.0296116 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.20it/s]
+1it [00:00,  3.20it/s]
+Epoch: 103 cost time: 0.8229129314422607
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 103, Steps: 1 | Train Loss: 0.0295811 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.23it/s]
+1it [00:00,  3.23it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 104 cost time: 0.8367602825164795
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 104, Steps: 1 | Train Loss: 0.0348682 Vali Loss: nan
+lr = 0.0000654543
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 105 cost time: 0.8169460296630859
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 105, Steps: 1 | Train Loss: 0.0341028 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.40it/s]
+1it [00:00,  3.40it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 106 cost time: 0.8537838459014893
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 106, Steps: 1 | Train Loss: 0.0328207 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  2.92it/s]
+1it [00:00,  2.92it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 107 cost time: 0.8395497798919678
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 107, Steps: 1 | Train Loss: 0.0327282 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.29it/s]
+1it [00:00,  3.29it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 108 cost time: 0.8038656711578369
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 108, Steps: 1 | Train Loss: 0.0310335 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.42it/s]
+1it [00:00,  3.42it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.37it/s]
+1it [00:00,  3.37it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 109, Steps: 1 | Train Loss: 0.0324528 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.35it/s]
+1it [00:00,  3.35it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 110, Steps: 1 | Train Loss: 0.0301487 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.23it/s]
+1it [00:00,  3.23it/s]
+Epoch: 111 cost time: 0.825650691986084
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 111, Steps: 1 | Train Loss: 0.0320698 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.39it/s]
+1it [00:00,  3.39it/s]
+Epoch: 112 cost time: 0.8367149829864502
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 112, Steps: 1 | Train Loss: 0.0314892 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  4.33it/s]
+1it [00:00,  4.33it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 113 cost time: 0.8296093940734863
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 113, Steps: 1 | Train Loss: 0.0316686 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.19it/s]
+1it [00:00,  3.19it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 114 cost time: 0.8315508365631104
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 114, Steps: 1 | Train Loss: 0.0293824 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.25it/s]
+1it [00:00,  3.25it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 115 cost time: 0.8209290504455566
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 115, Steps: 1 | Train Loss: 0.0321356 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.30it/s]
+1it [00:00,  3.30it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 116 cost time: 0.8341169357299805
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 116, Steps: 1 | Train Loss: 0.0312825 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.23it/s]
+1it [00:00,  3.23it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.19it/s]
+1it [00:00,  3.19it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 117, Steps: 1 | Train Loss: 0.0300109 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.01it/s]
+1it [00:00,  3.01it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 118, Steps: 1 | Train Loss: 0.0326035 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.26it/s]
+1it [00:00,  3.26it/s]
+Epoch: 119 cost time: 0.81919264793396
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 119, Steps: 1 | Train Loss: 0.0316789 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+1it [00:00,  3.37it/s]
+L 18
+M 54
+Epoch: 120 cost time: 0.8082053661346436
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 120, Steps: 1 | Train Loss: 0.0305169 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  4.34it/s]
+1it [00:00,  4.34it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 121 cost time: 0.8302528858184814
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 121, Steps: 1 | Train Loss: 0.0303185 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.20it/s]
+1it [00:00,  3.20it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 122 cost time: 0.8490183353424072
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 122, Steps: 1 | Train Loss: 0.0321052 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.06it/s]
+1it [00:00,  3.06it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 123 cost time: 0.8565108776092529
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 123, Steps: 1 | Train Loss: 0.0336932 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.10it/s]
+1it [00:00,  3.10it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 124 cost time: 0.8374669551849365
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 124, Steps: 1 | Train Loss: 0.0312829 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.24it/s]
+1it [00:00,  3.24it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.12it/s]
+1it [00:00,  3.12it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 125, Steps: 1 | Train Loss: 0.0327762 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.34it/s]
+1it [00:00,  3.34it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 126, Steps: 1 | Train Loss: 0.0314459 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.16it/s]
+1it [00:00,  3.16it/s]
+Epoch: 127 cost time: 0.8512969017028809
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 127, Steps: 1 | Train Loss: 0.0273158 Vali Loss: nan
+lr = 0.0000206187
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 128 cost time: 0.8851022720336914
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 128, Steps: 1 | Train Loss: 0.0305897 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.13it/s]
+1it [00:00,  3.13it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 129 cost time: 0.8373446464538574
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 129, Steps: 1 | Train Loss: 0.0271433 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.26it/s]
+1it [00:00,  3.26it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 130 cost time: 0.8499031066894531
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 130, Steps: 1 | Train Loss: 0.0297691 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  3.16it/s]
+1it [00:00,  3.16it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 131 cost time: 0.8573598861694336
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+1it [00:00,  3.31it/s]
+1it [00:00,  3.31it/s]
+Epoch: 131, Steps: 1 | Train Loss: 0.0304558 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.04it/s]
+1it [00:00,  3.04it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 132, Steps: 1 | Train Loss: 0.0266536 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.29it/s]
+1it [00:00,  3.29it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 133, Steps: 1 | Train Loss: 0.0292863 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.31it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 134 cost time: 0.8343198299407959
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 134, Steps: 1 | Train Loss: 0.0291777 Vali Loss: nan
+lr = 0.0000345557
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 135 cost time: 0.8401246070861816
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 135, Steps: 1 | Train Loss: 0.0282708 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.32it/s]
+1it [00:00,  3.32it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 136 cost time: 0.8726978302001953
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 136, Steps: 1 | Train Loss: 0.0288989 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.15it/s]
+1it [00:00,  3.15it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 137 cost time: 0.8619582653045654
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 137, Steps: 1 | Train Loss: 0.0329830 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.15it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 138 cost time: 0.8832314014434814
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+1it [00:00,  3.03it/s]
+1it [00:00,  3.03it/s]
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 138, Steps: 1 | Train Loss: 0.0287402 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.12it/s]
+1it [00:00,  3.12it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 139, Steps: 1 | Train Loss: 0.0287124 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.35it/s]
+1it [00:00,  3.35it/s]
+Epoch: 140 cost time: 0.8455140590667725
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 140, Steps: 1 | Train Loss: 0.0284071 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  3.26it/s]
+1it [00:00,  3.26it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 141 cost time: 0.8168480396270752
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 141, Steps: 1 | Train Loss: 0.0315498 Vali Loss: nan
+lr = 0.0000975531
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 142 cost time: 0.8044750690460205
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 142, Steps: 1 | Train Loss: 0.0283484 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.39it/s]
+1it [00:00,  3.39it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 143 cost time: 0.824845552444458
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 143, Steps: 1 | Train Loss: 0.0276683 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.26it/s]
+1it [00:00,  3.26it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 144 cost time: 0.8693037033081055
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 144, Steps: 1 | Train Loss: 0.0273719 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.12it/s]
+1it [00:00,  3.12it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 145 cost time: 0.8273582458496094
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+1it [00:00,  3.13it/s]
+pred tensor([])
+true tensor([])
+Epoch: 145, Steps: 1 | Train Loss: 0.0280030 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.08it/s]
+1it [00:00,  3.08it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 146, Steps: 1 | Train Loss: 0.0301960 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  2.95it/s]
+1it [00:00,  2.95it/s]
+Epoch: 147 cost time: 0.8879795074462891
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 147, Steps: 1 | Train Loss: 0.0272537 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  4.40it/s]
+1it [00:00,  4.40it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 148 cost time: 0.8464305400848389
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 148, Steps: 1 | Train Loss: 0.0328184 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.18it/s]
+1it [00:00,  3.18it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 149 cost time: 0.8310737609863281
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 149, Steps: 1 | Train Loss: 0.0300595 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.26it/s]
+1it [00:00,  3.26it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 150 cost time: 0.8200442790985107
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 150, Steps: 1 | Train Loss: 0.0311250 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  3.27it/s]
+1it [00:00,  3.27it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 151 cost time: 0.8428196907043457
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 151, Steps: 1 | Train Loss: 0.0266493 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.19it/s]
+1it [00:00,  3.19it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.17it/s]
+1it [00:00,  3.17it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 152, Steps: 1 | Train Loss: 0.0301489 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.08it/s]
+1it [00:00,  3.08it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 153, Steps: 1 | Train Loss: 0.0268959 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.48it/s]
+1it [00:00,  3.48it/s]
+Epoch: 154 cost time: 0.8003344535827637
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 154, Steps: 1 | Train Loss: 0.0282823 Vali Loss: nan
+lr = 0.0000345557
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 155 cost time: 0.8060503005981445
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 155, Steps: 1 | Train Loss: 0.0285528 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.24it/s]
+1it [00:00,  3.24it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 156 cost time: 0.8408424854278564
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 156, Steps: 1 | Train Loss: 0.0265841 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.24it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 157 cost time: 0.8341360092163086
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 157, Steps: 1 | Train Loss: 0.0272395 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.22it/s]
+1it [00:00,  3.22it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 158 cost time: 0.8245940208435059
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+1it [00:00,  3.35it/s]
+1it [00:00,  3.35it/s]
+Epoch: 158, Steps: 1 | Train Loss: 0.0287216 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.50it/s]
+1it [00:00,  3.50it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 159, Steps: 1 | Train Loss: 0.0277767 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.41it/s]
+1it [00:00,  3.41it/s]
+Epoch: 160 cost time: 0.8108294010162354
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 160, Steps: 1 | Train Loss: 0.0303546 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  3.07it/s]
+1it [00:00,  3.07it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 161 cost time: 0.8384153842926025
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 161, Steps: 1 | Train Loss: 0.0271082 Vali Loss: nan
+lr = 0.0000975531
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 162 cost time: 0.8499932289123535
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 162, Steps: 1 | Train Loss: 0.0283307 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.06it/s]
+1it [00:00,  3.06it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 163 cost time: 0.8730554580688477
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 163, Steps: 1 | Train Loss: 0.0268020 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.08it/s]
+1it [00:00,  3.08it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 164 cost time: 0.8439145088195801
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+1it [00:00,  3.27it/s]
+1it [00:00,  3.27it/s]
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 164, Steps: 1 | Train Loss: 0.0268978 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.22it/s]
+1it [00:00,  3.22it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 165, Steps: 1 | Train Loss: 0.0276246 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.23it/s]
+1it [00:00,  3.23it/s]
+Epoch: 166 cost time: 0.8281276226043701
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 166, Steps: 1 | Train Loss: 0.0271983 Vali Loss: nan
+lr = 0.0000345557
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 167 cost time: 0.8766078948974609
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 167, Steps: 1 | Train Loss: 0.0264147 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.02it/s]
+1it [00:00,  3.02it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 168 cost time: 0.8464386463165283
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 168, Steps: 1 | Train Loss: 0.0269362 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.16it/s]
+1it [00:00,  3.16it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 169 cost time: 0.8717880249023438
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+1it [00:00,  3.09it/s]
+1it [00:00,  3.09it/s]
+Epoch: 169, Steps: 1 | Train Loss: 0.0257350 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 170 cost time: 0.8530464172363281
+1it [00:00,  3.09it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 170, Steps: 1 | Train Loss: 0.0307302 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.19it/s]
+1it [00:00,  3.19it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 171, Steps: 1 | Train Loss: 0.0286188 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.24it/s]
+1it [00:00,  3.24it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 172 cost time: 0.8229143619537354
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 172, Steps: 1 | Train Loss: 0.0290496 Vali Loss: nan
+lr = 0.0000095582
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 173 cost time: 0.8278098106384277
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 173, Steps: 1 | Train Loss: 0.0285127 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.26it/s]
+1it [00:00,  3.26it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 174 cost time: 0.8440558910369873
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 174, Steps: 1 | Train Loss: 0.0260237 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.16it/s]
+1it [00:00,  3.16it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 175 cost time: 0.8249993324279785
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 175, Steps: 1 | Train Loss: 0.0275116 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.19it/s]
+1it [00:00,  3.19it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.12it/s]
+1it [00:00,  3.12it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 176, Steps: 1 | Train Loss: 0.0243888 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.26it/s]
+1it [00:00,  3.26it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 177, Steps: 1 | Train Loss: 0.0291069 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.29it/s]
+1it [00:00,  3.29it/s]
+Epoch: 178 cost time: 0.8245809078216553
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 178, Steps: 1 | Train Loss: 0.0270541 Vali Loss: nan
+lr = 0.0000904518
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 179 cost time: 0.8563718795776367
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 179, Steps: 1 | Train Loss: 0.0271174 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 180 cost time: 0.8275573253631592
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 180, Steps: 1 | Train Loss: 0.0275209 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  3.25it/s]
+1it [00:00,  3.25it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 181 cost time: 0.8123147487640381
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 181, Steps: 1 | Train Loss: 0.0248318 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.36it/s]
+1it [00:00,  3.36it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 182 cost time: 0.8716168403625488
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 182, Steps: 1 | Train Loss: 0.0255768 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.06it/s]
+1it [00:00,  3.06it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 183, Steps: 1 | Train Loss: 0.0266544 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.22it/s]
+1it [00:00,  3.22it/s]
+Epoch: 184 cost time: 0.8255014419555664
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 184, Steps: 1 | Train Loss: 0.0254512 Vali Loss: nan
+lr = 0.0000654543
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 185 cost time: 0.8354859352111816
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 185, Steps: 1 | Train Loss: 0.0264900 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.32it/s]
+1it [00:00,  3.32it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 186 cost time: 0.8705928325653076
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 186, Steps: 1 | Train Loss: 0.0251010 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.06it/s]
+1it [00:00,  3.06it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 187 cost time: 0.8606524467468262
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 187, Steps: 1 | Train Loss: 0.0245156 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.20it/s]
+1it [00:00,  3.20it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 188 cost time: 0.8445863723754883
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 188, Steps: 1 | Train Loss: 0.0253211 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.34it/s]
+1it [00:00,  3.34it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.07it/s]
+1it [00:00,  3.07it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 189, Steps: 1 | Train Loss: 0.0256897 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  2.81it/s]
+1it [00:00,  2.81it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 190, Steps: 1 | Train Loss: 0.0245151 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.08it/s]
+1it [00:00,  3.08it/s]
+Epoch: 191 cost time: 0.8301000595092773
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 191, Steps: 1 | Train Loss: 0.0249287 Vali Loss: nan
+lr = 0.0000024569
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 192 cost time: 0.833399772644043
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 192, Steps: 1 | Train Loss: 0.0257028 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.35it/s]
+1it [00:00,  3.35it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 193 cost time: 0.8195383548736572
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 193, Steps: 1 | Train Loss: 0.0268838 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.34it/s]
+1it [00:00,  3.34it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 194 cost time: 0.8276150226593018
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 194, Steps: 1 | Train Loss: 0.0251068 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.23it/s]
+1it [00:00,  3.23it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 195 cost time: 0.8340721130371094
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 195, Steps: 1 | Train Loss: 0.0255966 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.24it/s]
+1it [00:00,  3.24it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 196 cost time: 0.8315269947052002
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 196, Steps: 1 | Train Loss: 0.0259095 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.06it/s]
+1it [00:00,  3.06it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.50it/s]
+1it [00:00,  3.50it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 197, Steps: 1 | Train Loss: 0.0248348 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.17it/s]
+1it [00:00,  3.17it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 198, Steps: 1 | Train Loss: 0.0256914 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.31it/s]
+1it [00:00,  3.31it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 199, Steps: 1 | Train Loss: 0.0252574 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.12it/s]
+1it [00:00,  3.12it/s]
+Epoch: 200 cost time: 0.869673490524292
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 200, Steps: 1 | Train Loss: 0.0250324 Vali Loss: nan
+lr = 0.0001000000
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 201 cost time: 0.8261556625366211
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 201, Steps: 1 | Train Loss: 0.0243497 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.25it/s]
+1it [00:00,  3.25it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 202 cost time: 0.8452131748199463
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 202, Steps: 1 | Train Loss: 0.0248241 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.22it/s]
+1it [00:00,  3.22it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 203 cost time: 0.8224837779998779
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 203, Steps: 1 | Train Loss: 0.0237761 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.33it/s]
+1it [00:00,  3.33it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 204 cost time: 0.8266384601593018
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 204, Steps: 1 | Train Loss: 0.0262218 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.23it/s]
+1it [00:00,  3.23it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 205 cost time: 0.8304710388183594
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+1it [00:00,  3.17it/s]
+1it [00:00,  3.17it/s]
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 205, Steps: 1 | Train Loss: 0.0245985 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.20it/s]
+1it [00:00,  3.20it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 206, Steps: 1 | Train Loss: 0.0270260 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.13it/s]
+1it [00:00,  3.13it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 207, Steps: 1 | Train Loss: 0.0255042 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.25it/s]
+1it [00:00,  3.25it/s]
+Epoch: 208 cost time: 0.8235201835632324
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 208, Steps: 1 | Train Loss: 0.0242182 Vali Loss: nan
+lr = 0.0000095582
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 209 cost time: 0.833765983581543
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 209, Steps: 1 | Train Loss: 0.0261075 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.23it/s]
+1it [00:00,  3.23it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 210 cost time: 0.8467278480529785
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 210, Steps: 1 | Train Loss: 0.0264307 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  3.20it/s]
+1it [00:00,  3.20it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 211 cost time: 0.8471269607543945
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 211, Steps: 1 | Train Loss: 0.0274719 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 212 cost time: 0.8570878505706787
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 212, Steps: 1 | Train Loss: 0.0263611 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.19it/s]
+1it [00:00,  3.19it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 213 cost time: 0.8518011569976807
+1it [00:00,  3.19it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 213, Steps: 1 | Train Loss: 0.0234552 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 214, Steps: 1 | Train Loss: 0.0232436 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.05it/s]
+1it [00:00,  3.05it/s]
+Epoch: 215 cost time: 0.8649816513061523
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 215, Steps: 1 | Train Loss: 0.0256670 Vali Loss: nan
+lr = 0.0000500050
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 216 cost time: 0.8440775871276855
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 216, Steps: 1 | Train Loss: 0.0261271 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.27it/s]
+1it [00:00,  3.27it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 217 cost time: 0.8550121784210205
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 217, Steps: 1 | Train Loss: 0.0241372 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.18it/s]
+1it [00:00,  3.18it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 218 cost time: 0.8746566772460938
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 218, Steps: 1 | Train Loss: 0.0246428 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.10it/s]
+1it [00:00,  3.10it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 219 cost time: 0.8357288837432861
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 219, Steps: 1 | Train Loss: 0.0249033 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.17it/s]
+1it [00:00,  3.17it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.18it/s]
+1it [00:00,  3.18it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 220, Steps: 1 | Train Loss: 0.0252724 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.21it/s]
+1it [00:00,  3.21it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 221, Steps: 1 | Train Loss: 0.0234565 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.15it/s]
+1it [00:00,  3.15it/s]
+Epoch: 222 cost time: 0.8568756580352783
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 222, Steps: 1 | Train Loss: 0.0255661 Vali Loss: nan
+lr = 0.0000904518
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 223 cost time: 0.8589475154876709
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 223, Steps: 1 | Train Loss: 0.0235146 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.06it/s]
+1it [00:00,  3.06it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 224 cost time: 0.8746383190155029
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 224, Steps: 1 | Train Loss: 0.0252714 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.05it/s]
+1it [00:00,  3.05it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 225 cost time: 0.8608207702636719
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 225, Steps: 1 | Train Loss: 0.0237428 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.18it/s]
+1it [00:00,  3.18it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 226 cost time: 0.8680260181427002
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 226, Steps: 1 | Train Loss: 0.0242993 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  2.98it/s]
+1it [00:00,  2.98it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.04it/s]
+1it [00:00,  3.04it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 227, Steps: 1 | Train Loss: 0.0243777 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.17it/s]
+1it [00:00,  3.17it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 228, Steps: 1 | Train Loss: 0.0238751 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.34it/s]
+1it [00:00,  3.34it/s]
+Epoch: 229 cost time: 0.8162221908569336
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 229, Steps: 1 | Train Loss: 0.0244980 Vali Loss: nan
+lr = 0.0000024569
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 230 cost time: 0.8468630313873291
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 230, Steps: 1 | Train Loss: 0.0244594 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  3.29it/s]
+1it [00:00,  3.29it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 231 cost time: 0.8843238353729248
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 231, Steps: 1 | Train Loss: 0.0239637 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.08it/s]
+1it [00:00,  3.08it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 232 cost time: 0.8414065837860107
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 232, Steps: 1 | Train Loss: 0.0270171 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.15it/s]
+1it [00:00,  3.15it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 233 cost time: 0.8487346172332764
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 233, Steps: 1 | Train Loss: 0.0257710 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.02it/s]
+1it [00:00,  3.02it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 234 cost time: 0.7984938621520996
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+1it [00:00,  3.51it/s]
+1it [00:00,  3.51it/s]
+pred tensor([])
+true tensor([])
+Epoch: 234, Steps: 1 | Train Loss: 0.0237049 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.22it/s]
+1it [00:00,  3.22it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 235, Steps: 1 | Train Loss: 0.0246428 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.06it/s]
+1it [00:00,  3.06it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 236, Steps: 1 | Train Loss: 0.0237132 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 237 cost time: 0.8587062358856201
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 237, Steps: 1 | Train Loss: 0.0247463 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.19it/s]
+1it [00:00,  3.19it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 238 cost time: 0.8372097015380859
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 238, Steps: 1 | Train Loss: 0.0248807 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.13it/s]
+1it [00:00,  3.13it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 239 cost time: 0.8027181625366211
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 239, Steps: 1 | Train Loss: 0.0233368 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.43it/s]
+1it [00:00,  3.43it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 240 cost time: 0.8231015205383301
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 240, Steps: 1 | Train Loss: 0.0228858 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  3.20it/s]
+1it [00:00,  3.20it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 241 cost time: 0.8386235237121582
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 241, Steps: 1 | Train Loss: 0.0245248 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.18it/s]
+1it [00:00,  3.18it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.25it/s]
+1it [00:00,  3.25it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 242, Steps: 1 | Train Loss: 0.0253867 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.32it/s]
+1it [00:00,  3.32it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 243, Steps: 1 | Train Loss: 0.0218163 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  4.29it/s]
+1it [00:00,  4.29it/s]
+Epoch: 244 cost time: 0.8667066097259521
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 244, Steps: 1 | Train Loss: 0.0234984 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.12it/s]
+1it [00:00,  3.12it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 245 cost time: 0.8599903583526611
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 245, Steps: 1 | Train Loss: 0.0226872 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.18it/s]
+1it [00:00,  3.18it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 246 cost time: 0.8819751739501953
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 246, Steps: 1 | Train Loss: 0.0229038 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.11it/s]
+1it [00:00,  3.11it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 247 cost time: 0.826890230178833
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 247, Steps: 1 | Train Loss: 0.0221924 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.28it/s]
+1it [00:00,  3.28it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 248 cost time: 0.8630359172821045
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+1it [00:00,  3.02it/s]
+1it [00:00,  3.02it/s]
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 248, Steps: 1 | Train Loss: 0.0232630 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.13it/s]
+1it [00:00,  3.13it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 249, Steps: 1 | Train Loss: 0.0229861 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.27it/s]
+1it [00:00,  3.27it/s]
+Epoch: 250 cost time: 0.8592567443847656
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 250, Steps: 1 | Train Loss: 0.0210256 Vali Loss: nan
+lr = 0.0000000100
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 251 cost time: 0.8420281410217285
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 251, Steps: 1 | Train Loss: 0.0235051 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.09it/s]
+1it [00:00,  3.09it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 252 cost time: 0.8697278499603271
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 252, Steps: 1 | Train Loss: 0.0234186 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.01it/s]
+1it [00:00,  3.01it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 253 cost time: 0.8361530303955078
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 253, Steps: 1 | Train Loss: 0.0242950 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.15it/s]
+1it [00:00,  3.15it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 254 cost time: 0.8663496971130371
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 254, Steps: 1 | Train Loss: 0.0243225 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.04it/s]
+1it [00:00,  3.04it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 255 cost time: 0.8700799942016602
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+1it [00:00,  3.10it/s]
+1it [00:00,  3.10it/s]
+Epoch: 255, Steps: 1 | Train Loss: 0.0217164 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.09it/s]
+1it [00:00,  3.09it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 256, Steps: 1 | Train Loss: 0.0228696 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.29it/s]
+1it [00:00,  3.29it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 257, Steps: 1 | Train Loss: 0.0241472 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  4.41it/s]
+1it [00:00,  4.41it/s]
+Epoch: 258 cost time: 0.8108487129211426
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 258, Steps: 1 | Train Loss: 0.0230039 Vali Loss: nan
+lr = 0.0000904518
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 259 cost time: 0.8400359153747559
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 259, Steps: 1 | Train Loss: 0.0226632 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.05it/s]
+1it [00:00,  3.05it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 260 cost time: 0.8917968273162842
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 260, Steps: 1 | Train Loss: 0.0217517 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 261 cost time: 0.8882272243499756
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 261, Steps: 1 | Train Loss: 0.0220750 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  2.97it/s]
+1it [00:00,  2.97it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 262 cost time: 0.7991106510162354
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 262, Steps: 1 | Train Loss: 0.0231051 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.43it/s]
+1it [00:00,  3.43it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.12it/s]
+1it [00:00,  3.12it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 263, Steps: 1 | Train Loss: 0.0234302 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.28it/s]
+1it [00:00,  3.28it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 264, Steps: 1 | Train Loss: 0.0227386 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.13it/s]
+1it [00:00,  3.13it/s]
+Epoch: 265 cost time: 0.8584392070770264
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 265, Steps: 1 | Train Loss: 0.0228424 Vali Loss: nan
+lr = 0.0000500050
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 266 cost time: 0.8658006191253662
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 266, Steps: 1 | Train Loss: 0.0232722 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.08it/s]
+1it [00:00,  3.08it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 267 cost time: 0.7977769374847412
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 267, Steps: 1 | Train Loss: 0.0231695 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.47it/s]
+1it [00:00,  3.47it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 268 cost time: 0.888967752456665
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 268, Steps: 1 | Train Loss: 0.0220176 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  2.90it/s]
+1it [00:00,  2.90it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 269 cost time: 0.8410935401916504
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 269, Steps: 1 | Train Loss: 0.0234958 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.09it/s]
+1it [00:00,  3.09it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.07it/s]
+1it [00:00,  3.07it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 270, Steps: 1 | Train Loss: 0.0218463 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.18it/s]
+1it [00:00,  3.18it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 271, Steps: 1 | Train Loss: 0.0233570 Vali Loss: nan
+lr = 0.0000024569
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 272 cost time: 0.8114120960235596
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 272, Steps: 1 | Train Loss: 0.0221492 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.30it/s]
+1it [00:00,  3.30it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 273 cost time: 0.838979959487915
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 273, Steps: 1 | Train Loss: 0.0234722 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.18it/s]
+1it [00:00,  3.18it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 274 cost time: 0.8389296531677246
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 274, Steps: 1 | Train Loss: 0.0229705 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.15it/s]
+1it [00:00,  3.15it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 275 cost time: 0.8736975193023682
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+1it [00:00,  3.15it/s]
+Epoch: 275, Steps: 1 | Train Loss: 0.0242062 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.22it/s]
+1it [00:00,  3.22it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 276, Steps: 1 | Train Loss: 0.0238867 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.21it/s]
+1it [00:00,  3.21it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 277, Steps: 1 | Train Loss: 0.0236141 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 278 cost time: 0.8234148025512695
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 278, Steps: 1 | Train Loss: 0.0238068 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 279 cost time: 0.8145847320556641
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 279, Steps: 1 | Train Loss: 0.0224232 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.41it/s]
+1it [00:00,  3.41it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 280 cost time: 0.8464853763580322
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 280, Steps: 1 | Train Loss: 0.0216691 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  3.17it/s]
+1it [00:00,  3.17it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 281 cost time: 0.8456003665924072
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 281, Steps: 1 | Train Loss: 0.0206585 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.15it/s]
+1it [00:00,  3.15it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.13it/s]
+1it [00:00,  3.13it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 282, Steps: 1 | Train Loss: 0.0232485 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.17it/s]
+1it [00:00,  3.17it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 283, Steps: 1 | Train Loss: 0.0226105 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 284 cost time: 0.8393051624298096
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 284, Steps: 1 | Train Loss: 0.0231010 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.17it/s]
+1it [00:00,  3.17it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 285 cost time: 0.8126101493835449
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 285, Steps: 1 | Train Loss: 0.0215861 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.31it/s]
+1it [00:00,  3.31it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 286 cost time: 0.8659076690673828
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 286, Steps: 1 | Train Loss: 0.0225103 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.28it/s]
+1it [00:00,  3.28it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 287 cost time: 0.8256542682647705
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 287, Steps: 1 | Train Loss: 0.0202626 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 288 cost time: 0.8329503536224365
+1it [00:00,  3.14it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 288, Steps: 1 | Train Loss: 0.0213714 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.26it/s]
+1it [00:00,  3.26it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 289, Steps: 1 | Train Loss: 0.0209200 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  4.08it/s]
+1it [00:00,  4.08it/s]
+Epoch: 290 cost time: 0.8881094455718994
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 290, Steps: 1 | Train Loss: 0.0231519 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  2.97it/s]
+1it [00:00,  2.97it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 291 cost time: 0.8446242809295654
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 291, Steps: 1 | Train Loss: 0.0224073 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 292 cost time: 0.8268687725067139
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 292, Steps: 1 | Train Loss: 0.0219306 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.26it/s]
+1it [00:00,  3.26it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 293 cost time: 0.8449697494506836
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 293, Steps: 1 | Train Loss: 0.0218535 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.21it/s]
+1it [00:00,  3.21it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 294 cost time: 0.830751895904541
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 294, Steps: 1 | Train Loss: 0.0220719 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.34it/s]
+1it [00:00,  3.34it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.21it/s]
+1it [00:00,  3.21it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 295, Steps: 1 | Train Loss: 0.0212029 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.17it/s]
+1it [00:00,  3.17it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 296, Steps: 1 | Train Loss: 0.0212591 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 297 cost time: 0.8154149055480957
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 297, Steps: 1 | Train Loss: 0.0212441 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.25it/s]
+1it [00:00,  3.25it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 298 cost time: 0.8322153091430664
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 298, Steps: 1 | Train Loss: 0.0219060 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.28it/s]
+1it [00:00,  3.28it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 299 cost time: 0.8314023017883301
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 299, Steps: 1 | Train Loss: 0.0223701 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.25it/s]
+1it [00:00,  3.25it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 300 cost time: 0.8770666122436523
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 300, Steps: 1 | Train Loss: 0.0212768 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  3.01it/s]
+1it [00:00,  3.01it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.04it/s]
+1it [00:00,  3.04it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 301, Steps: 1 | Train Loss: 0.0229876 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.17it/s]
+1it [00:00,  3.17it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 302, Steps: 1 | Train Loss: 0.0213718 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 303 cost time: 0.7984936237335205
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 303, Steps: 1 | Train Loss: 0.0213415 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.46it/s]
+1it [00:00,  3.46it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 304 cost time: 0.8229219913482666
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 304, Steps: 1 | Train Loss: 0.0211187 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 305 cost time: 0.8229978084564209
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 305, Steps: 1 | Train Loss: 0.0218510 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.23it/s]
+1it [00:00,  3.23it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 306 cost time: 0.8271274566650391
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 306, Steps: 1 | Train Loss: 0.0223412 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.22it/s]
+1it [00:00,  3.22it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 307 cost time: 0.8078365325927734
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 307, Steps: 1 | Train Loss: 0.0216077 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.47it/s]
+1it [00:00,  3.47it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.37it/s]
+1it [00:00,  3.37it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 308, Steps: 1 | Train Loss: 0.0218167 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.27it/s]
+1it [00:00,  3.27it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 309, Steps: 1 | Train Loss: 0.0215215 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 310 cost time: 0.815415620803833
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 310, Steps: 1 | Train Loss: 0.0219232 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  3.22it/s]
+1it [00:00,  3.22it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 311 cost time: 0.8406596183776855
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 311, Steps: 1 | Train Loss: 0.0204037 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.27it/s]
+1it [00:00,  3.27it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 312 cost time: 0.8831603527069092
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 312, Steps: 1 | Train Loss: 0.0199949 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.02it/s]
+1it [00:00,  3.02it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 313 cost time: 0.8579380512237549
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 313, Steps: 1 | Train Loss: 0.0201273 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.20it/s]
+1it [00:00,  3.20it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 314 cost time: 0.8690786361694336
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+1it [00:00,  3.12it/s]
+1it [00:00,  3.12it/s]
+Epoch: 314, Steps: 1 | Train Loss: 0.0207158 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.24it/s]
+1it [00:00,  3.24it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 315, Steps: 1 | Train Loss: 0.0202778 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.15it/s]
+1it [00:00,  3.15it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 316, Steps: 1 | Train Loss: 0.0223158 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 317 cost time: 0.8312835693359375
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 317, Steps: 1 | Train Loss: 0.0209209 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.41it/s]
+1it [00:00,  3.41it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 318 cost time: 0.8698797225952148
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 318, Steps: 1 | Train Loss: 0.0212338 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.09it/s]
+1it [00:00,  3.09it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 319 cost time: 0.8751664161682129
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 319, Steps: 1 | Train Loss: 0.0211434 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.16it/s]
+1it [00:00,  3.16it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 320 cost time: 0.8513026237487793
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 320, Steps: 1 | Train Loss: 0.0194261 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  3.06it/s]
+1it [00:00,  3.06it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 321 cost time: 0.8336777687072754
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+1it [00:00,  3.24it/s]
+1it [00:00,  3.24it/s]
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 321, Steps: 1 | Train Loss: 0.0203747 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.38it/s]
+1it [00:00,  3.38it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 322, Steps: 1 | Train Loss: 0.0206475 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.29it/s]
+1it [00:00,  3.29it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 323, Steps: 1 | Train Loss: 0.0205274 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 324 cost time: 0.8220598697662354
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 324, Steps: 1 | Train Loss: 0.0208334 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 325 cost time: 0.8012735843658447
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 325, Steps: 1 | Train Loss: 0.0201985 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.39it/s]
+1it [00:00,  3.39it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 326 cost time: 0.8104774951934814
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 326, Steps: 1 | Train Loss: 0.0204623 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.49it/s]
+1it [00:00,  3.49it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 327 cost time: 0.8482539653778076
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 327, Steps: 1 | Train Loss: 0.0198654 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.12it/s]
+1it [00:00,  3.12it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 328 cost time: 0.8259680271148682
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 328, Steps: 1 | Train Loss: 0.0201134 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.27it/s]
+1it [00:00,  3.27it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 329 cost time: 0.8370728492736816
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 329, Steps: 1 | Train Loss: 0.0208014 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.22it/s]
+1it [00:00,  3.22it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 330, Steps: 1 | Train Loss: 0.0195885 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  4.05it/s]
+1it [00:00,  4.05it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 331, Steps: 1 | Train Loss: 0.0205700 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  2.96it/s]
+1it [00:00,  2.96it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 332 cost time: 0.8924045562744141
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 332, Steps: 1 | Train Loss: 0.0195300 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  2.92it/s]
+1it [00:00,  2.92it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 333 cost time: 0.850916862487793
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 333, Steps: 1 | Train Loss: 0.0209836 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.34it/s]
+1it [00:00,  3.34it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 334 cost time: 0.8631973266601562
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 334, Steps: 1 | Train Loss: 0.0197592 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.02it/s]
+1it [00:00,  3.02it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 335 cost time: 0.8748626708984375
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 335, Steps: 1 | Train Loss: 0.0195275 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.01it/s]
+1it [00:00,  3.01it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 336, Steps: 1 | Train Loss: 0.0205996 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.26it/s]
+1it [00:00,  3.26it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 337, Steps: 1 | Train Loss: 0.0195393 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 338 cost time: 0.8563232421875
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 338, Steps: 1 | Train Loss: 0.0202171 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.21it/s]
+1it [00:00,  3.21it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 339 cost time: 0.8689727783203125
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 339, Steps: 1 | Train Loss: 0.0189971 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.05it/s]
+1it [00:00,  3.05it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 340 cost time: 0.8843045234680176
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 340, Steps: 1 | Train Loss: 0.0187177 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  2.98it/s]
+1it [00:00,  2.98it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 341 cost time: 0.8226606845855713
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 341, Steps: 1 | Train Loss: 0.0196780 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.36it/s]
+1it [00:00,  3.36it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 342 cost time: 0.8148300647735596
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+1it [00:00,  3.41it/s]
+1it [00:00,  3.41it/s]
+Epoch: 342, Steps: 1 | Train Loss: 0.0197393 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.24it/s]
+1it [00:00,  3.24it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 343, Steps: 1 | Train Loss: 0.0194836 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.15it/s]
+1it [00:00,  3.15it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 344, Steps: 1 | Train Loss: 0.0193616 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 345 cost time: 0.8251161575317383
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 345, Steps: 1 | Train Loss: 0.0192113 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.32it/s]
+1it [00:00,  3.32it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 346 cost time: 0.8089978694915771
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 346, Steps: 1 | Train Loss: 0.0205638 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.36it/s]
+1it [00:00,  3.36it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 347 cost time: 0.8255555629730225
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 347, Steps: 1 | Train Loss: 0.0194541 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.24it/s]
+1it [00:00,  3.24it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 348 cost time: 0.8276140689849854
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 348, Steps: 1 | Train Loss: 0.0187866 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.28it/s]
+1it [00:00,  3.28it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 349 cost time: 0.8094453811645508
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 349, Steps: 1 | Train Loss: 0.0202453 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.26it/s]
+1it [00:00,  3.26it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 350 cost time: 0.836251974105835
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 350, Steps: 1 | Train Loss: 0.0192181 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  3.12it/s]
+1it [00:00,  3.12it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.34it/s]
+1it [00:00,  3.34it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 351, Steps: 1 | Train Loss: 0.0204168 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  4.42it/s]
+1it [00:00,  4.42it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 352, Steps: 1 | Train Loss: 0.0207623 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.17it/s]
+1it [00:00,  3.17it/s]
+Epoch: 353 cost time: 0.8553013801574707
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 353, Steps: 1 | Train Loss: 0.0193657 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.06it/s]
+1it [00:00,  3.06it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 354 cost time: 0.8892028331756592
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 354, Steps: 1 | Train Loss: 0.0192802 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.09it/s]
+1it [00:00,  3.09it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 355 cost time: 0.8032963275909424
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 355, Steps: 1 | Train Loss: 0.0209104 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.37it/s]
+1it [00:00,  3.37it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 356 cost time: 0.8513271808624268
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 356, Steps: 1 | Train Loss: 0.0200476 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.10it/s]
+1it [00:00,  3.10it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 357 cost time: 0.8160152435302734
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 357, Steps: 1 | Train Loss: 0.0201794 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.29it/s]
+1it [00:00,  3.29it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.25it/s]
+1it [00:00,  3.25it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 358, Steps: 1 | Train Loss: 0.0201661 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.18it/s]
+1it [00:00,  3.18it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 359, Steps: 1 | Train Loss: 0.0193163 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 360 cost time: 0.8452730178833008
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 360, Steps: 1 | Train Loss: 0.0202750 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.19it/s]
+1it [00:00,  3.19it/s]
+Epoch: 361 cost time: 0.8195695877075195
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 361, Steps: 1 | Train Loss: 0.0200354 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.20it/s]
+1it [00:00,  3.20it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 362 cost time: 0.8528859615325928
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 362, Steps: 1 | Train Loss: 0.0204703 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.12it/s]
+1it [00:00,  3.12it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 363 cost time: 0.8429579734802246
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 363, Steps: 1 | Train Loss: 0.0198226 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.26it/s]
+1it [00:00,  3.26it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 364 cost time: 0.8425304889678955
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 364, Steps: 1 | Train Loss: 0.0189984 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.36it/s]
+1it [00:00,  3.36it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 365 cost time: 0.8411068916320801
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 365, Steps: 1 | Train Loss: 0.0193853 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.23it/s]
+1it [00:00,  3.23it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.27it/s]
+1it [00:00,  3.27it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 366, Steps: 1 | Train Loss: 0.0185083 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.29it/s]
+1it [00:00,  3.29it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 367, Steps: 1 | Train Loss: 0.0179707 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 368 cost time: 0.8119595050811768
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 368, Steps: 1 | Train Loss: 0.0190393 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.21it/s]
+1it [00:00,  3.21it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 369 cost time: 0.865044355392456
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 369, Steps: 1 | Train Loss: 0.0190583 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.08it/s]
+1it [00:00,  3.08it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 370 cost time: 0.8044052124023438
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 370, Steps: 1 | Train Loss: 0.0190786 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  3.33it/s]
+1it [00:00,  3.33it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 371 cost time: 0.8683412075042725
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 371, Steps: 1 | Train Loss: 0.0188650 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.09it/s]
+1it [00:00,  3.09it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 372 cost time: 0.8608887195587158
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 372, Steps: 1 | Train Loss: 0.0189429 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.15it/s]
+1it [00:00,  3.15it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 373 cost time: 0.8325674533843994
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+Epoch: 373, Steps: 1 | Train Loss: 0.0184729 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.03it/s]
+1it [00:00,  3.03it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 374, Steps: 1 | Train Loss: 0.0198365 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 375, Steps: 1 | Train Loss: 0.0183586 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.21it/s]
+1it [00:00,  3.20it/s]
+1it [00:00,  3.20it/s]
+Epoch: 376 cost time: 0.8161194324493408
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 376, Steps: 1 | Train Loss: 0.0181475 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.26it/s]
+1it [00:00,  3.26it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 377 cost time: 0.8389208316802979
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 377, Steps: 1 | Train Loss: 0.0199324 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.09it/s]
+1it [00:00,  3.09it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 378 cost time: 0.8628494739532471
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 378, Steps: 1 | Train Loss: 0.0194311 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.20it/s]
+1it [00:00,  3.20it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 379 cost time: 0.8141839504241943
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 379, Steps: 1 | Train Loss: 0.0183785 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.27it/s]
+1it [00:00,  3.27it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 380 cost time: 0.828575849533081
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 380, Steps: 1 | Train Loss: 0.0190406 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  3.11it/s]
+1it [00:00,  3.11it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 381 cost time: 0.8453032970428467
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+1it [00:00,  3.29it/s]
+1it [00:00,  3.29it/s]
+Epoch: 381, Steps: 1 | Train Loss: 0.0177462 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 382, Steps: 1 | Train Loss: 0.0184409 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.15it/s]
+1it [00:00,  3.15it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 383, Steps: 1 | Train Loss: 0.0187661 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  3.18it/s]
+1it [00:00,  3.18it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 384 cost time: 0.8478457927703857
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 384, Steps: 1 | Train Loss: 0.0189390 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  3.16it/s]
+1it [00:00,  3.16it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 385 cost time: 0.8608040809631348
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 385, Steps: 1 | Train Loss: 0.0187085 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  3.25it/s]
+1it [00:00,  3.25it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 386 cost time: 0.8399183750152588
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 386, Steps: 1 | Train Loss: 0.0185207 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.33it/s]
+1it [00:00,  3.33it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 387 cost time: 0.8255987167358398
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 387, Steps: 1 | Train Loss: 0.0183021 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.00it/s]
+1it [00:00,  3.00it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.03it/s]
+1it [00:00,  3.03it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 388, Steps: 1 | Train Loss: 0.0185705 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 389, Steps: 1 | Train Loss: 0.0193033 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.14it/s]
+1it [00:00,  3.14it/s]
+Epoch: 390 cost time: 0.8800318241119385
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 390, Steps: 1 | Train Loss: 0.0192503 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  3.26it/s]
+1it [00:00,  3.26it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 391 cost time: 0.8388228416442871
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 391, Steps: 1 | Train Loss: 0.0184850 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  3.29it/s]
+1it [00:00,  3.29it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 392 cost time: 0.8151021003723145
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 392, Steps: 1 | Train Loss: 0.0181127 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  3.30it/s]
+1it [00:00,  3.30it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 393 cost time: 0.815579891204834
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 393, Steps: 1 | Train Loss: 0.0189962 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.02it/s]
+1it [00:00,  3.02it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 394 cost time: 0.8606836795806885
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 394, Steps: 1 | Train Loss: 0.0192084 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  3.41it/s]
+1it [00:00,  3.41it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.08it/s]
+1it [00:00,  3.08it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 395, Steps: 1 | Train Loss: 0.0188944 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 396, Steps: 1 | Train Loss: 0.0181020 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  3.20it/s]
+1it [00:00,  3.20it/s]
+Epoch: 397 cost time: 0.8437051773071289
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 397, Steps: 1 | Train Loss: 0.0189336 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+1it [00:00,  3.20it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 398 cost time: 0.8432719707489014
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 398, Steps: 1 | Train Loss: 0.0181134 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  3.34it/s]
+1it [00:00,  3.34it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 399 cost time: 0.8231451511383057
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 399, Steps: 1 | Train Loss: 0.0173673 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.31it/s]
+1it [00:00,  3.31it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 400 cost time: 0.8171591758728027
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 400, Steps: 1 | Train Loss: 0.0187486 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  3.15it/s]
+1it [00:00,  3.15it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 401 cost time: 0.8211743831634521
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 401, Steps: 1 | Train Loss: 0.0179052 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  3.06it/s]
+1it [00:00,  3.06it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 402, Steps: 1 | Train Loss: 0.0183547 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  7.09it/s]
+1it [00:00,  7.09it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 403, Steps: 1 | Train Loss: 0.0177883 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  7.67it/s]
+1it [00:00,  7.67it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 404 cost time: 0.81803297996521
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 404, Steps: 1 | Train Loss: 0.0169730 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  7.70it/s]
+1it [00:00,  7.70it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 405 cost time: 0.8583180904388428
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 405, Steps: 1 | Train Loss: 0.0185672 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  6.85it/s]
+1it [00:00,  6.85it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 406 cost time: 0.8606669902801514
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 406, Steps: 1 | Train Loss: 0.0186766 Vali Loss: nan
+lr = 0.0000345557
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 407 cost time: 0.8423233032226562
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 407, Steps: 1 | Train Loss: 0.0185005 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  3.00it/s]
+1it [00:00,  3.00it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  4.24it/s]
+1it [00:00,  4.24it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 408, Steps: 1 | Train Loss: 0.0180657 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  7.20it/s]
+1it [00:00,  7.20it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 409 cost time: 0.8430280685424805
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 409, Steps: 1 | Train Loss: 0.0178193 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  8.58it/s]
+1it [00:00,  8.58it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 410 cost time: 0.855083703994751
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 410, Steps: 1 | Train Loss: 0.0178577 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  7.54it/s]
+1it [00:00,  7.54it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 411 cost time: 0.8385660648345947
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 411, Steps: 1 | Train Loss: 0.0169768 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  7.30it/s]
+1it [00:00,  7.30it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 412 cost time: 0.8247828483581543
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 412, Steps: 1 | Train Loss: 0.0174260 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  7.27it/s]
+1it [00:00,  7.27it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 413 cost time: 0.8208959102630615
+1it [00:00,  7.27it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 413, Steps: 1 | Train Loss: 0.0177137 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.27it/s]
+1it [00:00,  3.27it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 414, Steps: 1 | Train Loss: 0.0175411 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  4.53it/s]
+1it [00:00,  4.53it/s]
+Epoch: 415 cost time: 0.8132951259613037
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 415, Steps: 1 | Train Loss: 0.0185165 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  7.08it/s]
+1it [00:00,  7.08it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 416 cost time: 0.7891948223114014
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 416, Steps: 1 | Train Loss: 0.0181225 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  7.59it/s]
+1it [00:00,  7.59it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 417 cost time: 0.8245217800140381
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 417, Steps: 1 | Train Loss: 0.0173684 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  7.37it/s]
+1it [00:00,  7.37it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 418 cost time: 0.8252055644989014
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 418, Steps: 1 | Train Loss: 0.0177741 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  7.41it/s]
+1it [00:00,  7.41it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 419 cost time: 0.8475074768066406
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 419, Steps: 1 | Train Loss: 0.0174315 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  7.09it/s]
+1it [00:00,  7.09it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 420 cost time: 0.8084375858306885
+1it [00:00,  7.09it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 420, Steps: 1 | Train Loss: 0.0171008 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.25it/s]
+1it [00:00,  3.25it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 421, Steps: 1 | Train Loss: 0.0171732 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 422 cost time: 0.8193304538726807
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 422, Steps: 1 | Train Loss: 0.0181054 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  7.93it/s]
+1it [00:00,  7.93it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 423 cost time: 0.8666467666625977
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 423, Steps: 1 | Train Loss: 0.0169478 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  8.07it/s]
+1it [00:00,  8.07it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 424 cost time: 0.8299014568328857
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 424, Steps: 1 | Train Loss: 0.0168734 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  7.79it/s]
+1it [00:00,  7.79it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 425 cost time: 0.8413019180297852
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 425, Steps: 1 | Train Loss: 0.0172048 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  7.20it/s]
+1it [00:00,  7.20it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 426 cost time: 0.7867801189422607
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 426, Steps: 1 | Train Loss: 0.0172322 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  8.62it/s]
+1it [00:00,  8.62it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 427 cost time: 0.8183557987213135
+1it [00:00,  8.62it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 427, Steps: 1 | Train Loss: 0.0176890 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  4.12it/s]
+1it [00:00,  4.12it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 428, Steps: 1 | Train Loss: 0.0170057 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  8.14it/s]
+1it [00:00,  8.14it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 429 cost time: 0.8411056995391846
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 429, Steps: 1 | Train Loss: 0.0165807 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  6.88it/s]
+1it [00:00,  6.88it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 430 cost time: 0.8355906009674072
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 430, Steps: 1 | Train Loss: 0.0179084 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  7.45it/s]
+1it [00:00,  7.45it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 431 cost time: 0.8429474830627441
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 431, Steps: 1 | Train Loss: 0.0163106 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  7.44it/s]
+1it [00:00,  7.44it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 432 cost time: 0.8332962989807129
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 432, Steps: 1 | Train Loss: 0.0176701 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  8.14it/s]
+1it [00:00,  8.14it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 433 cost time: 0.8699765205383301
+1it [00:00,  8.14it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 433, Steps: 1 | Train Loss: 0.0174717 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.31it/s]
+1it [00:00,  3.31it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 434, Steps: 1 | Train Loss: 0.0167790 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 435 cost time: 0.8195879459381104
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 435, Steps: 1 | Train Loss: 0.0171537 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  6.92it/s]
+1it [00:00,  6.92it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 436 cost time: 0.8244655132293701
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 436, Steps: 1 | Train Loss: 0.0168900 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  7.55it/s]
+1it [00:00,  7.55it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 437 cost time: 0.8407166004180908
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 437, Steps: 1 | Train Loss: 0.0174640 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  6.95it/s]
+1it [00:00,  6.95it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 438 cost time: 0.8377571105957031
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 438, Steps: 1 | Train Loss: 0.0182401 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  6.79it/s]
+1it [00:00,  6.79it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 439 cost time: 0.850977897644043
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 439, Steps: 1 | Train Loss: 0.0164796 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.28it/s]
+1it [00:00,  3.28it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 440, Steps: 1 | Train Loss: 0.0168434 Vali Loss: nan
+lr = 0.0001000000
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.25it/s]
+1it [00:00,  3.25it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 441, Steps: 1 | Train Loss: 0.0170380 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 442 cost time: 0.8300395011901855
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 442, Steps: 1 | Train Loss: 0.0168230 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  6.84it/s]
+1it [00:00,  6.84it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 443 cost time: 0.8428962230682373
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 443, Steps: 1 | Train Loss: 0.0168891 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  7.34it/s]
+1it [00:00,  7.34it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 444 cost time: 0.8146400451660156
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 444, Steps: 1 | Train Loss: 0.0164819 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  7.02it/s]
+1it [00:00,  7.02it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 445 cost time: 0.8173809051513672
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 445, Steps: 1 | Train Loss: 0.0161512 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  7.76it/s]
+1it [00:00,  7.76it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 446 cost time: 0.8182759284973145
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 446, Steps: 1 | Train Loss: 0.0169251 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  8.27it/s]
+1it [00:00,  8.27it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 447 cost time: 0.8152003288269043
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 447, Steps: 1 | Train Loss: 0.0173720 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  7.09it/s]
+1it [00:00,  7.09it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 448 cost time: 0.8816297054290771
+1it [00:00,  7.09it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 448, Steps: 1 | Train Loss: 0.0165616 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.07it/s]
+1it [00:00,  3.07it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 449, Steps: 1 | Train Loss: 0.0165672 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 450 cost time: 0.8611202239990234
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 450, Steps: 1 | Train Loss: 0.0169076 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  6.97it/s]
+1it [00:00,  6.97it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 451 cost time: 0.8336610794067383
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 451, Steps: 1 | Train Loss: 0.0172509 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  7.68it/s]
+1it [00:00,  7.68it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 452 cost time: 0.8270173072814941
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 452, Steps: 1 | Train Loss: 0.0172051 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  7.82it/s]
+1it [00:00,  7.82it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 453 cost time: 0.8253676891326904
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 453, Steps: 1 | Train Loss: 0.0163239 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  7.42it/s]
+1it [00:00,  7.42it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 454 cost time: 0.8285126686096191
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 454, Steps: 1 | Train Loss: 0.0165556 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  8.04it/s]
+1it [00:00,  8.04it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 455 cost time: 0.8564176559448242
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 455, Steps: 1 | Train Loss: 0.0161245 Vali Loss: nan
+lr = 0.0000500050
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.17it/s]
+1it [00:00,  3.17it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 456, Steps: 1 | Train Loss: 0.0159438 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  4.39it/s]
+1it [00:00,  4.39it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 457, Steps: 1 | Train Loss: 0.0163273 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  6.99it/s]
+1it [00:00,  6.99it/s]
+Epoch: 458 cost time: 0.8361644744873047
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 458, Steps: 1 | Train Loss: 0.0157031 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  8.35it/s]
+1it [00:00,  8.35it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 459 cost time: 0.8401474952697754
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 459, Steps: 1 | Train Loss: 0.0165163 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  7.40it/s]
+1it [00:00,  7.40it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 460 cost time: 0.852264404296875
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 460, Steps: 1 | Train Loss: 0.0166997 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  8.05it/s]
+1it [00:00,  8.05it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 461 cost time: 0.8350903987884521
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 461, Steps: 1 | Train Loss: 0.0171956 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  7.77it/s]
+1it [00:00,  7.77it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 462 cost time: 0.8446495532989502
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 462, Steps: 1 | Train Loss: 0.0158772 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  7.73it/s]
+1it [00:00,  7.73it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 463 cost time: 0.8247256278991699
+1it [00:00,  7.73it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 463, Steps: 1 | Train Loss: 0.0160855 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.29it/s]
+1it [00:00,  3.29it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 464, Steps: 1 | Train Loss: 0.0158337 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 465 cost time: 0.8180339336395264
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 465, Steps: 1 | Train Loss: 0.0162384 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  7.13it/s]
+1it [00:00,  7.13it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 466 cost time: 0.8564901351928711
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 466, Steps: 1 | Train Loss: 0.0156994 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  6.90it/s]
+1it [00:00,  6.90it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 467 cost time: 0.8305635452270508
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 467, Steps: 1 | Train Loss: 0.0162642 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  7.79it/s]
+1it [00:00,  7.79it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 468 cost time: 0.8412721157073975
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 468, Steps: 1 | Train Loss: 0.0166071 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  7.76it/s]
+1it [00:00,  7.76it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 469 cost time: 0.8214316368103027
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 469, Steps: 1 | Train Loss: 0.0167067 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  7.06it/s]
+1it [00:00,  7.06it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 470 cost time: 0.846278190612793
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+1it [00:00,  7.06it/s]
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 470, Steps: 1 | Train Loss: 0.0157109 Vali Loss: nan
+lr = 0.0000000100
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.07it/s]
+1it [00:00,  3.07it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 471, Steps: 1 | Train Loss: 0.0157984 Vali Loss: nan
+lr = 0.0000024569
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 472 cost time: 0.8874578475952148
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 472, Steps: 1 | Train Loss: 0.0158543 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  6.81it/s]
+1it [00:00,  6.81it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 473 cost time: 0.8262579441070557
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 473, Steps: 1 | Train Loss: 0.0159202 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  7.51it/s]
+1it [00:00,  7.51it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 474 cost time: 0.8547322750091553
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 474, Steps: 1 | Train Loss: 0.0162347 Vali Loss: nan
+lr = 0.0000345557
+1it [00:00,  7.79it/s]
+1it [00:00,  7.79it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 475 cost time: 0.8070051670074463
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 475, Steps: 1 | Train Loss: 0.0160421 Vali Loss: nan
+lr = 0.0000500050
+1it [00:00,  7.90it/s]
+1it [00:00,  7.90it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 476 cost time: 0.8368160724639893
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 476, Steps: 1 | Train Loss: 0.0161190 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  8.08it/s]
+1it [00:00,  8.08it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 477 cost time: 0.8272514343261719
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 477, Steps: 1 | Train Loss: 0.0149389 Vali Loss: nan
+lr = 0.0000793913
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.21it/s]
+1it [00:00,  3.21it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 478, Steps: 1 | Train Loss: 0.0150688 Vali Loss: nan
+lr = 0.0000904518
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.20it/s]
+1it [00:00,  3.20it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 479, Steps: 1 | Train Loss: 0.0170156 Vali Loss: nan
+lr = 0.0000975531
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 480 cost time: 0.8283588886260986
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 480, Steps: 1 | Train Loss: 0.0158142 Vali Loss: nan
+lr = 0.0001000000
+1it [00:00,  6.96it/s]
+1it [00:00,  6.96it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 481 cost time: 0.8465042114257812
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 481, Steps: 1 | Train Loss: 0.0165650 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  8.00it/s]
+1it [00:00,  8.00it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 482 cost time: 0.8226451873779297
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 482, Steps: 1 | Train Loss: 0.0151051 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  8.35it/s]
+1it [00:00,  8.35it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 483 cost time: 0.8290176391601562
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 483, Steps: 1 | Train Loss: 0.0155770 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  7.67it/s]
+1it [00:00,  7.67it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 484 cost time: 0.8527841567993164
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 484, Steps: 1 | Train Loss: 0.0164694 Vali Loss: nan
+lr = 0.0000654543
+1it [00:00,  7.88it/s]
+1it [00:00,  7.88it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 485 cost time: 0.8055746555328369
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 485, Steps: 1 | Train Loss: 0.0154749 Vali Loss: nan
+lr = 0.0000500050
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  2.97it/s]
+1it [00:00,  2.97it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 486, Steps: 1 | Train Loss: 0.0152678 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.17it/s]
+1it [00:00,  3.17it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 487, Steps: 1 | Train Loss: 0.0165782 Vali Loss: nan
+lr = 0.0000206187
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+0it [00:00, ?it/s]t/s]
+0it [00:00, ?it/s]t/s]
+Epoch: 488 cost time: 0.8481762409210205
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 488, Steps: 1 | Train Loss: 0.0153644 Vali Loss: nan
+lr = 0.0000095582
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  6.84it/s]
+1it [00:00,  6.84it/s]
+Epoch: 489 cost time: 0.8268373012542725
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 489, Steps: 1 | Train Loss: 0.0158960 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  7.03it/s]
+1it [00:00,  7.03it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 490 cost time: 0.8346512317657471
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 490, Steps: 1 | Train Loss: 0.0147461 Vali Loss: nan
+lr = 0.0000000100
+1it [00:00,  7.19it/s]
+1it [00:00,  7.19it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 491 cost time: 0.8507568836212158
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 491, Steps: 1 | Train Loss: 0.0159615 Vali Loss: nan
+lr = 0.0000024569
+1it [00:00,  7.37it/s]
+1it [00:00,  7.37it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 492 cost time: 0.8290672302246094
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 492, Steps: 1 | Train Loss: 0.0151796 Vali Loss: nan
+lr = 0.0000095582
+1it [00:00,  7.58it/s]
+1it [00:00,  7.58it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 493 cost time: 0.8369178771972656
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 493, Steps: 1 | Train Loss: 0.0164889 Vali Loss: nan
+lr = 0.0000206187
+1it [00:00,  6.89it/s]
+1it [00:00,  6.89it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 494 cost time: 0.8162055015563965
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+1it [00:00,  6.89it/s]
+Epoch: 494, Steps: 1 | Train Loss: 0.0147206 Vali Loss: nan
+lr = 0.0000345557
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  3.04it/s]
+1it [00:00,  3.04it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 495, Steps: 1 | Train Loss: 0.0161104 Vali Loss: nan
+lr = 0.0000500050
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+1it [00:00,  4.36it/s]
+1it [00:00,  4.36it/s]
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 496, Steps: 1 | Train Loss: 0.0149557 Vali Loss: nan
+lr = 0.0000654543
+Validation loss decreased (nan --> nan).  Saving model ...
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+1it [00:00,  7.53it/s]
+1it [00:00,  7.53it/s]
+Epoch: 497 cost time: 0.8314182758331299
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 497, Steps: 1 | Train Loss: 0.0156812 Vali Loss: nan
+lr = 0.0000793913
+1it [00:00,  7.52it/s]
+1it [00:00,  7.52it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 498 cost time: 0.8299479484558105
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 498, Steps: 1 | Train Loss: 0.0154898 Vali Loss: nan
+lr = 0.0000904518
+1it [00:00,  6.24it/s]
+1it [00:00,  6.24it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 499 cost time: 0.8325965404510498
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 499, Steps: 1 | Train Loss: 0.0149174 Vali Loss: nan
+lr = 0.0000975531
+1it [00:00,  7.91it/s]
+1it [00:00,  7.91it/s]
+outputs torch.Size([92, 12, 54])
+B 92
+L 18
+M 54
+Epoch: 500 cost time: 0.8209519386291504
+outputs torch.Size([8, 12, 54])
+B 8
+L 18
+M 54
+total vali observation: torch.Size([0])
+missing_idx_len: 8
+pred tensor([])
+true tensor([])
+Epoch: 500, Steps: 1 | Train Loss: 0.0155959 Vali Loss: nan
+lr = 0.0001000000
+    preds = preds.reshape(-1, preds.shape[-2], preds.shape[-1]) ii)
+    preds = preds.reshape(-1, preds.shape[-2], preds.shape[-1]) ii)
+------------------------------------
+outputs torch.Size([23, 12, 54])
+B 23
+L 18
+M 54
+test shape: (1, 0) (1, 0)

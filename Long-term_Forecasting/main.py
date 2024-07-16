@@ -20,6 +20,9 @@ import numpy as np
 
 import argparse
 import random
+import wandb
+import random
+
 
 warnings.filterwarnings('ignore')
 
@@ -36,8 +39,8 @@ parser.add_argument('--checkpoints', type=str, default='./checkpoints/')
 parser.add_argument('--root_path', type=str, default='./dataset/traffic/')
 parser.add_argument('--data_path', type=str, default='traffic.csv')
 parser.add_argument('--data', type=str, default='custom')
-parser.add_argument('--features', type=str, default='M')
-parser.add_argument('--freq', type=int, default=1)
+parser.add_argument('--features', type=str, default='MS')
+parser.add_argument('--freq', type=str, default='0')
 parser.add_argument('--target', type=str, default='OT')
 parser.add_argument('--embed', type=str, default='timeF')
 parser.add_argument('--percent', type=int, default=10)
@@ -52,7 +55,7 @@ parser.add_argument('--batch_size', type=int, default=512)
 parser.add_argument('--num_workers', type=int, default=10)
 parser.add_argument('--train_epochs', type=int, default=10)
 parser.add_argument('--lradj', type=str, default='type1')
-parser.add_argument('--patience', type=int, default=3)
+parser.add_argument('--patience', type=int, default=30)
 
 parser.add_argument('--gpt_layers', type=int, default=3)
 parser.add_argument('--is_gpt', type=int, default=1)
@@ -77,10 +80,25 @@ parser.add_argument('--tmax', type=int, default=10)
 
 parser.add_argument('--itr', type=int, default=3)
 parser.add_argument('--cos', type=int, default=0)
+parser.add_argument('--which_firm', type=int, default=0)
+parser.add_argument('--num_variables', type=int, default=54)
 
 
 
 args = parser.parse_args()
+
+
+# start a new wandb run to track this script
+wandb.init(
+    # set the wandb project where this run will be logged
+    project="EPS_Predition_Quartarly",
+    
+    # track hyperparameters and run metadata
+    config=args,
+    name='Run1'+'_'+str(args.which_firm)
+
+)
+
 
 SEASONALITY_MAP = {
    "minutely": 1440,
@@ -96,6 +114,10 @@ SEASONALITY_MAP = {
 
 mses = []
 maes = []
+tr_mses = []
+tr_maes = []
+vali_mses = []
+vali_maes = []
 
 for ii in range(args.itr):
 
@@ -106,16 +128,16 @@ for ii in range(args.itr):
     if not os.path.exists(path):
         os.makedirs(path)
 
-    if args.freq == 0:
-        args.freq = 'h'
+    if args.freq == '0':
+        args.freq = "M"
+   
 
     train_data, train_loader = data_provider(args, 'train')
     vali_data, vali_loader = data_provider(args, 'val')
     test_data, test_loader = data_provider(args, 'test')
+    
 
-    if args.freq != 'h':
-        args.freq = SEASONALITY_MAP[test_data.freq]
-        print("freq = {}".format(args.freq))
+
 
     device = torch.device('cuda:0')
 
@@ -164,9 +186,14 @@ for ii in range(args.itr):
             batch_y_mark = batch_y_mark.float().to(device)
             
             outputs = model(batch_x, ii)
-
+ 
             outputs = outputs[:, -args.pred_len:, :]
             batch_y = batch_y[:, -args.pred_len:, :].to(device)
+
+            missing_idx=~torch.isnan(batch_y)
+            outputs=outputs[missing_idx]
+            batch_y=batch_y[missing_idx]
+            
             loss = criterion(outputs, batch_y)
             train_loss.append(loss.item())
 
@@ -185,6 +212,7 @@ for ii in range(args.itr):
 
         train_loss = np.average(train_loss)
         vali_loss = vali(model, vali_data, vali_loader, criterion, args, device, ii)
+        wandb.log({"train_loss": train_loss, "val_loss": vali_loss})
         # test_loss = vali(model, test_data, test_loader, criterion, args, device, ii)
         # print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f}, Test Loss: {4:.7f}".format(
         #     epoch + 1, train_steps, train_loss, vali_loss, test_loss))
@@ -204,11 +232,32 @@ for ii in range(args.itr):
     best_model_path = path + '/' + 'checkpoint.pth'
     model.load_state_dict(torch.load(best_model_path))
     print("------------------------------------")
-    mse, mae = test(model, test_data, test_loader, args, device, ii)
+    mse, r2 = test(model, test_data, test_loader, args, device, ii)
     mses.append(mse)
-    maes.append(mae)
+    maes.append(r2)
+
+    tr_mse, tr_r2 = test(model, train_data, train_loader, args, device, ii)
+    tr_mses.append(tr_mse)
+    tr_maes.append(tr_r2)
+
+    vali_mse, vali_r2 = test(model, vali_data, vali_loader, args, device, ii)
+    vali_mses.append(vali_mse)
+    vali_maes.append(vali_r2)
+    #model_path = "path/to/save/model"
+    #model.save(model_path)
+
+    # Then log the model file or directory to WandB
+    #wandb.save(model_path)
+    
 
 mses = np.array(mses)
 maes = np.array(maes)
 print("mse_mean = {:.4f}, mse_std = {:.4f}".format(np.mean(mses), np.std(mses)))
-print("mae_mean = {:.4f}, mae_std = {:.4f}".format(np.mean(maes), np.std(maes)))
+print("r2_mean = {:.4f}, mae_std = {:.4f}".format(np.mean(maes), np.std(maes)))
+wandb.log({"test_mse_mean": np.mean(mses), "test_mse_std": np.std(mses),"test_r2_mean": np.mean(maes), "test_r2_std": np.std(maes) })
+tr_mses = np.array(tr_mses)
+tr_maes = np.array(tr_maes)
+wandb.log({"train_mse_mean": np.mean(tr_mses), "train_mse_std": np.std(tr_mses),"train_r2_mean": np.mean(tr_maes), "train_r2_std": np.std(tr_maes) })
+vali_mses = np.array(vali_mses)
+vali_maes = np.array(vali_maes)
+wandb.log({"vali_mse_mean": np.mean(vali_mses), "vali_mse_std": np.std(vali_mses),"vali_r2_mean": np.mean(vali_maes), "vali_r2_std": np.std(vali_maes) })

@@ -1,4 +1,4 @@
-from data_provider.data_loader import Dataset_Custom, Dataset_Pred, Dataset_TSF, Dataset_ETT_hour, Dataset_ETT_minute
+from data_provider.data_loader import Dataset_Custom, Dataset_Pred, Dataset_TSF, Dataset_ETT_hour, Dataset_ETT_minute,Dataset_EPS
 from torch.utils.data import DataLoader
 
 data_dict = {
@@ -6,10 +6,11 @@ data_dict = {
     'tsf_data': Dataset_TSF,
     'ett_h': Dataset_ETT_hour,
     'ett_m': Dataset_ETT_minute,
+    'eps': Dataset_EPS,
 }
 
 
-def data_provider(args, flag, drop_last_test=True, train_all=False):
+def data_provider(args, flag, drop_last_test=False, train_all=False):
     Data = data_dict[args.data]
     timeenc = 0 if args.embed != 'timeF' else 1
     percent = args.percent
@@ -17,7 +18,7 @@ def data_provider(args, flag, drop_last_test=True, train_all=False):
 
     if flag == 'test':
         shuffle_flag = False
-        drop_last = drop_last_test
+        drop_last = False #drop_last_test
         batch_size = args.batch_size
         freq = args.freq
     elif flag == 'pred':
@@ -28,12 +29,12 @@ def data_provider(args, flag, drop_last_test=True, train_all=False):
         Data = Dataset_Pred
     elif flag == 'val':
         shuffle_flag = True
-        drop_last = drop_last_test
+        drop_last = False #drop_last_test
         batch_size = args.batch_size
         freq = args.freq
     else:
         shuffle_flag = True
-        drop_last = True
+        drop_last = False  #True
         batch_size = args.batch_size
         freq = args.freq
 

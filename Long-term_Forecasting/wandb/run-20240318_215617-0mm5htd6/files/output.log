@@ -1,0 +1,836 @@
+self.enc_in = 7
+self.data_x = (8640, 7)
+train 57463
+self.enc_in = 7
+self.data_x = (3216, 7)
+val 19495
+self.enc_in = 7
+self.data_x = (3216, 7)
+test 19495
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (1): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (2): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (3): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (4): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (5): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:28,  7.93it/s]
+18it [00:01, 18.02it/s]
+
+
+76it [00:04, 17.54it/s]
+Epoch: 1, Steps: 224 | Train Loss: 0.3743988 Vali Loss: 0.7046911
+lr = 0.0000993845
+Validation loss decreased (inf --> 0.704691).  Saving model ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.07it/s]
+Epoch: 2 cost time: 28.057876586914062
+
+76it [00:04, 17.52it/s]
+9it [00:01,  8.20it/s]
+Epoch: 2, Steps: 224 | Train Loss: 0.3429428 Vali Loss: 0.7093563
+lr = 0.0000975531
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.03it/s]
+18it [00:01, 17.78it/s]
+
+76it [00:04, 17.43it/s]
+2it [00:00, 10.14it/s]
+Epoch: 3, Steps: 224 | Train Loss: 0.3356446 Vali Loss: 0.7122178
+lr = 0.0000945509
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.01it/s]
+4it [00:00, 16.54it/s]
+
+
+74it [00:04, 17.63it/s]
+Epoch: 4, Steps: 224 | Train Loss: 0.3301635 Vali Loss: 0.7019488
+lr = 0.0000904518
+76it [00:04, 17.35it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.00it/s]
+12it [00:00, 17.49it/s]
+
+
+76it [00:04, 17.37it/s]
+Epoch: 5, Steps: 224 | Train Loss: 0.3247010 Vali Loss: 0.6959832
+lr = 0.0000853568
+Validation loss decreased (0.701949 --> 0.695983).  Saving model ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.00it/s]
+20it [00:01, 17.81it/s]
+
+76it [00:04, 17.34it/s]
+4it [00:00,  8.53it/s]
+Epoch: 6, Steps: 224 | Train Loss: 0.3204748 Vali Loss: 0.7033774
+lr = 0.0000793913
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:28,  7.99it/s]
+4it [00:00, 16.59it/s]
+
+
+76it [00:04, 17.68it/s]
+Epoch: 7, Steps: 224 | Train Loss: 0.3156481 Vali Loss: 0.7014943
+lr = 0.0000727023
+76it [00:04, 17.41it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:28,  8.00it/s]
+24it [00:01, 17.77it/s]
+
+76it [00:04, 17.46it/s]
+10it [00:00, 18.00it/s]
+Epoch: 8, Steps: 224 | Train Loss: 0.3119422 Vali Loss: 0.7029005
+lr = 0.0000654543
+EarlyStopping counter: 3 out of 3
+Early stopping
+
+
+76it [00:04, 18.18it/s]
+test shape: (76, 256, 96, 1) (76, 256, 96, 1)
+test shape: (19456, 96, 1) (19456, 96, 1)
+mae:0.4033, mse:0.3828, rmse:0.6187, r2:0.6538
+self.enc_in = 7
+self.data_x = (8640, 7)
+train 57463
+self.enc_in = 7
+self.data_x = (3216, 7)
+val 19495
+self.enc_in = 7
+self.data_x = (3216, 7)
+test 19495
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (1): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (2): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (3): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (4): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (5): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.01it/s]
+26it [00:01, 17.75it/s]
+
+76it [00:04, 17.38it/s]
+2it [00:00,  9.69it/s]
+Epoch: 1, Steps: 224 | Train Loss: 0.3746879 Vali Loss: 0.7157652
+lr = 0.0000993845
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.01it/s]
+0it [00:00, ?it/s]
+
+
+76it [00:04, 17.37it/s]
+5it [00:00,  8.62it/s]
+Epoch: 2, Steps: 224 | Train Loss: 0.3420702 Vali Loss: 0.7140415
+lr = 0.0000975531
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.02it/s]
+8it [00:00, 16.97it/s]
+
+
+76it [00:04, 17.44it/s]
+Epoch: 3, Steps: 224 | Train Loss: 0.3355425 Vali Loss: 0.7201247
+lr = 0.0000945509
+EarlyStopping counter: 1 out of 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.01it/s]
+28it [00:01, 17.72it/s]
+
+76it [00:04, 17.41it/s]
+3it [00:00,  8.74it/s]
+Epoch: 4, Steps: 224 | Train Loss: 0.3293924 Vali Loss: 0.7034486
+lr = 0.0000904518
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.01it/s]
+2it [00:00, 16.69it/s]
+
+
+76it [00:04, 17.40it/s]
+12it [00:01,  8.01it/s]
+Epoch: 5, Steps: 224 | Train Loss: 0.3250221 Vali Loss: 0.7093439
+lr = 0.0000853568
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.01it/s]
+24it [00:01, 17.75it/s]
+
+76it [00:04, 17.39it/s]
+0it [00:00, ?it/s]
+Epoch: 6, Steps: 224 | Train Loss: 0.3205649 Vali Loss: 0.7022157
+lr = 0.0000793913
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.01it/s]
+32it [00:01, 17.70it/s]
+
+76it [00:04, 17.42it/s]
+10it [00:01,  8.06it/s]
+Epoch: 7, Steps: 224 | Train Loss: 0.3174996 Vali Loss: 0.7043330
+lr = 0.0000727023
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.01it/s]
+8it [00:00, 16.72it/s]
+
+
+76it [00:04, 17.44it/s]
+Epoch: 8, Steps: 224 | Train Loss: 0.3126539 Vali Loss: 0.7036350
+lr = 0.0000654543
+EarlyStopping counter: 2 out of 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.02it/s]
+224it [00:27,  8.01it/s]
+
+76it [00:04, 17.37it/s]
+14it [00:00, 18.36it/s]
+Epoch: 9, Steps: 224 | Train Loss: 0.3099651 Vali Loss: 0.7132633
+lr = 0.0000578259
+EarlyStopping counter: 3 out of 3
+Early stopping
+
+
+76it [00:04, 18.05it/s]
+test shape: (76, 256, 96, 1) (76, 256, 96, 1)
+test shape: (19456, 96, 1) (19456, 96, 1)
+mae:0.4027, mse:0.3832, rmse:0.6190, r2:0.6535
+self.enc_in = 7
+self.data_x = (8640, 7)
+train 57463
+self.enc_in = 7
+self.data_x = (3216, 7)
+val 19495
+self.enc_in = 7
+self.data_x = (3216, 7)
+test 19495
+gpt2 = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (1): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (2): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (3): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (4): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (5): GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+223it [00:27,  8.03it/s]
+224it [00:27,  8.02it/s]
+
+76it [00:04, 17.38it/s]
+2it [00:00,  8.01it/s]
+Epoch: 1, Steps: 224 | Train Loss: 0.3717599 Vali Loss: 0.7127936
+lr = 0.0000993845
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.00it/s]
+1it [00:00,  9.67it/s]
+
+
+76it [00:04, 17.21it/s]
+6it [00:00,  8.43it/s]
+Epoch: 2, Steps: 224 | Train Loss: 0.3397738 Vali Loss: 0.7026607
+lr = 0.0000975531
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.02it/s]
+8it [00:00, 16.72it/s]
+
+
+76it [00:04, 17.40it/s]
+Epoch: 3, Steps: 224 | Train Loss: 0.3335968 Vali Loss: 0.6951936
+lr = 0.0000945509
+Validation loss decreased (0.702661 --> 0.695194).  Saving model ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.01it/s]
+18it [00:01, 17.81it/s]
+
+76it [00:04, 17.44it/s]
+3it [00:00,  8.62it/s]
+Epoch: 4, Steps: 224 | Train Loss: 0.3281189 Vali Loss: 0.7053980
+lr = 0.0000904518
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.00it/s]
+2it [00:00, 16.76it/s]
+
+
+76it [00:04, 17.41it/s]
+12it [00:01,  8.06it/s]
+Epoch: 5, Steps: 224 | Train Loss: 0.3230140 Vali Loss: 0.7052839
+lr = 0.0000853568
+
+
+
+
+
+
+
+
+
+
+
+
+
+224it [00:27,  8.01it/s]
+22it [00:01, 17.85it/s]
+
+76it [00:04, 17.39it/s]
+8it [00:00, 17.54it/s]
+Epoch: 6, Steps: 224 | Train Loss: 0.3189655 Vali Loss: 0.6998443
+lr = 0.0000793913
+EarlyStopping counter: 3 out of 3
+Early stopping
+
+
+76it [00:04, 17.98it/s]
+test shape: (76, 256, 96, 1) (76, 256, 96, 1)
+test shape: (19456, 96, 1) (19456, 96, 1)
+mae:0.4024, mse:0.3836, rmse:0.6194, r2:0.6531
+mse_mean = 0.3832, mse_std = 0.0003
+r2_mean = 0.6531, mae_std = 0.0000
